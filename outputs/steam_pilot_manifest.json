@@ -1,0 +1,67 @@
+{
+  "crawl_started_utc": "2026-11-20T11:47:19.2627062Z",
+  "crawl_finished_utc": "2026-11-20T11:47:27.5854198Z",
+  "endpoint": "https://api.steampowered.com/IUserReviewsService/GetAppReviews/v1/",
+  "filters": {
+    "language": "english",
+    "purchase_type": "all",
+    "sort": "recent",
+    "pages_per_game": 1,
+    "page_size": 40
+  },
+  "apps": [
+    {
+      "app_id": 570,
+      "game": "Dota 2",
+      "pages_fetched": 1,
+      "reviews_fetched": 40,
+      "total_matching_reported": 2831,
+      "error": null
+    },
+    {
+      "app_id": 730,
+      "game": "Counter-Strike 2",
+      "pages_fetched": 1,
+      "reviews_fetched": 40,
+      "total_matching_reported": 17489,
+      "error": null
+    },
+    {
+      "app_id": 440,
+      "game": "Team Fortress 2",
+      "pages_fetched": 1,
+      "reviews_fetched": 40,
+      "total_matching_reported": 2079,
+      "error": null
+    },
+    {
+      "app_id": 620,
+      "game": "Portal 2",
+      "pages_fetched": 1,
+      "reviews_fetched": 40,
+      "total_matching_reported": 815,
+      "error": null
+    },
+    {
+      "app_id": 550,
+      "game": "Left 4 Dead 2",
+      "pages_fetched": 1,
+      "reviews_fetched": 40,
+      "total_matching_reported": 1408,
+      "error": null
+    }
+  ],
+  "total_records": 200,
+  "unique_review_ids": 200,
+  "duplicate_review_ids": 0,
+  "unique_hashed_reviewers": 199,
+  "reviewers_on_multiple_games": 1,
+  "user_id_transform": "SHA-256 of SteamID; consistent across sampled games; pseudonymized, not anonymized",
+  "known_limitations": [
+    "Small pilot, not representative",
+    "Recent English reviews only",
+    "Steam voted_up is binary recommendation feedback, not a star rating",
+    "App list is a convenience sample",
+    "Reviewer overlap from this small sample is only a preliminary signal"
+  ]
+}
