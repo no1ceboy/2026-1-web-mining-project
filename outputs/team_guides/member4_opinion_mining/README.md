@@ -2,7 +2,7 @@
 
 ## Project in one minute
 
-The team is collecting game reviews and testing whether extracted review opinions improve recommendations. Your job is to find what aspects reviewers praise or criticize, validate the extraction, and provide an opinion feature for LightGCN. The project uses link analysis and opinion mining; Information Retrieval is excluded.
+The team is collecting game reviews and testing whether extracted review opinions improve recommendations. The opinion-mining workstream identifies aspects reviewers praise or criticize, validates extraction quality, and provides an opinion feature for LightGCN. The project uses link analysis and opinion mining; Information Retrieval is excluded.
 
 The Steam API's `voted_up` value is the reviewer's overall recommendation, not an aspect sentiment label. A positive recommendation can contain a complaint about graphics; a negative recommendation can praise gameplay. Read and label the review text itself.
 

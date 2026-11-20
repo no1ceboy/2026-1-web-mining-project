@@ -4,7 +4,7 @@
 
 The team is building a review-aware game recommendation system. We want to learn whether opinions extracted from game reviews improve recommendations based on links between users and games. The capstone combines a reproducible data-collection system with an evaluated method. Information Retrieval is out of scope; the course connections are link analysis and opinion mining, with LightGCN as the learned recommender.
 
-Your role is to collect a bounded, auditable review sample from one platform across multiple games. Do not crawl multiple platforms or attempt to copy all of Steam.
+The crawler workstream collects a bounded, auditable review sample from one platform across multiple games. The scope is limited to one source and does not attempt to copy all of Steam.
 
 ## What already exists
 
@@ -12,7 +12,7 @@ Your role is to collect a bounded, auditable review sample from one platform acr
 - `../../steam_pilot_manifest.json`: request settings and crawl counts.
 - `../../README.md`: full project plan and the pilot's limitations.
 
-The pilot has 200 unique reviews and 199 unique hashed reviewers, but only one reviewer appears on more than one sampled game. This is too sparse to validate graph recommendation. The Steam API was reachable from the environment that made the pilot; check access from your own normal network before expanding.
+The pilot has 200 unique reviews and 199 unique hashed reviewers, but only one reviewer appears on more than one sampled game. This is too sparse to validate graph recommendation. The Steam API was reachable from the environment that made the pilot; the crawler owner should verify access from the collection network before expanding.
 
 ## Source and crawl boundary
 
@@ -41,9 +41,9 @@ Keep the current pilot's field names and types consistent:
 
 Do not include raw SteamIDs in saved outputs. Do not map `voted_up` to aspect sentiment; the opinion-mining owner will infer aspect sentiment from the text separately.
 
-## Your tasks and deliverables
+## Tasks and deliverables
 
-1. Confirm the API works from your normal network and record the test result.
+1. Confirm the API works from the crawler owner's normal network and record the test result.
 2. Expand the sample to up to 20 games and 100 recent English reviews per game. Keep a request log and make the crawl resumable.
 3. Save:
    - `outputs/steam_expanded_pilot.jsonl`

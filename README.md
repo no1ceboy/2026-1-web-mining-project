@@ -7,7 +7,7 @@ This capstone studies whether opinions mined from Steam game reviews add useful 
 ## Start here
 
 1. Read the [full project plan](outputs/README.md) for the research questions, shared schema, evaluation plan, and checkpoint schedule.
-2. Open the README for your assigned workstream:
+2. Open the README for the assigned workstream:
    - [Member 1: crawler and data provenance](outputs/team_guides/member1_crawler/README.md)
    - [Member 3: Personalized PageRank and LightGCN](outputs/team_guides/member3_graph_models/README.md)
    - [Member 4: opinion mining and validation](outputs/team_guides/member4_opinion_mining/README.md)
@@ -23,7 +23,7 @@ The current pilot contains 200 recent English reviews from five games. It has ve
 
 | Owner | Workstream | First evidence to share |
 | --- | --- | --- |
-| Project lead (you / Member 2) | Cleaning, shared loader, chronological split, evaluator, Popularity baseline | Clean-data counts, exclusions, split/evaluator contract, baseline status |
+| Project Lead / Member 2 | Cleaning, shared loader, chronological split, evaluator, Popularity baseline | Clean-data counts, exclusions, split/evaluator contract, baseline status |
 | Member 1 | Steam crawler and provenance | Expanded sample, manifest, access status, overlap/data-quality report |
 | Member 3 | PPR and LightGCN | Graph coverage, runnable pilot methods, runtime and limitations |
 | Member 4 | Opinion mining | Aspect guide, human annotation pilot, extractor benchmark and validation status |
@@ -40,7 +40,7 @@ All four streams can start from the pilot in parallel. Coordinate shared field n
 
 ## Git collaboration
 
-Create a branch for your work, for example `member1/crawler`, `member3/graph-models`, or `member4/opinion-mining`. Commit focused changes and open a pull request or ask the project lead to review before merging. Do not commit model weights, environment files, credentials, caches, or large unbounded crawls. Keep generated reports and bounded samples reproducible and small enough to review.
+Each contributor should create a branch for the assigned workstream, for example `member1/crawler`, `member3/graph-models`, or `member4/opinion-mining`. Commit focused changes and open a pull request or request review from the project lead before merging. Do not commit model weights, environment files, credentials, caches, or large unbounded crawls. Keep generated reports and bounded samples reproducible and small enough to review.
 
 ## Current status
 

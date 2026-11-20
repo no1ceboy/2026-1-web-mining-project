@@ -2,7 +2,7 @@
 
 ## Project in one minute
 
-The team is collecting game reviews from one source and testing whether review opinions improve game recommendations. Information Retrieval is excluded. Your role covers the syllabus's link-analysis method, Personalized PageRank (PPR), and one learned graph recommender, LightGCN.
+The team is collecting game reviews from one source and testing whether review opinions improve game recommendations. Information Retrieval is excluded. The graph-model workstream covers the syllabus's link-analysis method, Personalized PageRank (PPR), and one learned graph recommender, LightGCN.
 
 The four core configurations are Popularity, PPR, LightGCN, and LightGCN with opinion evidence. The cleaning/evaluation owner (Member 2) supplies the common data loader, time split, evaluator, and Popularity baseline. Do not build a separate incompatible split or metric implementation.
 
@@ -37,7 +37,7 @@ score(u, i) = (1 - alpha) * L(u, i) + alpha * O(u, i)
 
 Here `L(u,i)` is LightGCN's normalized interaction-only score, `O(u,i)` is the normalized opinion compatibility, and `alpha` is selected on validation data only. If the opinion score is unavailable, use the LightGCN score. Do not use test reviews or test labels to build either model or select `alpha`.
 
-## Your tasks and deliverables
+## Tasks and deliverables
 
 1. Inspect the current pilot schema and report graph coverage: users, games, positive edges, users with positive interactions on two or more games, and largest connected component.
 2. Implement PPR and LightGCN so both consume Member 2's shared loader and split.

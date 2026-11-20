@@ -264,12 +264,12 @@ The main effect is the change from LightGCN using interactions alone to LightGCN
 
 ## 8. Team responsibilities
 
-Use four parallel technical workstreams. If the group has four people total, the project lead also owns one workstream. If there are four teammates plus you, the lead coordinates the shared protocol and integration while helping with annotation and analysis; do not leave the lead with coordination only.
+Use four parallel technical workstreams for the four-person project team. The Project Lead / Member 2 owns cleaning and evaluation while coordinating the shared protocol and integration. All members should also contribute to annotation, interpretation, writing, and demo integration.
 
 | Owner | Primary ownership | Shared obligations |
 | --- | --- | --- |
 | Member 1: crawler and provenance | Test source access; implement a bounded, resumable crawler; record source, collection counts, failures, and field coverage; audit product metadata. Use the released dataset as fallback if the pilot fails. | Publish a small raw pilot early and produce the crawl/data-quality summary |
-| Member 2 (you): data pipeline and evaluation | Parse, deduplicate, join metadata, filter the target population, create the chronological split and shared data loader; implement the evaluator and Popularity baseline | Build the pipeline on the pilot while acquisition continues; report counts, exclusions, and baseline metrics |
+| Project Lead / Member 2: data pipeline and evaluation | Parse, deduplicate, join metadata, filter the target population, create the chronological split and shared data loader; implement the evaluator and Popularity baseline | Build the pipeline on the pilot while acquisition continues; report counts, exclusions, and baseline metrics |
 | Member 3: graph recommenders | Implement Personalized PageRank and LightGCN using the shared data loader and evaluator | Start with the pilot, report metrics/runtime, and rerun both methods on the frozen clean snapshot |
 | Member 4: opinion mining | Define aspect labels, pilot a pretrained aspect-opinion extractor, manually check examples, and implement the opinion compatibility score for LightGCN fusion | Work from the pilot while the full dataset is prepared; report extraction quality, errors, and opinion-augmented results |
 
@@ -306,7 +306,7 @@ The four workstreams run in parallel, not as four sequential handoffs. Freeze a 
 
 1. **Motivation and scope (5 min):** Reviews reveal aspect-level praise and criticism that an overall recommendation flag does not explain. The project combines link analysis, LightGCN, and validated opinion mining; Information Retrieval is excluded.
 2. **Pilot and source gate (5 min):** Show the 200-review Steam pilot and its single cross-game reviewer. Expand the same-source sample once and review graph overlap by Nov 21; use Amazon if the graph remains too sparse.
-3. **Assign owners (10 min):** Confirm one owner for crawling, one for cleaning/evaluation (Member 2, you), one for PPR/LightGCN, and one for opinion extraction/annotation.
+3. **Assign owners (10 min):** Confirm one owner for crawling, the Project Lead / Member 2 for cleaning and evaluation, one owner for PPR/LightGCN, and one owner for opinion extraction and annotation.
 4. **Shared contract (5 min):** Freeze the schema, positive-label mapping, output paths, and dataset version names.
 5. **Check-in (5 min):** Each owner states their first artifact and when they will report it. Use two short sync points per day until the Nov 23 checkpoint.
 
