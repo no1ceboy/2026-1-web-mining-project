@@ -8,23 +8,23 @@ This capstone studies whether opinions mined from Steam game reviews add useful 
 
 1. Read the [full project plan](outputs/README.md) for the research questions, shared schema, evaluation plan, and checkpoint schedule.
 2. Open the README for the assigned workstream:
-   - [Member 1: crawler and data provenance](outputs/team_guides/member1_crawler/README.md)
+   - [Data collection and provenance](outputs/team_guides/data_collection/README.md)
    - [Member 3: Personalized PageRank and LightGCN](outputs/team_guides/member3_graph_models/README.md)
    - [Member 4: opinion mining and validation](outputs/team_guides/member4_opinion_mining/README.md)
-3. Start from the [Steam pilot reviews](outputs/steam_pilot.jsonl) and [pilot manifest](outputs/steam_pilot_manifest.json). Keep this original pilot unchanged; write new, versioned outputs.
+3. Use the [expanded Steam review snapshot](outputs/steam_expanded_pilot.jsonl), [crawl manifest](outputs/steam_expanded_manifest.json), and [data-quality/overlap report](outputs/steam_overlap_report.md) for the next development steps. This snapshot still needs cleaning and a shared chronological split. Keep the [original pilot](outputs/steam_pilot.jsonl) and [its manifest](outputs/steam_pilot_manifest.json) unchanged; write new, versioned outputs.
 
 ## Project in brief
 
 The main comparison is Popularity vs. Personalized PageRank (PPR) vs. LightGCN. We then test whether validated aspect-level opinions from review text improve LightGCN. Steam's `voted_up` field is an overall recommendation label; it is not the sentiment of every aspect mentioned in a review.
 
-The current pilot contains 200 recent English reviews from five games. It has very little cross-game reviewer overlap, so it is suitable for pipeline development but not for model-quality claims. The crawler owner will expand the same-source sample and report overlap before the team decides whether to continue with Steam or use the Amazon fallback. Never combine Steam and Amazon users or interactions in one graph.
+The expanded pilot contains 2,000 recent English reviews from 20 games. Only 24 reviewers have positive interactions with at least two sampled games, so it is suitable for pipeline development but not for model-quality claims. The [source assessment](outputs/steam_overlap_report.md) recommends the Amazon fallback for main recommendation experiments; the team must confirm the decision. Never combine Steam and Amazon users or interactions in one graph.
 
 ## Workstream owners
 
 | Owner | Workstream | First evidence to share |
 | --- | --- | --- |
 | Project Lead / Member 2 | Cleaning, shared loader, chronological split, evaluator, Popularity baseline | Clean-data counts, exclusions, split/evaluator contract, baseline status |
-| Member 1 | Steam crawler and provenance | Expanded sample, manifest, access status, overlap/data-quality report |
+| Data Collection | Steam crawler and provenance | Expanded sample, manifest, access status, overlap/data-quality report |
 | Member 3 | PPR and LightGCN | Graph coverage, runnable pilot methods, runtime and limitations |
 | Member 4 | Opinion mining | Aspect guide, human annotation pilot, extractor benchmark and validation status |
 
@@ -40,8 +40,8 @@ All four streams can start from the pilot in parallel. Coordinate shared field n
 
 ## Git collaboration
 
-Each contributor should create a branch for the assigned workstream, for example `member1/crawler`, `member3/graph-models`, or `member4/opinion-mining`. Commit focused changes and open a pull request or request review from the project lead before merging. Do not commit model weights, environment files, credentials, caches, or large unbounded crawls. Keep generated reports and bounded samples reproducible and small enough to review.
+Each contributor should create a branch for the assigned workstream, for example `feat/steam-data-collection`, `member3/graph-models`, or `member4/opinion-mining`. Commit focused changes and open a pull request or request review from the project lead before merging. Do not commit model weights, environment files, credentials, caches, or large unbounded crawls. Keep generated reports and bounded samples reproducible and small enough to review.
 
 ## Current status
 
-The repository begins with the project plan, role guides, a 200-review Steam feasibility pilot, and its crawl manifest. The expanded crawl, cleaning pipeline, models, opinion validation, and demo are work in progress. See the [timeline and immediate checkpoint plan](outputs/README.md#9-timeline-and-compute-plan).
+The bounded Steam data-collection workstream is complete: a resumable crawler, a 2,000-review sample across 20 games, request logs, manifests, a limited app-metadata audit, and an [overlap/data-quality report](outputs/steam_overlap_report.md) are available. See the [runbook](docs/steam_data_collection.md) for commands and handoff instructions. The report recommends the Amazon fallback for main recommendation experiments; the team must confirm the source decision. Cleaning, models, opinion validation, and the demo remain separate workstreams. See the [timeline and immediate checkpoint plan](outputs/README.md#9-timeline-and-compute-plan).

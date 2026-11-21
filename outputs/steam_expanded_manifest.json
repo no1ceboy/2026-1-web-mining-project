@@ -1,0 +1,424 @@
+{
+  "manifest_version": 1,
+  "dataset_version": "steam_expanded_v0",
+  "config_sha256": "0ed01b899947c6d97a8a2d84946245a9d9f8042a0acec73d8f3ed9272dc53ea5",
+  "config": {
+    "dataset_version": "steam_expanded_v0",
+    "selection": "Convenience sample: the five original pilot games plus fifteen manually selected PC games across genres. Not a random or representative Steam sample.",
+    "language": "english",
+    "sort": "recent",
+    "purchase_type": "all",
+    "review_type": "all",
+    "filter_offtopic_activity": true,
+    "reviews_per_game": 100,
+    "page_size": 50,
+    "max_pages_per_game": 5,
+    "request_interval_seconds": 2,
+    "timeout_seconds": 25,
+    "max_retries": 3,
+    "backoff_seconds": 2,
+    "apps": [
+      {
+        "app_id": 570,
+        "game": "Dota 2"
+      },
+      {
+        "app_id": 730,
+        "game": "Counter-Strike 2"
+      },
+      {
+        "app_id": 440,
+        "game": "Team Fortress 2"
+      },
+      {
+        "app_id": 620,
+        "game": "Portal 2"
+      },
+      {
+        "app_id": 550,
+        "game": "Left 4 Dead 2"
+      },
+      {
+        "app_id": 400,
+        "game": "Portal"
+      },
+      {
+        "app_id": 220,
+        "game": "Half-Life 2"
+      },
+      {
+        "app_id": 4000,
+        "game": "Garry's Mod"
+      },
+      {
+        "app_id": 105600,
+        "game": "Terraria"
+      },
+      {
+        "app_id": 413150,
+        "game": "Stardew Valley"
+      },
+      {
+        "app_id": 1091500,
+        "game": "Cyberpunk 2077"
+      },
+      {
+        "app_id": 1245620,
+        "game": "ELDEN RING"
+      },
+      {
+        "app_id": 1086940,
+        "game": "Baldur's Gate 3"
+      },
+      {
+        "app_id": 292030,
+        "game": "The Witcher 3: Wild Hunt"
+      },
+      {
+        "app_id": 1174180,
+        "game": "Red Dead Redemption 2"
+      },
+      {
+        "app_id": 367520,
+        "game": "Hollow Knight"
+      },
+      {
+        "app_id": 1145360,
+        "game": "Hades"
+      },
+      {
+        "app_id": 646570,
+        "game": "Slay the Spire"
+      },
+      {
+        "app_id": 294100,
+        "game": "RimWorld"
+      },
+      {
+        "app_id": 548430,
+        "game": "Deep Rock Galactic"
+      }
+    ]
+  },
+  "endpoint": "https://api.steampowered.com/IUserReviewsService/GetAppReviews/v1/",
+  "api_documentation": "https://partner.steamgames.com/doc/webapi/IUserReviewsService?l=english",
+  "crawl_started_utc": "2026-11-21T03:58:27.529326Z",
+  "crawl_finished_utc": "2026-11-21T04:00:16.671220Z",
+  "status": "completed",
+  "user_id_transform": "SHA-256 of UTF-8 SteamID; unsalted; consistent with original pilot",
+  "known_limitations": [
+    "Bounded convenience sample, not representative of Steam or all game players.",
+    "Recent English reviews only; manually selected games; off-topic filtering enabled.",
+    "No complete purchase/exposure histories; unobserved games are not verified dislikes.",
+    "Steam voted_up is overall binary recommendation feedback, not aspect sentiment.",
+    "SHA-256 reviewer identifiers are pseudonymous, not anonymous.",
+    "Review text can be edited after creation: timestamp is creation time, not proof that the collected text existed then. Strict historical text evaluation needs an edit-time policy or historical snapshots.",
+    "API responses may be cached; collection settings do not reproduce an immutable server snapshot.",
+    "App names are manually configured labels, not a complete metadata audit."
+  ],
+  "apps": [
+    {
+      "app_id": 570,
+      "game": "Dota 2",
+      "cursor": "AoJ4vsjo+6EDc9bwlQc=",
+      "pages_fetched": 2,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 844490
+    },
+    {
+      "app_id": 730,
+      "game": "Counter-Strike 2",
+      "cursor": "AoJw6oi0/aEDdMyGlgc=",
+      "pages_fetched": 2,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 2651110
+    },
+    {
+      "app_id": 440,
+      "game": "Team Fortress 2",
+      "cursor": "AoJ4jffI+aEDconVlQc=",
+      "pages_fetched": 2,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 745564
+    },
+    {
+      "app_id": 620,
+      "game": "Portal 2",
+      "cursor": "AoJ4nfmj8qEDfbPwlAc=",
+      "pages_fetched": 2,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 212944
+    },
+    {
+      "app_id": 550,
+      "game": "Left 4 Dead 2",
+      "cursor": "AoJwy4uD96EDc5W0lQc=",
+      "pages_fetched": 2,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 322173
+    },
+    {
+      "app_id": 400,
+      "game": "Portal",
+      "cursor": "AoJwqprz7aEDcJKvlAc=",
+      "pages_fetched": 2,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 100884
+    },
+    {
+      "app_id": 220,
+      "game": "Half-Life 2",
+      "cursor": "AoJ48rr08qEDfbf7lAc=",
+      "pages_fetched": 2,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 125069
+    },
+    {
+      "app_id": 4000,
+      "game": "Garry's Mod",
+      "cursor": "AoJw3ZjE+6EDfI3ulQc=",
+      "pages_fetched": 2,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 624413
+    },
+    {
+      "app_id": 105600,
+      "game": "Terraria",
+      "cursor": "AoJw4ajd+qEDduLklQc=",
+      "pages_fetched": 2,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 746958
+    },
+    {
+      "app_id": 413150,
+      "game": "Stardew Valley",
+      "cursor": "AoJwo8Gn+aEDfe3SlQc=",
+      "pages_fetched": 2,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 470286
+    },
+    {
+      "app_id": 1091500,
+      "game": "Cyberpunk 2077",
+      "cursor": "AoJ4zq2I/aEDfayBlgc=",
+      "pages_fetched": 2,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 431581
+    },
+    {
+      "app_id": 1245620,
+      "game": "ELDEN RING",
+      "cursor": "AoJ4hqj396EDcovBlQc=",
+      "pages_fetched": 2,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 575193
+    },
+    {
+      "app_id": 1086940,
+      "game": "Baldur's Gate 3",
+      "cursor": "AoJwzMra+KEDeqDNlQc=",
+      "pages_fetched": 2,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 508313
+    },
+    {
+      "app_id": 292030,
+      "game": "The Witcher 3: Wild Hunt",
+      "cursor": "AoJw/OKj+KEDfPDGlQc=",
+      "pages_fetched": 2,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 269162
+    },
+    {
+      "app_id": 1174180,
+      "game": "Red Dead Redemption 2",
+      "cursor": "AoJwgd/5/KEDe7z/lQc=",
+      "pages_fetched": 2,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 340380
+    },
+    {
+      "app_id": 367520,
+      "game": "Hollow Knight",
+      "cursor": "AoJwrq+T+KEDeLzElQc=",
+      "pages_fetched": 2,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 213545
+    },
+    {
+      "app_id": 1145360,
+      "game": "Hades",
+      "cursor": "AoJ4z9er6KEDe7HTkwc=",
+      "pages_fetched": 2,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 154992
+    },
+    {
+      "app_id": 646570,
+      "game": "Slay the Spire",
+      "cursor": "AoJ4jKC+4aEDctzvkgc=",
+      "pages_fetched": 2,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 92671
+    },
+    {
+      "app_id": 294100,
+      "game": "RimWorld",
+      "cursor": "AoJ49Yuz8aEDdvHmlAc=",
+      "pages_fetched": 2,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 144229
+    },
+    {
+      "app_id": 548430,
+      "game": "Deep Rock Galactic",
+      "cursor": "AoJw9a2F8aEDf/bilAc=",
+      "pages_fetched": 2,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 216668
+    }
+  ],
+  "total_records": 2000,
+  "unique_review_ids": 2000,
+  "unique_hashed_reviewers": 1972,
+  "data_sha256": "b933f75af15905ed11f4dcaa735815bf58ffb17f54a4e19e55c6330e87fd4eda",
+  "last_saved_utc": "2026-11-21T04:00:16.708851Z",
+  "run_history": [
+    {
+      "started_at_utc": "2026-11-21T03:58:51.228549Z",
+      "pages_before_run": 1,
+      "max_pages_per_run": 1,
+      "status": "paused_page_budget",
+      "pages_fetched_this_run": 1,
+      "finished_at_utc": "2026-11-21T03:58:51.907303Z"
+    },
+    {
+      "started_at_utc": "2026-11-21T03:59:02.010437Z",
+      "pages_before_run": 2,
+      "max_pages_per_run": null,
+      "status": "completed",
+      "pages_fetched_this_run": 38,
+      "finished_at_utc": "2026-11-21T04:00:16.708851Z"
+    }
+  ]
+}

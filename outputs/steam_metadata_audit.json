@@ -1,0 +1,233 @@
+{
+  "started_at_utc": "2026-11-21T03:59:44.949510Z",
+  "config_sha256": "0ed01b899947c6d97a8a2d84946245a9d9f8042a0acec73d8f3ed9272dc53ea5",
+  "source": "https://store.steampowered.com/api/appdetails",
+  "purpose": "Verify configured IDs are games; this is not a full category/metadata crawl.",
+  "apps": [
+    {
+      "app_id": 570,
+      "configured_title": "Dota 2",
+      "requested_at_utc": "2026-11-21T03:59:44.949621Z",
+      "source_url": "https://store.steampowered.com/api/appdetails?appids=570&filters=basic",
+      "http_status": 200,
+      "status": "success",
+      "official_title": "Dota 2",
+      "app_type": "game",
+      "is_game": true
+    },
+    {
+      "app_id": 730,
+      "configured_title": "Counter-Strike 2",
+      "requested_at_utc": "2026-11-21T03:59:47.309947Z",
+      "source_url": "https://store.steampowered.com/api/appdetails?appids=730&filters=basic",
+      "http_status": 200,
+      "status": "success",
+      "official_title": "Counter-Strike 2",
+      "app_type": "game",
+      "is_game": true
+    },
+    {
+      "app_id": 440,
+      "configured_title": "Team Fortress 2",
+      "requested_at_utc": "2026-11-21T03:59:49.499694Z",
+      "source_url": "https://store.steampowered.com/api/appdetails?appids=440&filters=basic",
+      "http_status": 200,
+      "status": "success",
+      "official_title": "Team Fortress 2",
+      "app_type": "game",
+      "is_game": true
+    },
+    {
+      "app_id": 620,
+      "configured_title": "Portal 2",
+      "requested_at_utc": "2026-11-21T03:59:51.827300Z",
+      "source_url": "https://store.steampowered.com/api/appdetails?appids=620&filters=basic",
+      "http_status": 200,
+      "status": "success",
+      "official_title": "Portal 2",
+      "app_type": "game",
+      "is_game": true
+    },
+    {
+      "app_id": 550,
+      "configured_title": "Left 4 Dead 2",
+      "requested_at_utc": "2026-11-21T03:59:54.067469Z",
+      "source_url": "https://store.steampowered.com/api/appdetails?appids=550&filters=basic",
+      "http_status": 200,
+      "status": "success",
+      "official_title": "Left 4 Dead 2",
+      "app_type": "game",
+      "is_game": true
+    },
+    {
+      "app_id": 400,
+      "configured_title": "Portal",
+      "requested_at_utc": "2026-11-21T03:59:56.329723Z",
+      "source_url": "https://store.steampowered.com/api/appdetails?appids=400&filters=basic",
+      "http_status": 200,
+      "status": "success",
+      "official_title": "Portal",
+      "app_type": "game",
+      "is_game": true
+    },
+    {
+      "app_id": 220,
+      "configured_title": "Half-Life 2",
+      "requested_at_utc": "2026-11-21T03:59:58.688391Z",
+      "source_url": "https://store.steampowered.com/api/appdetails?appids=220&filters=basic",
+      "http_status": 200,
+      "status": "success",
+      "official_title": "Half-Life 2",
+      "app_type": "game",
+      "is_game": true
+    },
+    {
+      "app_id": 4000,
+      "configured_title": "Garry's Mod",
+      "requested_at_utc": "2026-11-21T04:00:00.929805Z",
+      "source_url": "https://store.steampowered.com/api/appdetails?appids=4000&filters=basic",
+      "http_status": 200,
+      "status": "success",
+      "official_title": "Garry's Mod",
+      "app_type": "game",
+      "is_game": true
+    },
+    {
+      "app_id": 105600,
+      "configured_title": "Terraria",
+      "requested_at_utc": "2026-11-21T04:00:03.205874Z",
+      "source_url": "https://store.steampowered.com/api/appdetails?appids=105600&filters=basic",
+      "http_status": 200,
+      "status": "success",
+      "official_title": "Terraria",
+      "app_type": "game",
+      "is_game": true
+    },
+    {
+      "app_id": 413150,
+      "configured_title": "Stardew Valley",
+      "requested_at_utc": "2026-11-21T04:00:05.520776Z",
+      "source_url": "https://store.steampowered.com/api/appdetails?appids=413150&filters=basic",
+      "http_status": 200,
+      "status": "success",
+      "official_title": "Stardew Valley",
+      "app_type": "game",
+      "is_game": true
+    },
+    {
+      "app_id": 1091500,
+      "configured_title": "Cyberpunk 2077",
+      "requested_at_utc": "2026-11-21T04:00:08.175978Z",
+      "source_url": "https://store.steampowered.com/api/appdetails?appids=1091500&filters=basic",
+      "http_status": 200,
+      "status": "success",
+      "official_title": "Cyberpunk 2077",
+      "app_type": "game",
+      "is_game": true
+    },
+    {
+      "app_id": 1245620,
+      "configured_title": "ELDEN RING",
+      "requested_at_utc": "2026-11-21T04:00:10.482031Z",
+      "source_url": "https://store.steampowered.com/api/appdetails?appids=1245620&filters=basic",
+      "http_status": 200,
+      "status": "success",
+      "official_title": "ELDEN RING",
+      "app_type": "game",
+      "is_game": true
+    },
+    {
+      "app_id": 1086940,
+      "configured_title": "Baldur's Gate 3",
+      "requested_at_utc": "2026-11-21T04:00:12.680609Z",
+      "source_url": "https://store.steampowered.com/api/appdetails?appids=1086940&filters=basic",
+      "http_status": 200,
+      "status": "success",
+      "official_title": "Baldur's Gate 3",
+      "app_type": "game",
+      "is_game": true
+    },
+    {
+      "app_id": 292030,
+      "configured_title": "The Witcher 3: Wild Hunt",
+      "requested_at_utc": "2026-11-21T04:00:14.896187Z",
+      "source_url": "https://store.steampowered.com/api/appdetails?appids=292030&filters=basic",
+      "http_status": 200,
+      "status": "success",
+      "official_title": "The Witcher 3: Wild Hunt — Remastered",
+      "app_type": "game",
+      "is_game": true
+    },
+    {
+      "app_id": 1174180,
+      "configured_title": "Red Dead Redemption 2",
+      "requested_at_utc": "2026-11-21T04:00:17.207101Z",
+      "source_url": "https://store.steampowered.com/api/appdetails?appids=1174180&filters=basic",
+      "http_status": 200,
+      "status": "success",
+      "official_title": "Red Dead Redemption 2",
+      "app_type": "game",
+      "is_game": true
+    },
+    {
+      "app_id": 367520,
+      "configured_title": "Hollow Knight",
+      "requested_at_utc": "2026-11-21T04:00:19.399844Z",
+      "source_url": "https://store.steampowered.com/api/appdetails?appids=367520&filters=basic",
+      "http_status": 200,
+      "status": "success",
+      "official_title": "Hollow Knight",
+      "app_type": "game",
+      "is_game": true
+    },
+    {
+      "app_id": 1145360,
+      "configured_title": "Hades",
+      "requested_at_utc": "2026-11-21T04:00:21.718126Z",
+      "source_url": "https://store.steampowered.com/api/appdetails?appids=1145360&filters=basic",
+      "http_status": 200,
+      "status": "success",
+      "official_title": "Hades",
+      "app_type": "game",
+      "is_game": true
+    },
+    {
+      "app_id": 646570,
+      "configured_title": "Slay the Spire",
+      "requested_at_utc": "2026-11-21T04:00:23.941667Z",
+      "source_url": "https://store.steampowered.com/api/appdetails?appids=646570&filters=basic",
+      "http_status": 200,
+      "status": "success",
+      "official_title": "Slay the Spire",
+      "app_type": "game",
+      "is_game": true
+    },
+    {
+      "app_id": 294100,
+      "configured_title": "RimWorld",
+      "requested_at_utc": "2026-11-21T04:00:26.201708Z",
+      "source_url": "https://store.steampowered.com/api/appdetails?appids=294100&filters=basic",
+      "http_status": 200,
+      "status": "success",
+      "official_title": "RimWorld",
+      "app_type": "game",
+      "is_game": true
+    },
+    {
+      "app_id": 548430,
+      "configured_title": "Deep Rock Galactic",
+      "requested_at_utc": "2026-11-21T04:00:28.518444Z",
+      "source_url": "https://store.steampowered.com/api/appdetails?appids=548430&filters=basic",
+      "http_status": 200,
+      "status": "success",
+      "official_title": "Deep Rock Galactic",
+      "app_type": "game",
+      "is_game": true
+    }
+  ],
+  "last_saved_utc": "2026-11-21T04:00:28.731416Z",
+  "successful_apps": 20,
+  "verified_game_apps": 20,
+  "status": "completed",
+  "finished_at_utc": "2026-11-21T04:00:28.735123Z"
+}

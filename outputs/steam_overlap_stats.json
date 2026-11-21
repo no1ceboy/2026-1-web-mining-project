@@ -1,0 +1,264 @@
+{
+  "records": 2000,
+  "unique_review_ids": 2000,
+  "duplicate_review_ids": 0,
+  "duplicate_user_item_records": 0,
+  "blank_texts": 15,
+  "very_short_texts_le_3_whitespace_tokens": 762,
+  "schema_invalid_records": 0,
+  "unique_reviewers": 1972,
+  "items": 20,
+  "positive_reviews": 1887,
+  "negative_reviews": 113,
+  "reviewers_on_multiple_games": 25,
+  "reviewer_game_count_distribution": {
+    "1": 1947,
+    "2": 23,
+    "3": 1,
+    "4": 1
+  },
+  "positive_users": 1860,
+  "positive_users_ge_2_games": 24,
+  "positive_users_ge_3_games": 2,
+  "positive_history_distribution": {
+    "1": 1836,
+    "2": 22,
+    "3": 1,
+    "4": 1
+  },
+  "positive_items": 20,
+  "positive_edges": 1887,
+  "positive_graph_nodes": 1880,
+  "positive_graph_components": 4,
+  "positive_components": [
+    {
+      "users": 1604,
+      "items": 17,
+      "edges": 1631,
+      "item_ids": [
+        "105600",
+        "1086940",
+        "1091500",
+        "1145360",
+        "1245620",
+        "220",
+        "292030",
+        "294100",
+        "367520",
+        "400",
+        "4000",
+        "440",
+        "548430",
+        "550",
+        "620",
+        "646570",
+        "730"
+      ]
+    },
+    {
+      "users": 97,
+      "items": 1,
+      "edges": 97,
+      "item_ids": [
+        "413150"
+      ]
+    },
+    {
+      "users": 84,
+      "items": 1,
+      "edges": 84,
+      "item_ids": [
+        "1174180"
+      ]
+    },
+    {
+      "users": 75,
+      "items": 1,
+      "edges": 75,
+      "item_ids": [
+        "570"
+      ]
+    }
+  ],
+  "largest_positive_component": {
+    "users": 1604,
+    "items": 17,
+    "edges": 1631,
+    "item_ids": [
+      "105600",
+      "1086940",
+      "1091500",
+      "1145360",
+      "1245620",
+      "220",
+      "292030",
+      "294100",
+      "367520",
+      "400",
+      "4000",
+      "440",
+      "548430",
+      "550",
+      "620",
+      "646570",
+      "730"
+    ]
+  },
+  "largest_component_node_share": 0.8622340425531915,
+  "largest_component_edge_share": 0.8643349231584526,
+  "earliest_review_utc": "2026-11-10T01:01:01+00:00",
+  "latest_review_utc": "2026-11-21T03:56:58+00:00",
+  "per_game": [
+    {
+      "item_id": "220",
+      "item_title": "Half-Life 2",
+      "reviews": 100,
+      "positive_reviews": 99,
+      "negative_reviews": 1
+    },
+    {
+      "item_id": "400",
+      "item_title": "Portal",
+      "reviews": 100,
+      "positive_reviews": 98,
+      "negative_reviews": 2
+    },
+    {
+      "item_id": "440",
+      "item_title": "Team Fortress 2",
+      "reviews": 100,
+      "positive_reviews": 97,
+      "negative_reviews": 3
+    },
+    {
+      "item_id": "550",
+      "item_title": "Left 4 Dead 2",
+      "reviews": 100,
+      "positive_reviews": 98,
+      "negative_reviews": 2
+    },
+    {
+      "item_id": "570",
+      "item_title": "Dota 2",
+      "reviews": 100,
+      "positive_reviews": 75,
+      "negative_reviews": 25
+    },
+    {
+      "item_id": "620",
+      "item_title": "Portal 2",
+      "reviews": 100,
+      "positive_reviews": 100,
+      "negative_reviews": 0
+    },
+    {
+      "item_id": "730",
+      "item_title": "Counter-Strike 2",
+      "reviews": 100,
+      "positive_reviews": 80,
+      "negative_reviews": 20
+    },
+    {
+      "item_id": "4000",
+      "item_title": "Garry's Mod",
+      "reviews": 100,
+      "positive_reviews": 98,
+      "negative_reviews": 2
+    },
+    {
+      "item_id": "105600",
+      "item_title": "Terraria",
+      "reviews": 100,
+      "positive_reviews": 98,
+      "negative_reviews": 2
+    },
+    {
+      "item_id": "292030",
+      "item_title": "The Witcher 3: Wild Hunt",
+      "reviews": 100,
+      "positive_reviews": 92,
+      "negative_reviews": 8
+    },
+    {
+      "item_id": "294100",
+      "item_title": "RimWorld",
+      "reviews": 100,
+      "positive_reviews": 99,
+      "negative_reviews": 1
+    },
+    {
+      "item_id": "367520",
+      "item_title": "Hollow Knight",
+      "reviews": 100,
+      "positive_reviews": 99,
+      "negative_reviews": 1
+    },
+    {
+      "item_id": "413150",
+      "item_title": "Stardew Valley",
+      "reviews": 100,
+      "positive_reviews": 97,
+      "negative_reviews": 3
+    },
+    {
+      "item_id": "548430",
+      "item_title": "Deep Rock Galactic",
+      "reviews": 100,
+      "positive_reviews": 93,
+      "negative_reviews": 7
+    },
+    {
+      "item_id": "646570",
+      "item_title": "Slay the Spire",
+      "reviews": 100,
+      "positive_reviews": 94,
+      "negative_reviews": 6
+    },
+    {
+      "item_id": "1086940",
+      "item_title": "Baldur's Gate 3",
+      "reviews": 100,
+      "positive_reviews": 97,
+      "negative_reviews": 3
+    },
+    {
+      "item_id": "1091500",
+      "item_title": "Cyberpunk 2077",
+      "reviews": 100,
+      "positive_reviews": 96,
+      "negative_reviews": 4
+    },
+    {
+      "item_id": "1145360",
+      "item_title": "Hades",
+      "reviews": 100,
+      "positive_reviews": 99,
+      "negative_reviews": 1
+    },
+    {
+      "item_id": "1174180",
+      "item_title": "Red Dead Redemption 2",
+      "reviews": 100,
+      "positive_reviews": 84,
+      "negative_reviews": 16
+    },
+    {
+      "item_id": "1245620",
+      "item_title": "ELDEN RING",
+      "reviews": 100,
+      "positive_reviews": 94,
+      "negative_reviews": 6
+    }
+  ],
+  "request_attempts": 40,
+  "failed_request_attempts": 0,
+  "successful_request_attempts": 40,
+  "http_429_attempts": 0,
+  "duplicate_observations_skipped": 0,
+  "invalid_observations_skipped": 0,
+  "failed_games": [],
+  "recommendation": "RECOMMEND AMAZON FALLBACK FOR MAIN EVALUATION",
+  "recommendation_reason": "This bounded pilot has only 20 games, 24 users with at least two distinct positive games, and 2 with at least three. These are descriptive history counts, not eligibility measured by the shared evaluator. The small candidate catalog also makes Recall@20 trivial. The recommended fallback is a project planning judgment for this pilot, not an agreed numerical acceptance threshold; Members 2/3 should verify the global split before the lead finalizes the source decision.",
+  "generated_at_utc": "2026-11-21T04:02:22.101126Z",
+  "data_sha256": "b933f75af15905ed11f4dcaa735815bf58ffb17f54a4e19e55c6330e87fd4eda"
+}

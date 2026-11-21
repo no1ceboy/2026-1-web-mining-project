@@ -1,4 +1,6 @@
-# Member 1 Guide: Crawl and Data Provenance
+# Data Collection and Provenance Guide
+
+Implementation and run instructions: [Steam data collection runbook](../../../docs/steam_data_collection.md). Start with `python scripts/steam_crawler.py --check-access` from the repository root. The expanded pilot and source recommendation are documented in [the overlap report](../../steam_overlap_report.md).
 
 ## Project in one minute
 

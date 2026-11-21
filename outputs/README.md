@@ -268,7 +268,7 @@ Use four parallel technical workstreams for the four-person project team. The Pr
 
 | Owner | Primary ownership | Shared obligations |
 | --- | --- | --- |
-| Member 1: crawler and provenance | Test source access; implement a bounded, resumable crawler; record source, collection counts, failures, and field coverage; audit product metadata. Use the released dataset as fallback if the pilot fails. | Publish a small raw pilot early and produce the crawl/data-quality summary |
+| Data Collection: crawler and provenance | Test source access; implement a bounded, resumable crawler; record source, collection counts, failures, and field coverage; audit product metadata. Use the released dataset as fallback if the pilot fails. | Publish a small raw pilot early and produce the crawl/data-quality summary |
 | Project Lead / Member 2: data pipeline and evaluation | Parse, deduplicate, join metadata, filter the target population, create the chronological split and shared data loader; implement the evaluator and Popularity baseline | Build the pipeline on the pilot while acquisition continues; report counts, exclusions, and baseline metrics |
 | Member 3: graph recommenders | Implement Personalized PageRank and LightGCN using the shared data loader and evaluator | Start with the pilot, report metrics/runtime, and rerun both methods on the frozen clean snapshot |
 | Member 4: opinion mining | Define aspect labels, pilot a pretrained aspect-opinion extractor, manually check examples, and implement the opinion compatibility score for LightGCN fusion | Work from the pilot while the full dataset is prepared; report extraction quality, errors, and opinion-augmented results |
@@ -277,7 +277,7 @@ Target roughly 6-8 focused hours per person before the progress report. The sour
 
 Role-specific, self-contained work guides for teammates who are new to the project:
 
-- [Member 1: crawler and data provenance](team_guides/member1_crawler/README.md)
+- [Data collection and provenance](team_guides/data_collection/README.md)
 - [Member 3: Personalized PageRank and LightGCN](team_guides/member3_graph_models/README.md)
 - [Member 4: opinion mining and validation](team_guides/member4_opinion_mining/README.md)
 
@@ -322,8 +322,8 @@ The only hard integration dependency is the clean snapshot for final comparable 
 
 | Date | Owner and work | Evidence ready by end of day |
 | --- | --- | --- |
-| Fri, Nov 20 | The lead runs the kickoff and owns one of the four streams. Member 1 tests Steam access from their normal network and starts expanding the pilot. Member 2 cleans the existing 200 reviews and builds the shared loader, evaluator, and Popularity baseline. Member 3 measures graph coverage, runs PPR, and starts LightGCN feasibility work. Member 4 drafts aspect labels and manually checks pilot reviews while testing extraction. | Frozen schema and owners, clean_v0 counts, graph coverage summary, source-access status, baseline status, and draft annotation guide |
-| Sat, Nov 21 | Member 1 reports expanded-crawl counts and reviewer overlap for the Steam go/no-go decision. Member 2 publishes the latest versioned clean snapshot, exclusions, split, and Popularity metrics. Member 3 reports PPR and LightGCN implementation/runtime status. Member 4 reports extraction examples and manual-label agreement on an overlapping subset. The lead resolves blockers and checks cross-stream consistency. | Source decision, data-quality summary, split manifest, baseline results/status, opinion-mining examples, annotation disagreements, and known limitations |
+| Fri, Nov 20 | The lead runs the kickoff and owns one of the four streams. The data collection owner tests Steam access from their normal network and starts expanding the pilot. Member 2 cleans the existing 200 reviews and builds the shared loader, evaluator, and Popularity baseline. Member 3 measures graph coverage, runs PPR, and starts LightGCN feasibility work. Member 4 drafts aspect labels and manually checks pilot reviews while testing extraction. | Frozen schema and owners, clean_v0 counts, graph coverage summary, source-access status, baseline status, and draft annotation guide |
+| Sat, Nov 21 | The data collection owner reports expanded-crawl counts and reviewer overlap for the Steam go/no-go decision. Member 2 publishes the latest versioned clean snapshot, exclusions, split, and Popularity metrics. Member 3 reports PPR and LightGCN implementation/runtime status. Member 4 reports extraction examples and manual-label agreement on an overlapping subset. The lead resolves blockers and checks cross-stream consistency. | Source decision, data-quality summary, split manifest, baseline results/status, opinion-mining examples, annotation disagreements, and known limitations |
 | Sun, Nov 22 | The lead integrates the report. All members verify their section, consolidate evidence, and rehearse a 5-7 minute update. | Final progress report/slides with completed, in-progress, blocked, and next-step items clearly separated |
 | Mon, Nov 23 | Submit/present the progress report. | Report delivered; assign follow-up tasks for the full project |
 
