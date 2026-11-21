@@ -8,7 +8,7 @@ import urllib.error
 import urllib.parse
 import urllib.request
 
-from steam_crawler import ROOT, USER_AGENT, fingerprint, load_config, utc_now, write_json
+from steam_crawler import DEFAULT_CONFIG, DEFAULT_OUTPUT_DIR, USER_AGENT, fingerprint, load_config, utc_now, write_json
 
 
 def audit(config, output_dir):
@@ -71,8 +71,8 @@ def audit(config, output_dir):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--config", type=Path, default=ROOT / "configs/steam_crawl_v0.json")
-    parser.add_argument("--output-dir", type=Path, default=ROOT / "outputs")
+    parser.add_argument("--config", type=Path, default=DEFAULT_CONFIG)
+    parser.add_argument("--output-dir", type=Path, default=DEFAULT_OUTPUT_DIR)
     args = parser.parse_args()
     result = audit(load_config(args.config), args.output_dir)
     return 0 if result["status"] == "completed" else 1

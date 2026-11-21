@@ -13,7 +13,7 @@ import urllib.error
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 import steam_crawler as crawler
-from steam_overlap_report import quality_errors, summarize
+from steam_overlap_report import quality_errors, recommend, summarize
 
 
 def config():
@@ -42,6 +42,28 @@ class FakeClient:
 
 
 class NormalizationTests(unittest.TestCase):
+    def test_expanded_config_has_100_distinct_games_and_rejects_101(self):
+        expanded = crawler.load_config(crawler.ROOT / "configs/steam_crawl_100games_v1.json")
+        self.assertEqual(len(expanded["apps"]), 100)
+        self.assertEqual(expanded["reviews_per_game"] * len(expanded["apps"]), 10000)
+        expanded["apps"].append({"app_id": 999999999, "game": "Test"})
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "config.json"
+            crawler.write_json(path, expanded)
+            with self.assertRaisesRegex(ValueError, "100 games"):
+                crawler.load_config(path)
+
+    def test_update_time_preserved_and_checked_without_changing_creation_time(self):
+        source = review(1)
+        source["timestamp_updated"] = source["timestamp_created"] + 100
+        row = crawler.normalize_review(source, config()["apps"][0], crawler.utc_now())
+        self.assertEqual(row["timestamp_updated"], source["timestamp_updated"])
+        self.assertEqual(row["timestamp"], source["timestamp_created"])
+        self.assertEqual(quality_errors(row), [])
+        source["timestamp_updated"] = source["timestamp_created"] - 1
+        with self.assertRaisesRegex(ValueError, "update_timestamp"):
+            crawler.normalize_review(source, config()["apps"][0], crawler.utc_now())
+
     def test_hash_and_negative_feedback_preserved_without_author_object(self):
         source = review(1, user=123, positive=False)
         row = crawler.normalize_review(source, config()["apps"][0], crawler.utc_now())
@@ -170,6 +192,12 @@ class HttpTests(unittest.TestCase):
 
 
 class GraphTests(unittest.TestCase):
+    def test_source_assessment_does_not_reuse_small_catalog_claim_for_100_games(self):
+        stats = {"items": 100, "positive_users_ge_2_games": 100, "positive_users_ge_3_games": 10}
+        verdict, reason = recommend(stats, {"status": "completed"})
+        self.assertIn("SPLIT CHECK", verdict)
+        self.assertNotIn("makes Recall@20 trivial", reason)
+
     def test_known_component_degrees_and_negative_exclusion(self):
         rows = []
         for number, user, item, positive in [(1, 10, 1, True), (2, 10, 2, True),

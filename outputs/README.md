@@ -4,6 +4,8 @@ A Method + System Hybrid capstone: build a bounded crawler and recommendation sy
 
 **Status:** A Steam API smoke crawl completed on 2026-11-20: 200 reviews from five games are saved under `outputs/steam_pilot.jsonl`, with crawl settings and counts in `outputs/steam_pilot_manifest.json`. No full cleaning, models, or evaluation have been completed. The small pilot has very little cross-game reviewer overlap, so graph suitability remains unproven.
 
+**Collection update (2026-11-21):** The collection scope has since expanded to 10,000 saved reviews from 100 manually selected games. The current version is [steam_100games_v1](steam_100games_v1/steam_expanded_manifest.json), with a [quality/overlap report](steam_100games_v1/steam_overlap_report.md) and [project assessment](../docs/project_assessment.md). There are 169 users with at least two positive games, 37 with at least three, and five with at least five; these are pre-split descriptive counts, not ranking-evaluation coverage. The original source gates and 20-game estimates below document the initial plan; use the current runbook and versioned manifest for the updated collection boundary. No cleaning, ranking models, opinion validation or final evaluation has been completed on main.
+
 ## 1. Motivation and project objective
 
 Game reviews contain searchable descriptions of product features, user opinions, and links between reviewers and products. A star rating compresses this evidence: two games can receive similar averages even when reviewers praise and criticize different aspects.

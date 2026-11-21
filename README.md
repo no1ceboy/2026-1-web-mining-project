@@ -11,13 +11,14 @@ This capstone studies whether opinions mined from Steam game reviews add useful 
    - [Data collection and provenance](outputs/team_guides/data_collection/README.md)
    - [Member 3: Personalized PageRank and LightGCN](outputs/team_guides/member3_graph_models/README.md)
    - [Member 4: opinion mining and validation](outputs/team_guides/member4_opinion_mining/README.md)
-3. Use the [expanded Steam review snapshot](outputs/steam_expanded_pilot.jsonl), [crawl manifest](outputs/steam_expanded_manifest.json), and [data-quality/overlap report](outputs/steam_overlap_report.md) for the next development steps. This snapshot still needs cleaning and a shared chronological split. Keep the [original pilot](outputs/steam_pilot.jsonl) and [its manifest](outputs/steam_pilot_manifest.json) unchanged; write new, versioned outputs.
+3. Use the [10,000-review, 100-game snapshot](outputs/steam_100games_v1/steam_expanded_pilot.jsonl), [crawl manifest](outputs/steam_100games_v1/steam_expanded_manifest.json), and [data-quality/overlap report](outputs/steam_100games_v1/steam_overlap_report.md) for the next development steps. This snapshot still needs cleaning and a shared chronological split. Keep the original 200-review pilot and the [2,000-review snapshot](outputs/steam_expanded_pilot.jsonl) unchanged; write new, versioned outputs.
+4. Read the [technical project assessment](docs/project_assessment.md) for data limitations, scope, workload and priorities for the four-person team.
 
 ## Project in brief
 
 The main comparison is Popularity vs. Personalized PageRank (PPR) vs. LightGCN. We then test whether validated aspect-level opinions from review text improve LightGCN. Steam's `voted_up` field is an overall recommendation label; it is not the sentiment of every aspect mentioned in a review.
 
-The expanded pilot contains 2,000 recent English reviews from 20 games. Only 24 reviewers have positive interactions with at least two sampled games, so it is suitable for pipeline development but not for model-quality claims. The [source assessment](outputs/steam_overlap_report.md) recommends the Amazon fallback for main recommendation experiments; the team must confirm the decision. Never combine Steam and Amazon users or interactions in one graph.
+The current snapshot contains 10,000 recent English reviews from 100 games and 9,718 reviewers. Only 169 reviewers have positive interactions with at least two sampled games, 37 with at least three, and five with at least five. The larger catalog removes the old 20-item Recall@20 limitation, but graph training/evaluation suitability remains conditional on the shared chronological split. See the [source assessment](outputs/steam_100games_v1/steam_overlap_report.md). Never combine Steam and Amazon users or interactions in one graph.
 
 ## Workstream owners
 
@@ -44,4 +45,4 @@ Each contributor should create a branch for the assigned workstream, for example
 
 ## Current status
 
-The bounded Steam data-collection workstream is complete: a resumable crawler, a 2,000-review sample across 20 games, request logs, manifests, a limited app-metadata audit, and an [overlap/data-quality report](outputs/steam_overlap_report.md) are available. See the [runbook](docs/steam_data_collection.md) for commands and handoff instructions. The report recommends the Amazon fallback for main recommendation experiments; the team must confirm the source decision. Cleaning, models, opinion validation, and the demo remain separate workstreams. See the [timeline and immediate checkpoint plan](outputs/README.md#9-timeline-and-compute-plan).
+The expanded bounded crawl is complete: 10,000 saved reviews across 100 apps, with request logs, resumable manifests, SHA-256 user IDs, creation/update timestamps, and an [overlap/data-quality report](outputs/steam_100games_v1/steam_overlap_report.md). The limited store metadata audit verified 98 app types as games; two appdetails responses remain unavailable and are recorded as unresolved. The 200- and 2,000-review snapshots are preserved. See the [runbook](docs/steam_data_collection.md) for commands and handoff instructions. Cleaning, shared evaluation, models, opinion validation, and the demo are not yet present on main. The team still needs to verify chronological coverage before finalizing the main recommendation dataset.

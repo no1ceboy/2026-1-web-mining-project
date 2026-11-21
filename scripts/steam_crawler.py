@@ -23,6 +23,8 @@ import urllib.request
 
 
 ROOT = Path(__file__).resolve().parents[1]
+DEFAULT_CONFIG = ROOT / "configs/steam_crawl_100games_v1.json"
+DEFAULT_OUTPUT_DIR = ROOT / "outputs/steam_100games_v1"
 ENDPOINT = "https://api.steampowered.com/IUserReviewsService/GetAppReviews/v1/"
 DOCUMENTATION = "https://partner.steamgames.com/doc/webapi/IUserReviewsService?l=english"
 USER_AGENT = "WebMiningCapstone/0.1 (bounded academic feasibility pilot)"
@@ -77,8 +79,8 @@ def fingerprint(config):
 def load_config(path):
     config = json.loads(Path(path).read_text(encoding="utf-8"))
     apps = config["apps"]
-    if not 1 <= len(apps) <= 20:
-        raise ValueError("Configure between 1 and 20 games.")
+    if not 1 <= len(apps) <= 100:
+        raise ValueError("Configure between 1 and 100 games.")
     ids = [app["app_id"] for app in apps]
     if len(ids) != len(set(ids)) or any(type(i) is not int or i <= 0 for i in ids):
         raise ValueError("App IDs must be unique positive integers.")
@@ -212,13 +214,19 @@ def normalize_review(review, app, collected_at):
     votes = review.get("votes_up", 0)
     if type(votes) is not int or votes < 0:
         raise ValueError("invalid_helpful_votes")
-    return {"review_id": review_id,
+    record = {"review_id": review_id,
             "user_id": hashlib.sha256(steam_id.encode("utf-8")).hexdigest(),
             "item_id": str(app["app_id"]), "item_title": app["game"],
             "timestamp": review["timestamp_created"], "crawl_time_utc": collected_at,
             "source_feedback": review["voted_up"], "positive_interaction": review["voted_up"],
             "title": "", "text": review["review"], "language": review["language"],
             "helpful_votes": votes, "source_url": ENDPOINT}
+    if "timestamp_updated" in review:
+        updated = review["timestamp_updated"]
+        if type(updated) is not int or updated < record["timestamp"]:
+            raise ValueError("invalid_update_timestamp")
+        record["timestamp_updated"] = updated
+    return record
 
 
 def initial_manifest(config):
@@ -383,8 +391,8 @@ def crawl(config, output_dir, client, max_pages_per_run=None):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--config", type=Path, default=ROOT / "configs/steam_crawl_v0.json")
-    parser.add_argument("--output-dir", type=Path, default=ROOT / "outputs")
+    parser.add_argument("--config", type=Path, default=DEFAULT_CONFIG)
+    parser.add_argument("--output-dir", type=Path, default=DEFAULT_OUTPUT_DIR)
     parser.add_argument("--check-access", action="store_true", help="Only probe access; save no review text.")
     parser.add_argument("--max-pages-per-run", type=int, help="Pause safely after this many successful pages.")
     args = parser.parse_args()

@@ -1,0 +1,1050 @@
+{
+  "records": 10000,
+  "unique_review_ids": 10000,
+  "duplicate_review_ids": 0,
+  "duplicate_user_item_records": 0,
+  "blank_texts": 47,
+  "very_short_texts_le_3_whitespace_tokens": 3147,
+  "schema_invalid_records": 0,
+  "unique_reviewers": 9718,
+  "items": 100,
+  "positive_reviews": 8659,
+  "negative_reviews": 1341,
+  "reviewers_on_multiple_games": 200,
+  "reviewer_game_count_distribution": {
+    "1": 9518,
+    "2": 152,
+    "3": 32,
+    "4": 10,
+    "5": 2,
+    "6": 1,
+    "8": 2,
+    "10": 1
+  },
+  "positive_users": 8423,
+  "positive_users_ge_2_games": 169,
+  "positive_users_ge_3_games": 37,
+  "positive_users_ge_5_games": 5,
+  "positive_users_ge_10_games": 1,
+  "reviews_with_update_timestamp": 10000,
+  "reviews_updated_after_creation": 422,
+  "positive_history_distribution": {
+    "1": 8254,
+    "2": 132,
+    "3": 21,
+    "4": 11,
+    "5": 2,
+    "6": 1,
+    "8": 1,
+    "10": 1
+  },
+  "positive_items": 100,
+  "positive_edges": 8659,
+  "positive_graph_nodes": 8523,
+  "positive_graph_components": 13,
+  "positive_components": [
+    {
+      "users": 7501,
+      "items": 88,
+      "edges": 7737,
+      "item_ids": [
+        "105600",
+        "1084600",
+        "1085660",
+        "108600",
+        "1086940",
+        "1091500",
+        "1144200",
+        "1145360",
+        "1150690",
+        "1158310",
+        "1172470",
+        "1196590",
+        "1238810",
+        "1238840",
+        "1244460",
+        "1245620",
+        "1272080",
+        "1284210",
+        "1326470",
+        "1446780",
+        "1517290",
+        "1623730",
+        "1794680",
+        "1966720",
+        "2050650",
+        "218620",
+        "219740",
+        "220",
+        "227300",
+        "230410",
+        "2344520",
+        "236850",
+        "242760",
+        "250900",
+        "251570",
+        "252490",
+        "255710",
+        "264710",
+        "268910",
+        "2694490",
+        "270880",
+        "271590",
+        "275850",
+        "281990",
+        "289070",
+        "292030",
+        "294100",
+        "322330",
+        "346110",
+        "359550",
+        "367520",
+        "374320",
+        "391540",
+        "39210",
+        "394360",
+        "400",
+        "4000",
+        "413150",
+        "427520",
+        "440",
+        "447040",
+        "457140",
+        "460930",
+        "493340",
+        "504230",
+        "526870",
+        "548430",
+        "550",
+        "570",
+        "570940",
+        "582010",
+        "582660",
+        "588650",
+        "620",
+        "632360",
+        "646570",
+        "666140",
+        "703080",
+        "753640",
+        "812140",
+        "814380",
+        "848450",
+        "883710",
+        "892970",
+        "8930",
+        "945360",
+        "949230",
+        "960090"
+      ]
+    },
+    {
+      "users": 96,
+      "items": 1,
+      "edges": 96,
+      "item_ids": [
+        "284160"
+      ]
+    },
+    {
+      "users": 95,
+      "items": 1,
+      "edges": 95,
+      "item_ids": [
+        "413410"
+      ]
+    },
+    {
+      "users": 92,
+      "items": 1,
+      "edges": 92,
+      "item_ids": [
+        "620980"
+      ]
+    },
+    {
+      "users": 86,
+      "items": 1,
+      "edges": 86,
+      "item_ids": [
+        "730"
+      ]
+    },
+    {
+      "users": 85,
+      "items": 1,
+      "edges": 85,
+      "item_ids": [
+        "1174180"
+      ]
+    },
+    {
+      "users": 75,
+      "items": 1,
+      "edges": 75,
+      "item_ids": [
+        "381210"
+      ]
+    },
+    {
+      "users": 74,
+      "items": 1,
+      "edges": 74,
+      "item_ids": [
+        "306130"
+      ]
+    },
+    {
+      "users": 69,
+      "items": 1,
+      "edges": 69,
+      "item_ids": [
+        "578080"
+      ]
+    },
+    {
+      "users": 67,
+      "items": 1,
+      "edges": 67,
+      "item_ids": [
+        "238960"
+      ]
+    },
+    {
+      "users": 66,
+      "items": 1,
+      "edges": 66,
+      "item_ids": [
+        "2208920"
+      ]
+    },
+    {
+      "users": 60,
+      "items": 1,
+      "edges": 60,
+      "item_ids": [
+        "899770"
+      ]
+    },
+    {
+      "users": 57,
+      "items": 1,
+      "edges": 57,
+      "item_ids": [
+        "1938090"
+      ]
+    }
+  ],
+  "largest_positive_component": {
+    "users": 7501,
+    "items": 88,
+    "edges": 7737,
+    "item_ids": [
+      "105600",
+      "1084600",
+      "1085660",
+      "108600",
+      "1086940",
+      "1091500",
+      "1144200",
+      "1145360",
+      "1150690",
+      "1158310",
+      "1172470",
+      "1196590",
+      "1238810",
+      "1238840",
+      "1244460",
+      "1245620",
+      "1272080",
+      "1284210",
+      "1326470",
+      "1446780",
+      "1517290",
+      "1623730",
+      "1794680",
+      "1966720",
+      "2050650",
+      "218620",
+      "219740",
+      "220",
+      "227300",
+      "230410",
+      "2344520",
+      "236850",
+      "242760",
+      "250900",
+      "251570",
+      "252490",
+      "255710",
+      "264710",
+      "268910",
+      "2694490",
+      "270880",
+      "271590",
+      "275850",
+      "281990",
+      "289070",
+      "292030",
+      "294100",
+      "322330",
+      "346110",
+      "359550",
+      "367520",
+      "374320",
+      "391540",
+      "39210",
+      "394360",
+      "400",
+      "4000",
+      "413150",
+      "427520",
+      "440",
+      "447040",
+      "457140",
+      "460930",
+      "493340",
+      "504230",
+      "526870",
+      "548430",
+      "550",
+      "570",
+      "570940",
+      "582010",
+      "582660",
+      "588650",
+      "620",
+      "632360",
+      "646570",
+      "666140",
+      "703080",
+      "753640",
+      "812140",
+      "814380",
+      "848450",
+      "883710",
+      "892970",
+      "8930",
+      "945360",
+      "949230",
+      "960090"
+    ]
+  },
+  "largest_component_node_share": 0.8904141734131175,
+  "largest_component_edge_share": 0.8935211918235362,
+  "earliest_review_utc": "2026-07-01T20:28:53+00:00",
+  "latest_review_utc": "2026-11-21T09:02:16+00:00",
+  "per_game": [
+    {
+      "item_id": "220",
+      "item_title": "Half-Life 2",
+      "reviews": 100,
+      "positive_reviews": 99,
+      "negative_reviews": 1
+    },
+    {
+      "item_id": "400",
+      "item_title": "Portal",
+      "reviews": 100,
+      "positive_reviews": 98,
+      "negative_reviews": 2
+    },
+    {
+      "item_id": "440",
+      "item_title": "Team Fortress 2",
+      "reviews": 100,
+      "positive_reviews": 96,
+      "negative_reviews": 4
+    },
+    {
+      "item_id": "550",
+      "item_title": "Left 4 Dead 2",
+      "reviews": 100,
+      "positive_reviews": 98,
+      "negative_reviews": 2
+    },
+    {
+      "item_id": "570",
+      "item_title": "Dota 2",
+      "reviews": 100,
+      "positive_reviews": 77,
+      "negative_reviews": 23
+    },
+    {
+      "item_id": "620",
+      "item_title": "Portal 2",
+      "reviews": 100,
+      "positive_reviews": 100,
+      "negative_reviews": 0
+    },
+    {
+      "item_id": "730",
+      "item_title": "Counter-Strike 2",
+      "reviews": 100,
+      "positive_reviews": 86,
+      "negative_reviews": 14
+    },
+    {
+      "item_id": "4000",
+      "item_title": "Garry's Mod",
+      "reviews": 100,
+      "positive_reviews": 97,
+      "negative_reviews": 3
+    },
+    {
+      "item_id": "8930",
+      "item_title": "Sid Meier's Civilization V",
+      "reviews": 100,
+      "positive_reviews": 92,
+      "negative_reviews": 8
+    },
+    {
+      "item_id": "39210",
+      "item_title": "FINAL FANTASY XIV Online",
+      "reviews": 100,
+      "positive_reviews": 79,
+      "negative_reviews": 21
+    },
+    {
+      "item_id": "105600",
+      "item_title": "Terraria",
+      "reviews": 100,
+      "positive_reviews": 99,
+      "negative_reviews": 1
+    },
+    {
+      "item_id": "108600",
+      "item_title": "Project Zomboid",
+      "reviews": 100,
+      "positive_reviews": 94,
+      "negative_reviews": 6
+    },
+    {
+      "item_id": "218620",
+      "item_title": "PAYDAY 2",
+      "reviews": 100,
+      "positive_reviews": 89,
+      "negative_reviews": 11
+    },
+    {
+      "item_id": "219740",
+      "item_title": "Don't Starve",
+      "reviews": 100,
+      "positive_reviews": 89,
+      "negative_reviews": 11
+    },
+    {
+      "item_id": "227300",
+      "item_title": "Euro Truck Simulator 2",
+      "reviews": 100,
+      "positive_reviews": 100,
+      "negative_reviews": 0
+    },
+    {
+      "item_id": "230410",
+      "item_title": "Warframe",
+      "reviews": 100,
+      "positive_reviews": 89,
+      "negative_reviews": 11
+    },
+    {
+      "item_id": "236850",
+      "item_title": "Europa Universalis IV",
+      "reviews": 100,
+      "positive_reviews": 69,
+      "negative_reviews": 31
+    },
+    {
+      "item_id": "238960",
+      "item_title": "Path of Exile",
+      "reviews": 100,
+      "positive_reviews": 67,
+      "negative_reviews": 33
+    },
+    {
+      "item_id": "242760",
+      "item_title": "The Forest",
+      "reviews": 100,
+      "positive_reviews": 88,
+      "negative_reviews": 12
+    },
+    {
+      "item_id": "250900",
+      "item_title": "The Binding of Isaac: Rebirth",
+      "reviews": 100,
+      "positive_reviews": 84,
+      "negative_reviews": 16
+    },
+    {
+      "item_id": "251570",
+      "item_title": "7 Days to Die",
+      "reviews": 100,
+      "positive_reviews": 75,
+      "negative_reviews": 25
+    },
+    {
+      "item_id": "252490",
+      "item_title": "Rust",
+      "reviews": 100,
+      "positive_reviews": 77,
+      "negative_reviews": 23
+    },
+    {
+      "item_id": "255710",
+      "item_title": "Cities: Skylines",
+      "reviews": 100,
+      "positive_reviews": 84,
+      "negative_reviews": 16
+    },
+    {
+      "item_id": "264710",
+      "item_title": "Subnautica",
+      "reviews": 100,
+      "positive_reviews": 98,
+      "negative_reviews": 2
+    },
+    {
+      "item_id": "268910",
+      "item_title": "Cuphead",
+      "reviews": 100,
+      "positive_reviews": 95,
+      "negative_reviews": 5
+    },
+    {
+      "item_id": "270880",
+      "item_title": "American Truck Simulator",
+      "reviews": 100,
+      "positive_reviews": 95,
+      "negative_reviews": 5
+    },
+    {
+      "item_id": "271590",
+      "item_title": "Grand Theft Auto V Legacy",
+      "reviews": 100,
+      "positive_reviews": 93,
+      "negative_reviews": 7
+    },
+    {
+      "item_id": "275850",
+      "item_title": "No Man's Sky",
+      "reviews": 100,
+      "positive_reviews": 88,
+      "negative_reviews": 12
+    },
+    {
+      "item_id": "281990",
+      "item_title": "Stellaris",
+      "reviews": 100,
+      "positive_reviews": 67,
+      "negative_reviews": 33
+    },
+    {
+      "item_id": "284160",
+      "item_title": "BeamNG.drive",
+      "reviews": 100,
+      "positive_reviews": 96,
+      "negative_reviews": 4
+    },
+    {
+      "item_id": "289070",
+      "item_title": "Sid Meier's Civilization VI",
+      "reviews": 100,
+      "positive_reviews": 92,
+      "negative_reviews": 8
+    },
+    {
+      "item_id": "292030",
+      "item_title": "The Witcher 3: Wild Hunt",
+      "reviews": 100,
+      "positive_reviews": 92,
+      "negative_reviews": 8
+    },
+    {
+      "item_id": "294100",
+      "item_title": "RimWorld",
+      "reviews": 100,
+      "positive_reviews": 99,
+      "negative_reviews": 1
+    },
+    {
+      "item_id": "306130",
+      "item_title": "The Elder Scrolls Online",
+      "reviews": 100,
+      "positive_reviews": 74,
+      "negative_reviews": 26
+    },
+    {
+      "item_id": "322330",
+      "item_title": "Don't Starve Together",
+      "reviews": 100,
+      "positive_reviews": 83,
+      "negative_reviews": 17
+    },
+    {
+      "item_id": "346110",
+      "item_title": "ARK: Survival Evolved",
+      "reviews": 100,
+      "positive_reviews": 78,
+      "negative_reviews": 22
+    },
+    {
+      "item_id": "359550",
+      "item_title": "Tom Clancy's Rainbow Six Siege",
+      "reviews": 100,
+      "positive_reviews": 72,
+      "negative_reviews": 28
+    },
+    {
+      "item_id": "367520",
+      "item_title": "Hollow Knight",
+      "reviews": 100,
+      "positive_reviews": 99,
+      "negative_reviews": 1
+    },
+    {
+      "item_id": "374320",
+      "item_title": "DARK SOULS III",
+      "reviews": 100,
+      "positive_reviews": 96,
+      "negative_reviews": 4
+    },
+    {
+      "item_id": "381210",
+      "item_title": "Dead by Daylight",
+      "reviews": 100,
+      "positive_reviews": 75,
+      "negative_reviews": 25
+    },
+    {
+      "item_id": "391540",
+      "item_title": "Undertale",
+      "reviews": 100,
+      "positive_reviews": 97,
+      "negative_reviews": 3
+    },
+    {
+      "item_id": "394360",
+      "item_title": "Hearts of Iron IV",
+      "reviews": 100,
+      "positive_reviews": 76,
+      "negative_reviews": 24
+    },
+    {
+      "item_id": "413150",
+      "item_title": "Stardew Valley",
+      "reviews": 100,
+      "positive_reviews": 96,
+      "negative_reviews": 4
+    },
+    {
+      "item_id": "413410",
+      "item_title": "Danganronpa: Trigger Happy Havoc",
+      "reviews": 100,
+      "positive_reviews": 95,
+      "negative_reviews": 5
+    },
+    {
+      "item_id": "427520",
+      "item_title": "Factorio",
+      "reviews": 100,
+      "positive_reviews": 99,
+      "negative_reviews": 1
+    },
+    {
+      "item_id": "447040",
+      "item_title": "Watch Dogs 2",
+      "reviews": 100,
+      "positive_reviews": 82,
+      "negative_reviews": 18
+    },
+    {
+      "item_id": "457140",
+      "item_title": "Oxygen Not Included",
+      "reviews": 100,
+      "positive_reviews": 94,
+      "negative_reviews": 6
+    },
+    {
+      "item_id": "460930",
+      "item_title": "Tom Clancy's Ghost Recon Wildlands",
+      "reviews": 100,
+      "positive_reviews": 83,
+      "negative_reviews": 17
+    },
+    {
+      "item_id": "493340",
+      "item_title": "Planet Coaster",
+      "reviews": 100,
+      "positive_reviews": 94,
+      "negative_reviews": 6
+    },
+    {
+      "item_id": "504230",
+      "item_title": "Celeste",
+      "reviews": 100,
+      "positive_reviews": 92,
+      "negative_reviews": 8
+    },
+    {
+      "item_id": "526870",
+      "item_title": "Satisfactory",
+      "reviews": 100,
+      "positive_reviews": 96,
+      "negative_reviews": 4
+    },
+    {
+      "item_id": "548430",
+      "item_title": "Deep Rock Galactic",
+      "reviews": 100,
+      "positive_reviews": 93,
+      "negative_reviews": 7
+    },
+    {
+      "item_id": "570940",
+      "item_title": "DARK SOULS: REMASTERED",
+      "reviews": 100,
+      "positive_reviews": 92,
+      "negative_reviews": 8
+    },
+    {
+      "item_id": "578080",
+      "item_title": "PUBG: BATTLEGROUNDS",
+      "reviews": 100,
+      "positive_reviews": 69,
+      "negative_reviews": 31
+    },
+    {
+      "item_id": "582010",
+      "item_title": "Monster Hunter: World",
+      "reviews": 100,
+      "positive_reviews": 93,
+      "negative_reviews": 7
+    },
+    {
+      "item_id": "582660",
+      "item_title": "Black Desert",
+      "reviews": 100,
+      "positive_reviews": 48,
+      "negative_reviews": 52
+    },
+    {
+      "item_id": "588650",
+      "item_title": "Dead Cells",
+      "reviews": 100,
+      "positive_reviews": 93,
+      "negative_reviews": 7
+    },
+    {
+      "item_id": "620980",
+      "item_title": "Beat Saber",
+      "reviews": 100,
+      "positive_reviews": 92,
+      "negative_reviews": 8
+    },
+    {
+      "item_id": "632360",
+      "item_title": "Risk of Rain 2",
+      "reviews": 100,
+      "positive_reviews": 91,
+      "negative_reviews": 9
+    },
+    {
+      "item_id": "646570",
+      "item_title": "Slay the Spire",
+      "reviews": 100,
+      "positive_reviews": 94,
+      "negative_reviews": 6
+    },
+    {
+      "item_id": "666140",
+      "item_title": "My Time at Portia",
+      "reviews": 100,
+      "positive_reviews": 79,
+      "negative_reviews": 21
+    },
+    {
+      "item_id": "703080",
+      "item_title": "Planet Zoo",
+      "reviews": 100,
+      "positive_reviews": 88,
+      "negative_reviews": 12
+    },
+    {
+      "item_id": "753640",
+      "item_title": "Outer Wilds",
+      "reviews": 100,
+      "positive_reviews": 93,
+      "negative_reviews": 7
+    },
+    {
+      "item_id": "812140",
+      "item_title": "Assassin's Creed Odyssey",
+      "reviews": 100,
+      "positive_reviews": 92,
+      "negative_reviews": 8
+    },
+    {
+      "item_id": "814380",
+      "item_title": "Sekiro: Shadows Die Twice",
+      "reviews": 100,
+      "positive_reviews": 92,
+      "negative_reviews": 8
+    },
+    {
+      "item_id": "848450",
+      "item_title": "Subnautica: Below Zero",
+      "reviews": 100,
+      "positive_reviews": 89,
+      "negative_reviews": 11
+    },
+    {
+      "item_id": "883710",
+      "item_title": "Resident Evil 2",
+      "reviews": 100,
+      "positive_reviews": 96,
+      "negative_reviews": 4
+    },
+    {
+      "item_id": "892970",
+      "item_title": "Valheim",
+      "reviews": 100,
+      "positive_reviews": 84,
+      "negative_reviews": 16
+    },
+    {
+      "item_id": "899770",
+      "item_title": "Last Epoch",
+      "reviews": 100,
+      "positive_reviews": 60,
+      "negative_reviews": 40
+    },
+    {
+      "item_id": "945360",
+      "item_title": "Among Us",
+      "reviews": 100,
+      "positive_reviews": 91,
+      "negative_reviews": 9
+    },
+    {
+      "item_id": "949230",
+      "item_title": "Cities: Skylines II",
+      "reviews": 100,
+      "positive_reviews": 69,
+      "negative_reviews": 31
+    },
+    {
+      "item_id": "960090",
+      "item_title": "Bloons TD 6",
+      "reviews": 100,
+      "positive_reviews": 96,
+      "negative_reviews": 4
+    },
+    {
+      "item_id": "1084600",
+      "item_title": "My Time at Sandrock",
+      "reviews": 100,
+      "positive_reviews": 86,
+      "negative_reviews": 14
+    },
+    {
+      "item_id": "1085660",
+      "item_title": "Destiny 2",
+      "reviews": 100,
+      "positive_reviews": 81,
+      "negative_reviews": 19
+    },
+    {
+      "item_id": "1086940",
+      "item_title": "Baldur's Gate 3",
+      "reviews": 100,
+      "positive_reviews": 96,
+      "negative_reviews": 4
+    },
+    {
+      "item_id": "1091500",
+      "item_title": "Cyberpunk 2077",
+      "reviews": 100,
+      "positive_reviews": 94,
+      "negative_reviews": 6
+    },
+    {
+      "item_id": "1144200",
+      "item_title": "Ready or Not",
+      "reviews": 100,
+      "positive_reviews": 90,
+      "negative_reviews": 10
+    },
+    {
+      "item_id": "1145360",
+      "item_title": "Hades",
+      "reviews": 100,
+      "positive_reviews": 98,
+      "negative_reviews": 2
+    },
+    {
+      "item_id": "1150690",
+      "item_title": "OMORI",
+      "reviews": 100,
+      "positive_reviews": 95,
+      "negative_reviews": 5
+    },
+    {
+      "item_id": "1158310",
+      "item_title": "Crusader Kings III",
+      "reviews": 100,
+      "positive_reviews": 55,
+      "negative_reviews": 45
+    },
+    {
+      "item_id": "1172470",
+      "item_title": "Apex Legends",
+      "reviews": 100,
+      "positive_reviews": 65,
+      "negative_reviews": 35
+    },
+    {
+      "item_id": "1174180",
+      "item_title": "Red Dead Redemption 2",
+      "reviews": 100,
+      "positive_reviews": 85,
+      "negative_reviews": 15
+    },
+    {
+      "item_id": "1196590",
+      "item_title": "Resident Evil Village",
+      "reviews": 100,
+      "positive_reviews": 92,
+      "negative_reviews": 8
+    },
+    {
+      "item_id": "1238810",
+      "item_title": "Battlefield V",
+      "reviews": 100,
+      "positive_reviews": 61,
+      "negative_reviews": 39
+    },
+    {
+      "item_id": "1238840",
+      "item_title": "Battlefield 1",
+      "reviews": 100,
+      "positive_reviews": 85,
+      "negative_reviews": 15
+    },
+    {
+      "item_id": "1244460",
+      "item_title": "Jurassic World Evolution 2",
+      "reviews": 100,
+      "positive_reviews": 90,
+      "negative_reviews": 10
+    },
+    {
+      "item_id": "1245620",
+      "item_title": "ELDEN RING",
+      "reviews": 100,
+      "positive_reviews": 94,
+      "negative_reviews": 6
+    },
+    {
+      "item_id": "1272080",
+      "item_title": "PAYDAY 3",
+      "reviews": 100,
+      "positive_reviews": 84,
+      "negative_reviews": 16
+    },
+    {
+      "item_id": "1284210",
+      "item_title": "Guild Wars 2",
+      "reviews": 100,
+      "positive_reviews": 86,
+      "negative_reviews": 14
+    },
+    {
+      "item_id": "1326470",
+      "item_title": "Sons Of The Forest",
+      "reviews": 100,
+      "positive_reviews": 91,
+      "negative_reviews": 9
+    },
+    {
+      "item_id": "1446780",
+      "item_title": "MONSTER HUNTER RISE",
+      "reviews": 100,
+      "positive_reviews": 95,
+      "negative_reviews": 5
+    },
+    {
+      "item_id": "1517290",
+      "item_title": "Battlefield 2042",
+      "reviews": 100,
+      "positive_reviews": 64,
+      "negative_reviews": 36
+    },
+    {
+      "item_id": "1623730",
+      "item_title": "Palworld",
+      "reviews": 100,
+      "positive_reviews": 97,
+      "negative_reviews": 3
+    },
+    {
+      "item_id": "1794680",
+      "item_title": "Vampire Survivors",
+      "reviews": 100,
+      "positive_reviews": 94,
+      "negative_reviews": 6
+    },
+    {
+      "item_id": "1938090",
+      "item_title": "Call of Duty",
+      "reviews": 100,
+      "positive_reviews": 57,
+      "negative_reviews": 43
+    },
+    {
+      "item_id": "1966720",
+      "item_title": "Lethal Company",
+      "reviews": 100,
+      "positive_reviews": 92,
+      "negative_reviews": 8
+    },
+    {
+      "item_id": "2050650",
+      "item_title": "Resident Evil 4",
+      "reviews": 100,
+      "positive_reviews": 98,
+      "negative_reviews": 2
+    },
+    {
+      "item_id": "2208920",
+      "item_title": "Assassin's Creed Valhalla",
+      "reviews": 100,
+      "positive_reviews": 66,
+      "negative_reviews": 34
+    },
+    {
+      "item_id": "2344520",
+      "item_title": "Diablo IV",
+      "reviews": 100,
+      "positive_reviews": 68,
+      "negative_reviews": 32
+    },
+    {
+      "item_id": "2694490",
+      "item_title": "Path of Exile 2",
+      "reviews": 100,
+      "positive_reviews": 84,
+      "negative_reviews": 16
+    }
+  ],
+  "request_attempts": 101,
+  "failed_request_attempts": 0,
+  "successful_request_attempts": 101,
+  "http_429_attempts": 0,
+  "duplicate_observations_skipped": 0,
+  "invalid_observations_skipped": 0,
+  "failed_games": [],
+  "recommendation": "STEAM SOURCE DECISION REQUIRES SHARED SPLIT CHECK",
+  "recommendation_reason": "The snapshot has 100 games, 169 users with at least two positive games and 37 with at least three. Expanding the item catalog removes the old 20-item Recall@20 limitation, but does not establish chronological warm-start coverage. Members 2/3 must report eligible users and targets under the shared historical split before training or choosing a source. No universal minimum-user threshold or model-quality result is asserted here.",
+  "generated_at_utc": "2026-11-21T09:08:16.101587Z",
+  "data_sha256": "8f6df45cb04b44a8cfd78052e845f006cee70956c5fbea829a3209ead4e3075c"
+}

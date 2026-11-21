@@ -1,0 +1,1856 @@
+{
+  "manifest_version": 1,
+  "dataset_version": "steam_100games_v1",
+  "config_sha256": "d65b676008511998a84035149c6df8495c5d51e17e7532294fddf2261506964e",
+  "config": {
+    "dataset_version": "steam_100games_v1",
+    "selection": "Bounded convenience sample of 100 manually selected PC games across genres, including the 20 earlier pilot games. 100 recent English reviews per game, independently recrawled; not representative of Steam or players. No selection based on model/test performance.",
+    "language": "english",
+    "sort": "recent",
+    "purchase_type": "all",
+    "review_type": "all",
+    "filter_offtopic_activity": true,
+    "reviews_per_game": 100,
+    "page_size": 100,
+    "max_pages_per_game": 5,
+    "request_interval_seconds": 2,
+    "timeout_seconds": 25,
+    "max_retries": 3,
+    "backoff_seconds": 2,
+    "apps": [
+      {
+        "app_id": 570,
+        "game": "Dota 2"
+      },
+      {
+        "app_id": 730,
+        "game": "Counter-Strike 2"
+      },
+      {
+        "app_id": 440,
+        "game": "Team Fortress 2"
+      },
+      {
+        "app_id": 620,
+        "game": "Portal 2"
+      },
+      {
+        "app_id": 550,
+        "game": "Left 4 Dead 2"
+      },
+      {
+        "app_id": 400,
+        "game": "Portal"
+      },
+      {
+        "app_id": 220,
+        "game": "Half-Life 2"
+      },
+      {
+        "app_id": 4000,
+        "game": "Garry's Mod"
+      },
+      {
+        "app_id": 105600,
+        "game": "Terraria"
+      },
+      {
+        "app_id": 413150,
+        "game": "Stardew Valley"
+      },
+      {
+        "app_id": 1091500,
+        "game": "Cyberpunk 2077"
+      },
+      {
+        "app_id": 1245620,
+        "game": "ELDEN RING"
+      },
+      {
+        "app_id": 1086940,
+        "game": "Baldur's Gate 3"
+      },
+      {
+        "app_id": 292030,
+        "game": "The Witcher 3: Wild Hunt"
+      },
+      {
+        "app_id": 1174180,
+        "game": "Red Dead Redemption 2"
+      },
+      {
+        "app_id": 367520,
+        "game": "Hollow Knight"
+      },
+      {
+        "app_id": 1145360,
+        "game": "Hades"
+      },
+      {
+        "app_id": 646570,
+        "game": "Slay the Spire"
+      },
+      {
+        "app_id": 294100,
+        "game": "RimWorld"
+      },
+      {
+        "app_id": 548430,
+        "game": "Deep Rock Galactic"
+      },
+      {
+        "app_id": 271590,
+        "game": "Grand Theft Auto V Legacy"
+      },
+      {
+        "app_id": 1172470,
+        "game": "Apex Legends"
+      },
+      {
+        "app_id": 578080,
+        "game": "PUBG: BATTLEGROUNDS"
+      },
+      {
+        "app_id": 252490,
+        "game": "Rust"
+      },
+      {
+        "app_id": 346110,
+        "game": "ARK: Survival Evolved"
+      },
+      {
+        "app_id": 945360,
+        "game": "Among Us"
+      },
+      {
+        "app_id": 1794680,
+        "game": "Vampire Survivors"
+      },
+      {
+        "app_id": 1966720,
+        "game": "Lethal Company"
+      },
+      {
+        "app_id": 1623730,
+        "game": "Palworld"
+      },
+      {
+        "app_id": 892970,
+        "game": "Valheim"
+      },
+      {
+        "app_id": 108600,
+        "game": "Project Zomboid"
+      },
+      {
+        "app_id": 1144200,
+        "game": "Ready or Not"
+      },
+      {
+        "app_id": 1938090,
+        "game": "Call of Duty"
+      },
+      {
+        "app_id": 359550,
+        "game": "Tom Clancy's Rainbow Six Siege"
+      },
+      {
+        "app_id": 381210,
+        "game": "Dead by Daylight"
+      },
+      {
+        "app_id": 322330,
+        "game": "Don't Starve Together"
+      },
+      {
+        "app_id": 219740,
+        "game": "Don't Starve"
+      },
+      {
+        "app_id": 275850,
+        "game": "No Man's Sky"
+      },
+      {
+        "app_id": 264710,
+        "game": "Subnautica"
+      },
+      {
+        "app_id": 848450,
+        "game": "Subnautica: Below Zero"
+      },
+      {
+        "app_id": 242760,
+        "game": "The Forest"
+      },
+      {
+        "app_id": 1326470,
+        "game": "Sons Of The Forest"
+      },
+      {
+        "app_id": 1084600,
+        "game": "My Time at Sandrock"
+      },
+      {
+        "app_id": 666140,
+        "game": "My Time at Portia"
+      },
+      {
+        "app_id": 632360,
+        "game": "Risk of Rain 2"
+      },
+      {
+        "app_id": 250900,
+        "game": "The Binding of Isaac: Rebirth"
+      },
+      {
+        "app_id": 753640,
+        "game": "Outer Wilds"
+      },
+      {
+        "app_id": 588650,
+        "game": "Dead Cells"
+      },
+      {
+        "app_id": 504230,
+        "game": "Celeste"
+      },
+      {
+        "app_id": 268910,
+        "game": "Cuphead"
+      },
+      {
+        "app_id": 391540,
+        "game": "Undertale"
+      },
+      {
+        "app_id": 427520,
+        "game": "Factorio"
+      },
+      {
+        "app_id": 526870,
+        "game": "Satisfactory"
+      },
+      {
+        "app_id": 457140,
+        "game": "Oxygen Not Included"
+      },
+      {
+        "app_id": 255710,
+        "game": "Cities: Skylines"
+      },
+      {
+        "app_id": 949230,
+        "game": "Cities: Skylines II"
+      },
+      {
+        "app_id": 227300,
+        "game": "Euro Truck Simulator 2"
+      },
+      {
+        "app_id": 270880,
+        "game": "American Truck Simulator"
+      },
+      {
+        "app_id": 289070,
+        "game": "Sid Meier's Civilization VI"
+      },
+      {
+        "app_id": 8930,
+        "game": "Sid Meier's Civilization V"
+      },
+      {
+        "app_id": 236850,
+        "game": "Europa Universalis IV"
+      },
+      {
+        "app_id": 281990,
+        "game": "Stellaris"
+      },
+      {
+        "app_id": 394360,
+        "game": "Hearts of Iron IV"
+      },
+      {
+        "app_id": 1158310,
+        "game": "Crusader Kings III"
+      },
+      {
+        "app_id": 251570,
+        "game": "7 Days to Die"
+      },
+      {
+        "app_id": 238960,
+        "game": "Path of Exile"
+      },
+      {
+        "app_id": 2694490,
+        "game": "Path of Exile 2"
+      },
+      {
+        "app_id": 899770,
+        "game": "Last Epoch"
+      },
+      {
+        "app_id": 2344520,
+        "game": "Diablo IV"
+      },
+      {
+        "app_id": 582010,
+        "game": "Monster Hunter: World"
+      },
+      {
+        "app_id": 1446780,
+        "game": "MONSTER HUNTER RISE"
+      },
+      {
+        "app_id": 814380,
+        "game": "Sekiro: Shadows Die Twice"
+      },
+      {
+        "app_id": 374320,
+        "game": "DARK SOULS III"
+      },
+      {
+        "app_id": 570940,
+        "game": "DARK SOULS: REMASTERED"
+      },
+      {
+        "app_id": 960090,
+        "game": "Bloons TD 6"
+      },
+      {
+        "app_id": 1244460,
+        "game": "Jurassic World Evolution 2"
+      },
+      {
+        "app_id": 703080,
+        "game": "Planet Zoo"
+      },
+      {
+        "app_id": 493340,
+        "game": "Planet Coaster"
+      },
+      {
+        "app_id": 582660,
+        "game": "Black Desert"
+      },
+      {
+        "app_id": 306130,
+        "game": "The Elder Scrolls Online"
+      },
+      {
+        "app_id": 39210,
+        "game": "FINAL FANTASY XIV Online"
+      },
+      {
+        "app_id": 1284210,
+        "game": "Guild Wars 2"
+      },
+      {
+        "app_id": 230410,
+        "game": "Warframe"
+      },
+      {
+        "app_id": 1085660,
+        "game": "Destiny 2"
+      },
+      {
+        "app_id": 1238810,
+        "game": "Battlefield V"
+      },
+      {
+        "app_id": 1517290,
+        "game": "Battlefield 2042"
+      },
+      {
+        "app_id": 1238840,
+        "game": "Battlefield 1"
+      },
+      {
+        "app_id": 218620,
+        "game": "PAYDAY 2"
+      },
+      {
+        "app_id": 1272080,
+        "game": "PAYDAY 3"
+      },
+      {
+        "app_id": 447040,
+        "game": "Watch Dogs 2"
+      },
+      {
+        "app_id": 460930,
+        "game": "Tom Clancy's Ghost Recon Wildlands"
+      },
+      {
+        "app_id": 812140,
+        "game": "Assassin's Creed Odyssey"
+      },
+      {
+        "app_id": 2208920,
+        "game": "Assassin's Creed Valhalla"
+      },
+      {
+        "app_id": 2050650,
+        "game": "Resident Evil 4"
+      },
+      {
+        "app_id": 883710,
+        "game": "Resident Evil 2"
+      },
+      {
+        "app_id": 1196590,
+        "game": "Resident Evil Village"
+      },
+      {
+        "app_id": 1150690,
+        "game": "OMORI"
+      },
+      {
+        "app_id": 413410,
+        "game": "Danganronpa: Trigger Happy Havoc"
+      },
+      {
+        "app_id": 620980,
+        "game": "Beat Saber"
+      },
+      {
+        "app_id": 284160,
+        "game": "BeamNG.drive"
+      }
+    ]
+  },
+  "endpoint": "https://api.steampowered.com/IUserReviewsService/GetAppReviews/v1/",
+  "api_documentation": "https://partner.steamgames.com/doc/webapi/IUserReviewsService?l=english",
+  "crawl_started_utc": "2026-11-21T09:04:14.962398Z",
+  "crawl_finished_utc": "2026-11-21T09:07:35.498259Z",
+  "status": "completed",
+  "user_id_transform": "SHA-256 of UTF-8 SteamID; unsalted; consistent with original pilot",
+  "known_limitations": [
+    "Bounded convenience sample, not representative of Steam or all game players.",
+    "Recent English reviews only; manually selected games; off-topic filtering enabled.",
+    "No complete purchase/exposure histories; unobserved games are not verified dislikes.",
+    "Steam voted_up is overall binary recommendation feedback, not aspect sentiment.",
+    "SHA-256 reviewer identifiers are pseudonymous, not anonymous.",
+    "Review text can be edited after creation: timestamp is creation time, not proof that the collected text existed then. Strict historical text evaluation needs an edit-time policy or historical snapshots.",
+    "API responses may be cached; collection settings do not reproduce an immutable server snapshot.",
+    "App names are manually configured labels, not a complete metadata audit."
+  ],
+  "apps": [
+    {
+      "app_id": 570,
+      "game": "Dota 2",
+      "cursor": "AoJwhbyj/KEDfPv0lQc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 844495
+    },
+    {
+      "app_id": 730,
+      "game": "Counter-Strike 2",
+      "cursor": "AoJwxNXk/aEDfMaLlgc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 2651150
+    },
+    {
+      "app_id": 440,
+      "game": "Team Fortress 2",
+      "cursor": "AoJwzo35+aEDdI/ZlQc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 745571
+    },
+    {
+      "app_id": 620,
+      "game": "Portal 2",
+      "cursor": "AoJw/7zr8qEDeKX6lAc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 212951
+    },
+    {
+      "app_id": 550,
+      "game": "Left 4 Dead 2",
+      "cursor": "AoJ4wKfj96EDedO+lQc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 322181
+    },
+    {
+      "app_id": 400,
+      "game": "Portal",
+      "cursor": "AoJwqprz7aEDcJKvlAc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 100882
+    },
+    {
+      "app_id": 220,
+      "game": "Half-Life 2",
+      "cursor": "AoJ4ssaF86EDf9X9lAc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 125069
+    },
+    {
+      "app_id": 4000,
+      "game": "Garry's Mod",
+      "cursor": "AoJ47s60/KEDe7r2lQc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 624428
+    },
+    {
+      "app_id": 105600,
+      "game": "Terraria",
+      "cursor": "AoJwp4Sn+6EDeuPrlQc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 746963
+    },
+    {
+      "app_id": 413150,
+      "game": "Stardew Valley",
+      "cursor": "AoJw5diV+qEDfbPclQc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 470295
+    },
+    {
+      "app_id": 1091500,
+      "game": "Cyberpunk 2077",
+      "cursor": "AoJwlvrB/aEDeJaIlgc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 431616
+    },
+    {
+      "app_id": 1245620,
+      "game": "ELDEN RING",
+      "cursor": "AoJ4xce5+KEDe/jJlQc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 575200
+    },
+    {
+      "app_id": 1086940,
+      "game": "Baldur's Gate 3",
+      "cursor": "AoJ4y8aM+aEDe47RlQc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 508322
+    },
+    {
+      "app_id": 292030,
+      "game": "The Witcher 3: Wild Hunt",
+      "cursor": "AoJwloGl+KEDfIrHlQc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 269162
+    },
+    {
+      "app_id": 1174180,
+      "game": "Red Dead Redemption 2",
+      "cursor": "AoJwr/Wy/aEDc7uGlgc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 340414
+    },
+    {
+      "app_id": 367520,
+      "game": "Hollow Knight",
+      "cursor": "AoJw95Ow+KEDdd/IlQc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 213549
+    },
+    {
+      "app_id": 1145360,
+      "game": "Hades",
+      "cursor": "AoJw4I6A6aEDcIHgkwc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 154996
+    },
+    {
+      "app_id": 646570,
+      "game": "Slay the Spire",
+      "cursor": "AoJ425HW4aEDfPrxkgc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 92671
+    },
+    {
+      "app_id": 294100,
+      "game": "RimWorld",
+      "cursor": "AoJ49vmn8qEDcvDwlAc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 144237
+    },
+    {
+      "app_id": 548430,
+      "game": "Deep Rock Galactic",
+      "cursor": "AoJ47oKb8aEDd/TklAc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 216668
+    },
+    {
+      "app_id": 271590,
+      "game": "Grand Theft Auto V Legacy",
+      "cursor": "AoJ4k+DJ+6EDc8PulQc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 649495
+    },
+    {
+      "app_id": 1172470,
+      "game": "Apex Legends",
+      "cursor": "AoJ4+OH7+aEDfLDZlQc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 453790
+    },
+    {
+      "app_id": 578080,
+      "game": "PUBG: BATTLEGROUNDS",
+      "cursor": "AoJwys3q1aADeYiGggc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 447530
+    },
+    {
+      "app_id": 252490,
+      "game": "Rust",
+      "cursor": "AoJws7vA+qEDfLHhlQc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 636148
+    },
+    {
+      "app_id": 346110,
+      "game": "ARK: Survival Evolved",
+      "cursor": "AoJ4ivO+76EDe8LHlAc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 333593
+    },
+    {
+      "app_id": 945360,
+      "game": "Among Us",
+      "cursor": "AoJwoZKs+KEDcZnIlQc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 435770
+    },
+    {
+      "app_id": 1794680,
+      "game": "Vampire Survivors",
+      "cursor": "AoJ4l4WS6aEDcfjhkwc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 136789
+    },
+    {
+      "app_id": 1966720,
+      "game": "Lethal Company",
+      "cursor": "AoJw4vv78KEDdYTilAc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 346239
+    },
+    {
+      "app_id": 1623730,
+      "game": "Palworld",
+      "cursor": "AoJ42bn89aEDdKSplQc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 211038
+    },
+    {
+      "app_id": 892970,
+      "game": "Valheim",
+      "cursor": "AoJ4+s28+aEDcZnUlQc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 315072
+    },
+    {
+      "app_id": 108600,
+      "game": "Project Zomboid",
+      "cursor": "AoJww/Kb+6EDd+7qlQc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 213632
+    },
+    {
+      "app_id": 1144200,
+      "game": "Ready or Not",
+      "cursor": "AoJ4jpCS9qEDfaSrlQc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 194136
+    },
+    {
+      "app_id": 1938090,
+      "game": "Call of Duty",
+      "cursor": "AoJ43ZyM/aEDeOWBlgc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 395225
+    },
+    {
+      "app_id": 359550,
+      "game": "Tom Clancy's Rainbow Six Siege",
+      "cursor": "AoJwiZPJ/aEDe/qIlgc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 827867
+    },
+    {
+      "app_id": 381210,
+      "game": "Dead by Daylight",
+      "cursor": "AoJwuv60yKEDeZrUjwc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 376641
+    },
+    {
+      "app_id": 322330,
+      "game": "Don't Starve Together",
+      "cursor": "AoJwzvaS5qEDeL2ykwc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 131389
+    },
+    {
+      "app_id": 219740,
+      "game": "Don't Starve",
+      "cursor": "AoJ4043nlaADcb7L+gY=",
+      "pages_fetched": 2,
+      "records_saved": 100,
+      "reviews_returned": 199,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 40553
+    },
+    {
+      "app_id": 275850,
+      "game": "No Man's Sky",
+      "cursor": "AoJwvJ3b9KEDeY2RlQc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 238341
+    },
+    {
+      "app_id": 264710,
+      "game": "Subnautica",
+      "cursor": "AoJwyb6d8qEDdtTvlAc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 210828
+    },
+    {
+      "app_id": 848450,
+      "game": "Subnautica: Below Zero",
+      "cursor": "AoJwjdu8vaEDes+wjgc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 60433
+    },
+    {
+      "app_id": 242760,
+      "game": "The Forest",
+      "cursor": "AoJ4gLXB7KEDcJWUlAc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 212828
+    },
+    {
+      "app_id": 1326470,
+      "game": "Sons Of The Forest",
+      "cursor": "AoJ4k/2E86EDfc79lAc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 135618
+    },
+    {
+      "app_id": 1084600,
+      "game": "My Time at Sandrock",
+      "cursor": "AoJ408/h46ADd//Fgwc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 11492
+    },
+    {
+      "app_id": 666140,
+      "game": "My Time at Portia",
+      "cursor": "AoJ4+NjXj58DeJD46gY=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 15896
+    },
+    {
+      "app_id": 632360,
+      "game": "Risk of Rain 2",
+      "cursor": "AoJw76HX86EDdoCGlQc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 242306
+    },
+    {
+      "app_id": 250900,
+      "game": "The Binding of Isaac: Rebirth",
+      "cursor": "AoJ4iuPG/KEDfqb4lQc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 185467
+    },
+    {
+      "app_id": 753640,
+      "game": "Outer Wilds",
+      "cursor": "AoJ4y6CQ7qEDfe+zlAc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 62423
+    },
+    {
+      "app_id": 588650,
+      "game": "Dead Cells",
+      "cursor": "AoJ4x+Gb2qEDfv/0kQc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 52123
+    },
+    {
+      "app_id": 504230,
+      "game": "Celeste",
+      "cursor": "AoJ4xeHy8KEDfpXhlAc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 70690
+    },
+    {
+      "app_id": 268910,
+      "game": "Cuphead",
+      "cursor": "AoJwue/k6KEDccrckwc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 75182
+    },
+    {
+      "app_id": 391540,
+      "game": "Undertale",
+      "cursor": "AoJ4o6SA+aEDfpzQlQc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 195814
+    },
+    {
+      "app_id": 427520,
+      "game": "Factorio",
+      "cursor": "AoJwo4LU8aEDcaPplAc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 147687
+    },
+    {
+      "app_id": 526870,
+      "game": "Satisfactory",
+      "cursor": "AoJw1/WI96EDf9W0lQc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 164841
+    },
+    {
+      "app_id": 457140,
+      "game": "Oxygen Not Included",
+      "cursor": "AoJwj63826EDcbeYkgc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 52814
+    },
+    {
+      "app_id": 255710,
+      "game": "Cities: Skylines",
+      "cursor": "AoJ4+pLu4aEDeIH0kgc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 128875
+    },
+    {
+      "app_id": 949230,
+      "game": "Cities: Skylines II",
+      "cursor": "AoJw752F86EDd9L9lAc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 47178
+    },
+    {
+      "app_id": 227300,
+      "game": "Euro Truck Simulator 2",
+      "cursor": "AoJw1rmh+qEDeerdlQc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 189683
+    },
+    {
+      "app_id": 270880,
+      "game": "American Truck Simulator",
+      "cursor": "AoJ4gu7686EDfPWIlQc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 111830
+    },
+    {
+      "app_id": 289070,
+      "game": "Sid Meier's Civilization VI",
+      "cursor": "AoJ4v/DN7aEDfNiolAc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 151333
+    },
+    {
+      "app_id": 8930,
+      "game": "Sid Meier's Civilization V",
+      "cursor": "AoJ4jZPt3KEDdt+lkgc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 130713
+    },
+    {
+      "app_id": 236850,
+      "game": "Europa Universalis IV",
+      "cursor": "AoJ4iLHH06EDftONkQc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 69187
+    },
+    {
+      "app_id": 281990,
+      "game": "Stellaris",
+      "cursor": "AoJ4g6Lc5aEDeqGqkwc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 106291
+    },
+    {
+      "app_id": 394360,
+      "game": "Hearts of Iron IV",
+      "cursor": "AoJwh7OT+aEDd8rRlQc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 165398
+    },
+    {
+      "app_id": 1158310,
+      "game": "Crusader Kings III",
+      "cursor": "AoJwyZ+/+KEDfdDKlQc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 69421
+    },
+    {
+      "app_id": 251570,
+      "game": "7 Days to Die",
+      "cursor": "AoJw1ry+8KEDe5zblAc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 184279
+    },
+    {
+      "app_id": 238960,
+      "game": "Path of Exile",
+      "cursor": "AoJwsNrF9aEDfruelQc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 143615
+    },
+    {
+      "app_id": 2694490,
+      "game": "Path of Exile 2",
+      "cursor": "AoJ4npLY9aEDf9mglQc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 134428
+    },
+    {
+      "app_id": 899770,
+      "game": "Last Epoch",
+      "cursor": "AoJ444fBqKEDc/qNjAc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 66082
+    },
+    {
+      "app_id": 2344520,
+      "game": "Diablo IV",
+      "cursor": "AoJ487nG4aEDerbwkgc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 27766
+    },
+    {
+      "app_id": 582010,
+      "game": "Monster Hunter: World",
+      "cursor": "AoJwwoKl7aEDeOihlAc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 173253
+    },
+    {
+      "app_id": 1446780,
+      "game": "MONSTER HUNTER RISE",
+      "cursor": "AoJ4/Mrp4aEDec/zkgc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 51386
+    },
+    {
+      "app_id": 814380,
+      "game": "Sekiro: Shadows Die Twice",
+      "cursor": "AoJwj9nh7aEDeqWslAc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 102763
+    },
+    {
+      "app_id": 374320,
+      "game": "DARK SOULS III",
+      "cursor": "AoJwuNrq7aEDfumtlAc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 168684
+    },
+    {
+      "app_id": 570940,
+      "game": "DARK SOULS: REMASTERED",
+      "cursor": "AoJw1bKC7qEDebuxlAc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 69989
+    },
+    {
+      "app_id": 960090,
+      "game": "Bloons TD 6",
+      "cursor": "AoJ4rpbH9aEDetGelQc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 262128
+    },
+    {
+      "app_id": 1244460,
+      "game": "Jurassic World Evolution 2",
+      "cursor": "AoJ4lITZmqEDd9G7igc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 23691
+    },
+    {
+      "app_id": 703080,
+      "game": "Planet Zoo",
+      "cursor": "AoJw8ePEv6EDePDJjgc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 50062
+    },
+    {
+      "app_id": 493340,
+      "game": "Planet Coaster",
+      "cursor": "AoJwpYKs+KADdvihhgc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 37902
+    },
+    {
+      "app_id": 582660,
+      "game": "Black Desert",
+      "cursor": "AoJ49YjEwqEDeqDxjgc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 51699
+    },
+    {
+      "app_id": 306130,
+      "game": "The Elder Scrolls Online",
+      "cursor": "AoJwjK6F2aEDcbnbkQc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 88267
+    },
+    {
+      "app_id": 39210,
+      "game": "FINAL FANTASY XIV Online",
+      "cursor": "AoJwzozu4aEDfoD0kgc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 67069
+    },
+    {
+      "app_id": 1284210,
+      "game": "Guild Wars 2",
+      "cursor": "AoJwp8n816EDcaHKkQc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 19407
+    },
+    {
+      "app_id": 230410,
+      "game": "Warframe",
+      "cursor": "AoJwndD5+KEDeN3PlQc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 304455
+    },
+    {
+      "app_id": 1085660,
+      "game": "Destiny 2",
+      "cursor": "AoJ4t5zE9aEDc6aelQc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 391574
+    },
+    {
+      "app_id": 1238810,
+      "game": "Battlefield V",
+      "cursor": "AoJwmfirv6EDfefGjgc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 43347
+    },
+    {
+      "app_id": 1517290,
+      "game": "Battlefield 2042",
+      "cursor": "AoJ47qz6o6EDeb3Ciwc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 133203
+    },
+    {
+      "app_id": 1238840,
+      "game": "Battlefield 1",
+      "cursor": "AoJwyPqm7aEDd5KilAc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 54323
+    },
+    {
+      "app_id": 218620,
+      "game": "PAYDAY 2",
+      "cursor": "AoJwr76e7qEDdou2lAc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 271071
+    },
+    {
+      "app_id": 1272080,
+      "game": "PAYDAY 3",
+      "cursor": "AoJwgv7V8qEDfu72lAc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 43127
+    },
+    {
+      "app_id": 447040,
+      "game": "Watch Dogs 2",
+      "cursor": "AoJ46pOG7aEDcOmclAc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 30245
+    },
+    {
+      "app_id": 460930,
+      "game": "Tom Clancy's Ghost Recon Wildlands",
+      "cursor": "AoJ40fuJ5qEDdaKxkwc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 48057
+    },
+    {
+      "app_id": 812140,
+      "game": "Assassin's Creed Odyssey",
+      "cursor": "AoJ4+rqr5aEDdOeikwc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 63892
+    },
+    {
+      "app_id": 2208920,
+      "game": "Assassin's Creed Valhalla",
+      "cursor": "AoJw/LPp2KEDerPXkQc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 16912
+    },
+    {
+      "app_id": 2050650,
+      "game": "Resident Evil 4",
+      "cursor": "AoJwlZXZ96EDc7W9lQc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 101163
+    },
+    {
+      "app_id": 883710,
+      "game": "Resident Evil 2",
+      "cursor": "AoJwxfrE8aEDcJjolAc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 83375
+    },
+    {
+      "app_id": 1196590,
+      "game": "Resident Evil Village",
+      "cursor": "AoJ4v7mP7KEDd/eOlAc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 66392
+    },
+    {
+      "app_id": 1150690,
+      "game": "OMORI",
+      "cursor": "AoJ406Xm46EDfvOPkwc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 61079
+    },
+    {
+      "app_id": 413410,
+      "game": "Danganronpa: Trigger Happy Havoc",
+      "cursor": "AoJ4tpTY5qEDfcu6kwc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 19562
+    },
+    {
+      "app_id": 620980,
+      "game": "Beat Saber",
+      "cursor": "AoJ4xcuZoaEDeOSaiwc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 57681
+    },
+    {
+      "app_id": 284160,
+      "game": "BeamNG.drive",
+      "cursor": "AoJ44sGT+6EDf5LqlQc=",
+      "pages_fetched": 1,
+      "records_saved": 100,
+      "reviews_returned": 100,
+      "duplicate_reviews_skipped": 0,
+      "invalid_reviews_skipped": 0,
+      "invalid_reasons": {},
+      "status": "target_reached",
+      "error": null,
+      "total_matching_reported": 232724
+    }
+  ],
+  "run_history": [
+    {
+      "started_at_utc": "2026-11-21T09:04:14.962598Z",
+      "pages_before_run": 0,
+      "max_pages_per_run": null,
+      "status": "completed",
+      "pages_fetched_this_run": 101,
+      "finished_at_utc": "2026-11-21T09:07:35.581019Z"
+    }
+  ],
+  "total_records": 10000,
+  "unique_review_ids": 10000,
+  "unique_hashed_reviewers": 9718,
+  "data_sha256": "8f6df45cb04b44a8cfd78052e845f006cee70956c5fbea829a3209ead4e3075c",
+  "last_saved_utc": "2026-11-21T09:07:35.581019Z"
+}

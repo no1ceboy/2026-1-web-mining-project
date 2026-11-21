@@ -10,7 +10,7 @@ import json
 from pathlib import Path
 import re
 
-from steam_crawler import ENDPOINT, ROOT, atomic_text, read_jsonl, utc_now, write_json
+from steam_crawler import DEFAULT_OUTPUT_DIR, ENDPOINT, ROOT, atomic_text, read_jsonl, utc_now, write_json
 
 
 REQUIRED = {"review_id", "user_id", "item_id", "item_title", "timestamp", "crawl_time_utc",
@@ -47,7 +47,10 @@ def quality_errors(row):
     if type(row.get("helpful_votes")) is not int or row.get("helpful_votes", -1) < 0:
         errors.append("invalid_helpful_votes")
     # The saved schema is an allowlist, so raw author objects cannot slip through.
-    if row.keys() - REQUIRED:
+    if "timestamp_updated" in row and (type(row["timestamp_updated"]) is not int or
+                                      row["timestamp_updated"] < row.get("timestamp", 0)):
+        errors.append("invalid_update_timestamp")
+    if row.keys() - (REQUIRED | {"timestamp_updated"}):
         errors.append("unexpected_fields")
     return errors
 
@@ -110,6 +113,10 @@ def summarize(records):
             "positive_users": len(positive_users),
             "positive_users_ge_2_games": sum(len(items) >= 2 for items in positive_users.values()),
             "positive_users_ge_3_games": sum(len(items) >= 3 for items in positive_users.values()),
+            "positive_users_ge_5_games": sum(len(items) >= 5 for items in positive_users.values()),
+            "positive_users_ge_10_games": sum(len(items) >= 10 for items in positive_users.values()),
+            "reviews_with_update_timestamp": sum("timestamp_updated" in row for row in records),
+            "reviews_updated_after_creation": sum(row.get("timestamp_updated", row["timestamp"]) > row["timestamp"] for row in records),
             "positive_history_distribution": dict(sorted(Counter(map(len, positive_users.values())).items())),
             "positive_items": len({item for _, item in positive_edges}),
             "positive_edges": len(positive_edges), "positive_graph_nodes": node_count,
@@ -125,13 +132,20 @@ def summarize(records):
 def recommend(stats, manifest):
     if manifest["status"] != "completed":
         return ("SOURCE GATE UNRESOLVED", "The crawl did not reach every configured target. Review access errors and coverage before choosing the source; do not claim collection is complete.")
-    # This is a bounded 20-item source pilot, not an automated model-selection gate.
+    if stats["items"] > 20 and stats["positive_users_ge_2_games"] > 0:
+        return ("STEAM SOURCE DECISION REQUIRES SHARED SPLIT CHECK",
+                f"The snapshot has {stats['items']} games, {stats['positive_users_ge_2_games']} users "
+                f"with at least two positive games and {stats['positive_users_ge_3_games']} with at least three. "
+                "Expanding the item catalog removes the old 20-item Recall@20 limitation, but does not "
+                "establish chronological warm-start coverage. Members 2/3 must report eligible users "
+                "and targets under the shared historical split before training or choosing a source. "
+                "No universal minimum-user threshold or model-quality result is asserted here.")
     return ("RECOMMEND AMAZON FALLBACK FOR MAIN EVALUATION",
             f"This bounded pilot has only {stats['items']} games, "
             f"{stats['positive_users_ge_2_games']} users with at least two distinct positive games, "
             f"and {stats['positive_users_ge_3_games']} with at least three. These are descriptive "
             "history counts, not eligibility measured by the shared evaluator. The small candidate "
-            "catalog also makes Recall@20 trivial. The recommended fallback is a project planning "
+            "catalog/history coverage limits meaningful ranking evaluation. The recommended fallback is a project planning "
             "judgment for this pilot, not an agreed numerical acceptance threshold; Members 2/3 "
             "should verify the global split before the lead finalizes the source decision.")
 
@@ -183,6 +197,7 @@ def build_report(records, manifest, request_log, baseline=None, metadata=None):
                        ("Positive recommendations", "positive_reviews"), ("Negative recommendations", "negative_reviews")]:
         lines.append(f"| {title} | {stats[key]} |")
     lines += ["", f"Review creation-time range UTC: {stats['earliest_review_utc']} to {stats['latest_review_utc']}.",
+              f"Update timestamps preserved: {stats['reviews_with_update_timestamp']} / {stats['records']}; last update later than creation: {stats['reviews_updated_after_creation']}. Older snapshots may not have this optional field.",
               "All saved reviewer IDs pass the 64-character lowercase SHA-256 format check. The saved schema excludes raw author objects and SteamIDs. Source language labels were checked; no independent language classifier was run.", "",
               "## Per-game coverage", "", "| App ID | Configured game label | Reviews | Positive | Negative | Pages | Status |", "| --- | --- | ---: | ---: | ---: | ---: | --- |"]
     by_item = {row["item_id"]: row for row in stats["per_game"]}
@@ -204,6 +219,7 @@ def build_report(records, manifest, request_log, baseline=None, metadata=None):
               f"- Positive users / items / unique edges: **{stats['positive_users']} / {stats['positive_items']} / {stats['positive_edges']}**.",
               f"- Users with at least two distinct positive games: **{stats['positive_users_ge_2_games']} / {stats['positive_users']}**.",
               f"- Users with at least three distinct positive games: **{stats['positive_users_ge_3_games']} / {stats['positive_users']}**.",
+              f"- Users with at least five / ten distinct positive games: **{stats['positive_users_ge_5_games']} / {stats['positive_users_ge_10_games']}**.",
               f"- Positive connected components: **{stats['positive_graph_components']}**.",
               f"- Largest component (by total nodes): **{largest['users']} users, {largest['items']} games, {largest['edges']} edges**.",
               f"- Largest component shares: **{stats['largest_component_node_share']:.2%} of positive nodes**, **{stats['largest_component_edge_share']:.2%} of positive edges**.", "",
@@ -212,9 +228,9 @@ def build_report(records, manifest, request_log, baseline=None, metadata=None):
         lines.append(f"| {degree} | {count} |")
     if baseline is not None:
         before = summarize(baseline)
-        lines += ["", "## Comparison with original pilot", "",
+        lines += ["", "## Comparison with baseline snapshot", "",
                   "These are separate time-dependent convenience snapshots, not a random-sample comparison. The original files were not modified.", "",
-                  "| Check | Original pilot | Expanded pilot |", "| --- | ---: | ---: |"]
+                  "| Check | Baseline snapshot | Current snapshot |", "| --- | ---: | ---: |"]
         for title, key in [("Reviews", "records"), ("Games", "items"), ("Reviewers", "unique_reviewers"),
                            ("Multi-game reviewers", "reviewers_on_multiple_games"),
                            ("Users with >=2 positive games", "positive_users_ge_2_games"),
@@ -224,9 +240,11 @@ def build_report(records, manifest, request_log, baseline=None, metadata=None):
               "- History counts are upper bounds only. Member 2 owns global chronological cutoffs, warm-user/item eligibility and the final evaluator; this report does not invent a competing split.",
               "- Two positive games can potentially support a user's historical interaction plus one held-out target. Three can potentially support history plus separate validation and test targets for that same user; the global protocol does not require every evaluated user to occur in both windows.",
               "- Having a large connected component does not imply that users have long histories: a few cross-game reviewers can connect many item-centered stars.",
-              f"- With only {stats['items']} sampled games and seen games excluded, K=20 can cover every eligible candidate in this pilot. Recall@20 would then be trivial; do not use it as evidence of recommendation quality.",
+              (f"- With {stats['items']} sampled games, K=20 covers the whole candidate catalog in the small-catalog case and is trivial."
+               if stats["items"] <= 20 else
+               f"- The full catalog has {stats['items']} games; Recall@20 is no longer automatically trivial. Still report actual candidate counts after historical item and seen-item filtering; some users can have small candidate sets."),
               "- Keep both feedback labels for opinion mining. A negative recommendation is not an aspect sentiment label. Unobserved items are not verified negative labels.",
-              "- Review creation timestamps do not certify historical text contents; collected reviews may have been edited later. Member 2/4 must establish an edit-time policy before historical text features are used.",
+              "- Review creation timestamps do not certify historical text contents. For new snapshots, use timestamp_updated to conservatively exclude collected text whose last update is at/after a prediction cutoff; treat missing update timestamps explicitly. Overall feedback can also change on edit, so interaction labels need the same audit. This cannot reconstruct earlier text or labels.",
               "- Share the versioned JSONL and manifest with Member 2, and these graph diagnostics with Member 3. Member 4 can use this pilot to develop annotation guidelines; ranking features must later respect the agreed historical split.",
               "- The limited metadata check above establishes only the fields it records; do not claim a full metadata audit.",
               "- Ask the lead to confirm the Steam/Amazon decision. Do not collect beyond this bound or silently mix sources.", "",
@@ -237,8 +255,8 @@ def build_report(records, manifest, request_log, baseline=None, metadata=None):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--output-dir", type=Path, default=ROOT / "outputs")
-    parser.add_argument("--baseline", type=Path, default=ROOT / "outputs/steam_pilot.jsonl")
+    parser.add_argument("--output-dir", type=Path, default=DEFAULT_OUTPUT_DIR)
+    parser.add_argument("--baseline", type=Path, default=ROOT / "outputs/steam_expanded_pilot.jsonl")
     args = parser.parse_args()
     data_path = args.output_dir / "steam_expanded_pilot.jsonl"
     manifest = json.loads((args.output_dir / "steam_expanded_manifest.json").read_text(encoding="utf-8"))

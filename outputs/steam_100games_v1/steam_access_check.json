@@ -1,0 +1,23 @@
+{
+  "tested_at_utc": "2026-11-21T09:04:08.044252Z",
+  "endpoint": "https://api.steampowered.com/IUserReviewsService/GetAppReviews/v1/",
+  "environment": "This execution machine and its current network; no VPN/proxy was configured by this crawler.",
+  "parameters": {
+    "appid": 570,
+    "filter": 1,
+    "languages": [
+      "english"
+    ],
+    "review_type": 0,
+    "purchase_type": 1,
+    "num_per_page": 2,
+    "cursor": "*",
+    "filter_offtopic_activity": true
+  },
+  "status": "success",
+  "http_status": 200,
+  "reviews_returned": 2,
+  "schema_check": "passed",
+  "has_cursor": true,
+  "elapsed_seconds": 0.955
+}

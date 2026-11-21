@@ -2,7 +2,7 @@
 
 Phần triển khai này chỉ phụ trách thu thập, provenance, kiểm tra chất lượng và độ kết nối. Dùng Python **3.10 trở lên**, chỉ thư viện chuẩn, không cần pip, GPU, Steam login hay API key.
 
-Đầu vào bàn giao cho các bước sau là `outputs/steam_expanded_pilot.jsonl`, đi kèm `outputs/steam_expanded_manifest.json`. Đây là snapshot review đã chuẩn hóa schema; chưa phải dữ liệu đã cleaning hoặc chia train/validation/test. Đọc `outputs/steam_overlap_report.md` trước khi dùng để đánh giá mô hình.
+Đầu vào hiện tại cho các bước sau là `outputs/steam_100games_v1/steam_expanded_pilot.jsonl`, đi kèm `outputs/steam_100games_v1/steam_expanded_manifest.json`. Mục tiêu là 10.000 review trên 100 game. Đây là snapshot review đã chuẩn hóa schema; chưa phải dữ liệu đã cleaning hoặc chia train/validation/test. Đọc `outputs/steam_100games_v1/steam_overlap_report.md` trước khi dùng để đánh giá mô hình. Snapshot 2.000 review cũ trong `outputs/` được giữ nguyên để đối chiếu.
 
 ## Chạy từ thư mục repo
 
@@ -16,7 +16,9 @@ python scripts/steam_overlap_report.py
 
 `--check-access` chỉ kiểm tra API và schema trên hai review, không lưu nội dung hoặc SteamID. Crawler dùng API mới với `input_json` và enum số theo [tài liệu Steamworks](https://partner.steamgames.com/doc/webapi/IUserReviewsService?l=english). Không dùng endpoint appreviews cũ.
 
-File `configs/steam_crawl_v0.json` cố định 20 app ID, tối đa 100 review/game, 50 review/trang, tối đa 5 trang/game. Khoảng nghỉ tối thiểu giữa request là 2 giây. Mẫu gồm 5 game pilot cũ và 15 game PC chọn thủ công; không phải mẫu ngẫu nhiên hay đại diện toàn Steam. Store audit xác minh ID, tên chính thức và loại app; không thu thập toàn bộ metadata.
+Mặc định dùng `configs/steam_crawl_100games_v1.json`: 100 app ID, tối đa 100 review được lưu/game, 100 review/trang, tối đa 5 trang/game. Khoảng nghỉ tối thiểu giữa request là 2 giây. Game được chọn thủ công trên nhiều thể loại và bao gồm 20 game pilot trước; không phải mẫu ngẫu nhiên hay đại diện toàn Steam. Store audit xác minh ID, tên chính thức và loại app; không thu thập toàn bộ metadata. Giới hạn 100 game thay thế giới hạn 20 game ban đầu theo yêu cầu mở rộng dự án.
+
+Để chạy tường minh, thêm `--config configs/steam_crawl_100games_v1.json --output-dir outputs/steam_100games_v1` cho crawler và metadata audit; thêm `--output-dir outputs/steam_100games_v1` cho report. Các lệnh không tham số ở trên đã dùng mặc định mới này.
 
 ## Dừng và chạy tiếp
 
@@ -40,17 +42,17 @@ Nếu đạt giới hạn trang, hết dữ liệu hoặc cursor không tiến l
 Không sửa config rồi tiếp tục một snapshot cũ: chương trình kiểm tra checksum config và từ chối trộn cấu hình. Khi cần một lần thu thập mới, dùng thư mục khác:
 
 ```powershell
-python scripts/steam_crawler.py --output-dir outputs/steam_expanded_v1 --check-access
-python scripts/steam_crawler.py --output-dir outputs/steam_expanded_v1
-python scripts/steam_metadata_audit.py --output-dir outputs/steam_expanded_v1
-python scripts/steam_overlap_report.py --output-dir outputs/steam_expanded_v1
+python scripts/steam_crawler.py --output-dir outputs/steam_100games_v2 --check-access
+python scripts/steam_crawler.py --output-dir outputs/steam_100games_v2
+python scripts/steam_metadata_audit.py --output-dir outputs/steam_100games_v2
+python scripts/steam_overlap_report.py --output-dir outputs/steam_100games_v2
 ```
 
 Giữ nguyên giới hạn đã thống nhất; việc mở rộng ngoài pilot cần nhóm chốt mục tiêu trước. Snapshot online mới có thể khác do review mới, review chỉnh sửa và cache của API, ngay cả khi config giống nhau. Các file `steam_pilot.jsonl` và `steam_pilot_manifest.json` gốc không bị ghi đè.
 
 ## Các file đầu ra
 
-| File trong outputs/ | Ý nghĩa |
+| File trong outputs/steam_100games_v1/ | Ý nghĩa |
 | --- | --- |
 | `steam_access_check.json` | Kết quả truy cập API và kiểm tra schema trên máy/mạng chạy lệnh |
 | `steam_expanded_pilot.jsonl` | Review đã chuẩn hóa, mỗi dòng một JSON |
@@ -61,6 +63,8 @@ Giữ nguyên giới hạn đã thống nhất; việc mở rộng ngoài pilot 
 | `steam_overlap_report.md` | Báo cáo để gửi nhóm, so sánh pilot cũ và đề xuất nguồn |
 
 Review giữ đúng schema pilot: ID review, SHA-256 user ID, ID/tên game, thời gian tạo và crawl, feedback gốc, positive_interaction, title/text, language, helpful_votes và source_url. SteamID gốc chỉ được dùng trong bộ nhớ để hash, không được ghi ra log hay response file.
+
+Snapshot mới bổ sung `timestamp_updated` khi nguồn trả về: Unix seconds cho lần chỉnh sửa cuối cùng. Schema checker vẫn chấp nhận snapshot cũ thiếu trường này. Trước mỗi cutoff, cần kiểm tra cả thời gian tạo và thời gian chỉnh sửa; không xem text/feedback được sửa sau cutoff là thông tin lịch sử. Trường này không khôi phục được các phiên bản cũ của review.
 
 Giữ cả hai nhãn feedback và cả review rỗng; report đếm rõ số rỗng để Member 2 quyết định cách xử lý. Bản ghi thiếu định danh, timestamp, nhãn Boolean hoặc sai ngôn ngữ bị loại với lý do trong manifest. Không tự suy diễn feedback bị thiếu thành false. Source language được kiểm tra theo API, chưa chạy mô hình xác định ngôn ngữ độc lập.
 
@@ -74,11 +78,11 @@ Các test offline kiểm tra hash/nhãn tiêu cực, phân trang và giới hạ
 
 ## Những việc cần bạn phối hợp với nhóm
 
-1. Đọc `outputs/steam_overlap_report.md`, gửi JSONL + manifest cho Member 2 và báo cáo graph cho Member 3. Không gửi lời hứa rằng mẫu này đủ để đánh giá mô hình.
+1. Đọc `outputs/steam_100games_v1/steam_overlap_report.md`, gửi JSONL + manifest cho Member 2 và báo cáo graph cho Member 3. Không gửi lời hứa rằng mẫu này đủ để đánh giá mô hình.
 2. Trao đổi với trưởng nhóm về đề xuất Steam/Amazon. Chưa có ngưỡng chấp nhận overlap được nhóm chốt; các số đếm hiện tại là bằng chứng để quyết định, không phải kết quả từ evaluator.
 3. Nếu crawl sẽ chuyển sang máy/mạng khác, người chạy ở đó cần kiểm tra `--check-access` lại. Kết quả máy này không xác nhận mạng khác.
 4. Mã nguồn và snapshot được quản lý trên nhánh `main`. Với các cập nhật tiếp theo, thống nhất phiên bản dữ liệu và quy trình review với nhóm.
 
 Member 2 sở hữu cleaning/split/evaluator, Member 3 sở hữu model, Member 4 sở hữu opinion mining. Không tự tạo một split khác hay gắn nhãn aspect dựa trên voted_up. Mỗi người cần làm phần annotation độc lập theo phân công thực tế của nhóm; crawler không tạo nhãn người dùng giả.
 
-Lưu ý dữ liệu theo thời gian: timestamp của review là thời gian tạo; nội dung tải hôm nay có thể đã được sửa sau đó. Nhóm cần chính sách xử lý edit-time hoặc snapshot lịch sử trước khi dùng text để tuyên bố thí nghiệm không có rò rỉ tương lai. Với chỉ 20 game, Recall@20 dễ trở thành chỉ số tầm thường vì K bao phủ toàn bộ tập ứng viên.
+Lưu ý dữ liệu theo thời gian: timestamp của review là thời gian tạo; nội dung tải hôm nay có thể đã được sửa sau đó. Nhóm cần chính sách xử lý edit-time hoặc snapshot lịch sử trước khi dùng text để tuyên bố thí nghiệm không có rò rỉ tương lai. Mẫu 100 game khắc phục giới hạn catalog 20 game cũ, nhưng sau khi lọc theo lịch sử một số tập ứng viên vẫn có thể nhỏ; phải báo cáo số ứng viên và coverage thật.

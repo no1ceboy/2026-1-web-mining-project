@@ -1,6 +1,6 @@
 # Data Collection and Provenance Guide
 
-Implementation and run instructions: [Steam data collection runbook](../../../docs/steam_data_collection.md). Start with `python scripts/steam_crawler.py --check-access` from the repository root. The expanded pilot and source recommendation are documented in [the overlap report](../../steam_overlap_report.md).
+Implementation and run instructions: [Steam data collection runbook](../../../docs/steam_data_collection.md). Start with `python scripts/steam_crawler.py --check-access` from the repository root. The current 100-game snapshot and source assessment are documented in [the overlap report](../../steam_100games_v1/steam_overlap_report.md). The original 20-game snapshot is preserved separately.
 
 ## Project in one minute
 
@@ -20,7 +20,7 @@ The pilot has 200 unique reviews and 199 unique hashed reviewers, but only one r
 
 Use Steam's current documented `IUserReviewsService/GetAppReviews` endpoint: [Steamworks API documentation](https://partner.steamgames.com/doc/webapi/IUserReviewsService?l=english). The endpoint returns review text, reviewer ID, timestamp, and `voted_up`; it does not return a 1–5 star rating. The app ID is the game ID. The project uses one source, Steam, across multiple game app IDs so reviewers can connect games in the graph.
 
-For the next feasibility sample, target **up to 100 recent English reviews for about 20 game IDs** (at most 2,000 records). Use `purchase_type=all`, preserve the returned cursor, and save progress incrementally. Steam documents a maximum of 100 reviews per page; anonymous requests have lower rate limits. On HTTP 429, wait and retry with backoff. Do not bypass access controls or keep retrying aggressively.
+The updated collection target is **up to 100 recent English reviews for 100 game IDs** (at most 10,000 saved records), replacing the original 20-game feasibility target. Use `purchase_type=all`, preserve the returned cursor, and save progress incrementally. Steam documents a maximum of 100 reviews per page; anonymous requests have lower rate limits. On HTTP 429, wait and retry with backoff. Do not bypass access controls or keep retrying aggressively.
 
 ## Shared record format
 
@@ -33,6 +33,7 @@ Keep the current pilot's field names and types consistent:
 | `item_id` | Steam app ID as a string |
 | `item_title` | Game title for readability |
 | `timestamp` | Review creation time as Unix seconds |
+| `timestamp_updated` | Last edit time as Unix seconds when provided; preserved in the new snapshot, optional for older snapshots |
 | `crawl_time_utc` | Time this record was collected |
 | `source_feedback` | Original `voted_up` Boolean; overall recommendation, not aspect sentiment |
 | `positive_interaction` | Same Boolean for Steam; downstream graph code uses `true` as a positive edge |
@@ -46,12 +47,12 @@ Do not include raw SteamIDs in saved outputs. Do not map `voted_up` to aspect se
 ## Tasks and deliverables
 
 1. Confirm the API works from the crawler owner's normal network and record the test result.
-2. Expand the sample to up to 20 games and 100 recent English reviews per game. Keep a request log and make the crawl resumable.
+2. Expand the sample to 100 games and up to 100 recent English reviews per game. Keep a request log and make the crawl resumable.
 3. Save:
-   - `outputs/steam_expanded_pilot.jsonl`
-   - `outputs/steam_expanded_manifest.json` with endpoint, filters, app IDs, page/cursor counts, times, and failures.
-   - `outputs/steam_overlap_report.md` with records per game, duplicate and blank-text counts, unique reviewers, reviewers on multiple games, positive-edge counts, and the largest positive-graph connected component.
-4. Recommend **continue with Steam** or **fall back to Amazon** based on access, review coverage, and graph overlap. Do not claim the 2,000-record pilot is representative.
+   - `outputs/steam_100games_v1/steam_expanded_pilot.jsonl`
+   - `outputs/steam_100games_v1/steam_expanded_manifest.json` with endpoint, filters, app IDs, page/cursor counts, times, and failures.
+   - `outputs/steam_100games_v1/steam_overlap_report.md` with records per game, duplicate and blank-text counts, unique reviewers, reviewers on multiple games, positive-edge counts, and the largest positive-graph connected component.
+4. Assess whether to continue with Steam or use the Amazon fallback based on access, review coverage, overlap and the shared chronological evaluator. Do not claim the 10,000-record convenience sample is representative.
 
 ## Completion checklist
 
@@ -65,4 +66,4 @@ Do not include raw SteamIDs in saved outputs. Do not map `voted_up` to aspect se
 
 Open this guide and the two pilot files above in the shared Codex workspace, then paste:
 
-> I own the Steam crawler workstream for this project. Read this guide and inspect the existing pilot and code before editing. First verify that the documented Steam reviews endpoint works from this environment. Then implement a bounded, resumable crawl of up to 100 recent English reviews for about 20 game IDs, preserving the pilot schema and never overwriting the pilot. Save the expanded JSONL, a resumable manifest, and the overlap/data-quality report listed above. Include polite rate-limit handling and incremental saves. Do not bypass access controls, switch sources silently, or claim this convenience sample is representative. If the API is inaccessible or overlap remains too sparse, report evidence and recommend the Amazon fallback. Keep changes limited to crawler-owned files and summarize the artifacts and blockers when done.
+> I own the Steam data collection workstream. Read this guide and inspect the current code and snapshots before editing. Verify the documented reviews endpoint, then run the bounded, resumable 100-game configuration with up to 100 recent English reviews per game. Preserve existing snapshots; save the new version under outputs/steam_100games_v1. Include hashes, timestamps, update times, source provenance, request logs, resumable progress and quality/overlap diagnostics. Do not bypass access controls, switch sources silently or claim representativeness. Coordinate the shared chronological feasibility check before making model-quality claims.
