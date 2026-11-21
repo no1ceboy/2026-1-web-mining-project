@@ -1,5 +1,7 @@
 # Đánh giá kỹ thuật dự án Web Mining
 
+**Cập nhật sau đánh giá:** phần lấy mẫu đã có [thiết kế theo lịch sử người dùng](sampling_design.md), collector và coverage builder mới. Nhận định/số liệu v1 bên dưới được giữ làm căn cứ ban đầu; xem [audit v3](../outputs/steam_history_v3/sampling_report.md) để biết kết quả acquisition mới, không suy diễn rằng mọi hạn chế đã được giải quyết hoặc đã có final ranking benchmark.
+
 Ngày đánh giá: 21/11/2026. Phạm vi: nội dung kế hoạch, mã nguồn có trên `main` trước đợt mở rộng, và kết quả snapshot `steam_100games_v1`. Đây là nhận định kỹ thuật, không phải điểm dự đoán của giảng viên; repo chưa có rubric chấm điểm chính thức. Công việc nằm trên nhánh riêng của các thành viên khác chưa được đánh giá.
 
 ## Nhận định

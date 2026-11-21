@@ -1,2 +1,3 @@
 # Preserve JSONL bytes across platforms so dataset checksums remain valid.
 *.jsonl text eol=lf
+*.json text eol=lf

@@ -1,0 +1,68 @@
+{
+  "generated_at_utc": "2026-11-21T12:16:24.992860Z",
+  "dataset_version": "steam_history_v2",
+  "collection_status": "paused_profile_budget",
+  "seed_users": 4766,
+  "profiles_attempted": 50,
+  "profile_status_counts": {
+    "complete": 49,
+    "unavailable": 1
+  },
+  "discovered_reviews": 122,
+  "discovered_users_with_in_catalog_reviews": 50,
+  "unfiltered_discovered_positive_history_distribution": {
+    "1": 32,
+    "2": 6,
+    "3": 5,
+    "4": 1,
+    "5": 2,
+    "6": 1,
+    "7": 1,
+    "10": 1,
+    "12": 1
+  },
+  "selected_users": 10,
+  "selected_reviews": 60,
+  "collection_user_target": 500,
+  "minimum_evaluation_cohort_users": 500,
+  "collection_targets_reached": false,
+  "selected_games_observed": 42,
+  "catalogue_games": 100,
+  "cohort_exclusion_counts": {
+    "insufficient_training_positive_games": 39,
+    "profile_not_complete": 1
+  },
+  "positive_reviews": 55,
+  "negative_reviews": 5,
+  "blank_cohort_texts": 1,
+  "short_cohort_texts": 54,
+  "opinion_train_candidates": 5,
+  "validation": {
+    "positive_training_edges": 53,
+    "warm_users": 10,
+    "warm_items": 37,
+    "eligible_target_users": 0,
+    "candidate_count_min": 0,
+    "candidate_count_max": 0,
+    "targets_with_more_than_20_candidates": 0,
+    "target_exclusion_observations": {}
+  },
+  "test": {
+    "positive_training_edges": 54,
+    "warm_users": 10,
+    "warm_items": 38,
+    "eligible_target_users": 0,
+    "candidate_count_min": 0,
+    "candidate_count_max": 0,
+    "targets_with_more_than_20_candidates": 0,
+    "target_exclusion_observations": {}
+  },
+  "matched_old_new_positive_users": 0,
+  "old_positive_edges_matched_users": 0,
+  "new_positive_edges_matched_users": 0,
+  "planning_gate_passed": false,
+  "planning_gate_note": "500 training-defined users and 100/100 eligible users in validation/test with >20 candidates are declared project planning targets, not universal statistical requirements. No ranking metrics were computed.",
+  "review_count_target_is_soft": true,
+  "review_count_note": "Never truncate individual rows or select users using future review counts to hit exactly 10,000. Membership uses training history only; the final count may differ.",
+  "raw_data_sha256": "029fdd3b79a50ff7e28384cb8249ef4f942bcbb4fd830bf0f2033133b9a63dbd"
+}

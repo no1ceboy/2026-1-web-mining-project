@@ -1,0 +1,84 @@
+{
+  "generated_at_utc": "2026-11-21T12:16:25.382461Z",
+  "dataset_version": "steam_history_v3",
+  "collection_status": "paused_profile_budget",
+  "seed_users": 8908,
+  "profiles_attempted": 100,
+  "profile_status_counts": {
+    "complete": 92,
+    "truncated_page_limit": 6,
+    "unavailable": 2
+  },
+  "discovered_reviews": 875,
+  "discovered_users_with_in_catalog_reviews": 100,
+  "unfiltered_discovered_positive_history_distribution": {
+    "2": 12,
+    "3": 1,
+    "4": 13,
+    "5": 10,
+    "6": 9,
+    "7": 6,
+    "8": 6,
+    "9": 9,
+    "10": 10,
+    "11": 3,
+    "12": 5,
+    "13": 5,
+    "14": 3,
+    "15": 1,
+    "16": 3,
+    "19": 2,
+    "21": 1,
+    "25": 1
+  },
+  "selected_users": 54,
+  "selected_reviews": 554,
+  "collection_user_target": 500,
+  "minimum_evaluation_cohort_users": 500,
+  "collection_targets_reached": false,
+  "selected_games_observed": 95,
+  "catalogue_games": 100,
+  "cohort_exclusion_counts": {
+    "insufficient_training_positive_games": 38,
+    "profile_not_complete": 8
+  },
+  "positive_reviews": 509,
+  "negative_reviews": 45,
+  "blank_cohort_texts": 0,
+  "short_cohort_texts": 382,
+  "opinion_train_candidates": 85,
+  "validation": {
+    "positive_training_edges": 334,
+    "warm_users": 54,
+    "warm_items": 84,
+    "eligible_target_users": 22,
+    "candidate_count_min": 69,
+    "candidate_count_max": 81,
+    "targets_with_more_than_20_candidates": 22,
+    "target_exclusion_observations": {
+      "cold_item": 9,
+      "target_has_visible_later_edit": 1
+    }
+  },
+  "test": {
+    "positive_training_edges": 458,
+    "warm_users": 54,
+    "warm_items": 90,
+    "eligible_target_users": 23,
+    "candidate_count_min": 69,
+    "candidate_count_max": 86,
+    "targets_with_more_than_20_candidates": 23,
+    "target_exclusion_observations": {
+      "cold_item": 6,
+      "target_has_visible_later_edit": 2
+    }
+  },
+  "matched_old_new_positive_users": 0,
+  "old_positive_edges_matched_users": 0,
+  "new_positive_edges_matched_users": 0,
+  "planning_gate_passed": false,
+  "planning_gate_note": "500 training-defined users and 100/100 eligible users in validation/test with >20 candidates are declared project planning targets, not universal statistical requirements. No ranking metrics were computed.",
+  "review_count_target_is_soft": true,
+  "review_count_note": "Never truncate individual rows or select users using future review counts to hit exactly 10,000. Membership uses training history only; the final count may differ.",
+  "raw_data_sha256": "9d7f2b0c4460582aff3b05531b78b557790cce58e939a4beb90814edd40a421d"
+}

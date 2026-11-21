@@ -1,5 +1,7 @@
 # Steam Data Collection — Hướng dẫn vận hành và bàn giao
 
+**Lấy mẫu cho recommendation đã được thiết kế lại:** xem [sampling_design.md](sampling_design.md) và `scripts/steam_history_sampler.py`. Tài liệu bên dưới mô tả crawler API theo quota của snapshot v1 để đối chiếu và tái lập, không phải khuyến nghị lấy mẫu cuối cho graph.
+
 Phần triển khai này chỉ phụ trách thu thập, provenance, kiểm tra chất lượng và độ kết nối. Dùng Python **3.10 trở lên**, chỉ thư viện chuẩn, không cần pip, GPU, Steam login hay API key.
 
 Đầu vào hiện tại cho các bước sau là `outputs/steam_100games_v1/steam_expanded_pilot.jsonl`, đi kèm `outputs/steam_100games_v1/steam_expanded_manifest.json`. Mục tiêu là 10.000 review trên 100 game. Đây là snapshot review đã chuẩn hóa schema; chưa phải dữ liệu đã cleaning hoặc chia train/validation/test. Đọc `outputs/steam_100games_v1/steam_overlap_report.md` trước khi dùng để đánh giá mô hình. Snapshot 2.000 review cũ trong `outputs/` được giữ nguyên để đối chiếu.

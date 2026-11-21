@@ -24,3 +24,7 @@ cache/
 .DS_Store
 Thumbs.db
 .vscode/
+
+# Private sampling lookup state / local source-review links
+*.dpapi
+*_spotcheck.html

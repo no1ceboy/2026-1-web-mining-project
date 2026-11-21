@@ -1,0 +1,43 @@
+{
+  "dataset_version": "steam_history_full_v1",
+  "catalogue_config": "configs/steam_crawl_100games_v1.json",
+  "catalogue_metadata": "outputs/steam_100games_v1/steam_metadata_audit.json",
+  "baseline_reviews": "outputs/steam_100games_v1/steam_expanded_pilot.jsonl",
+  "catalogue_replacements": [
+    {
+      "replace_app_id": 2694490,
+      "app_id": 435150,
+      "game": "Divinity: Original Sin 2 - Definitive Edition"
+    },
+    {
+      "replace_app_id": 39210,
+      "app_id": 1151340,
+      "game": "Fallout 76"
+    }
+  ],
+  "observation_start_utc": "2020-01-01T00:00:00Z",
+  "validation_cutoff_utc": "2024-01-01T00:00:00Z",
+  "test_cutoff_utc": "2025-01-01T00:00:00Z",
+  "observation_end_utc": "2026-11-21T00:00:00Z",
+  "seed_reviews_per_game": 100,
+  "minimum_positive_training_games": 3,
+  "selection_seed": "steam-history-v3-2026-11-21",
+  "target_cohort_users": 1000,
+  "target_cohort_reviews": 10000,
+  "minimum_validation_users": 100,
+  "minimum_test_users": 100,
+  "max_profile_users": 4000,
+  "max_profile_pages": 10,
+  "max_http_attempts": 6000,
+  "request_interval_seconds": 2,
+  "timeout_seconds": 25,
+  "max_retries": 2,
+  "backoff_seconds": 2,
+  "minimum_opinion_tokens": 20,
+  "minimum_english_detector_score": 0.9,
+  "community_date_upper_bound_hours": 38,
+  "scope": "Train-defined cohort of reviewers with at least three positive in-catalog training games. This is not a representative sample of all Steam users. Collect complete accessible public histories within the fixed window and catalogue; do not require future positives, fixed reviews per item, or an all-time k-core. Graph interactions can have any language; opinion-training candidates require English detection, sufficient text and historical availability.",
+  "seed_priority": "training_seed_degree_then_hash",
+  "protocol_note": "Sampling-feasibility revision after the v2 50-profile calibration: use a full validation year and a longer test horizon; prioritize repeat-game evidence found only in pre-2024 seed records. No ranking models or test ranking metrics were run. This is a historical long-horizon task, not a current-session next-game claim. Full-scale resource template, not automatically executed by the design pilot: fixed target 1000 train-eligible users to aim near 10000 whole-history reviews; soft row target, hard request/user limits. No future target is required for cohort membership.",
+  "minimum_cohort_users_for_evaluation": 500
+}

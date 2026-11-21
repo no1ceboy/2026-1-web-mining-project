@@ -1,5 +1,7 @@
 # Data Collection and Provenance Guide
 
+For the revised recommendation sampling workstream, use the [user-history design and runbook](../../../docs/sampling_design.md) and [v3 audit](../../steam_history_v3/sampling_report.md). The API quota-crawl instructions below describe the earlier v1 reference snapshot; they do not replace the train-defined cohort rules in the new design.
+
 Implementation and run instructions: [Steam data collection runbook](../../../docs/steam_data_collection.md). Start with `python scripts/steam_crawler.py --check-access` from the repository root. The current 100-game snapshot and source assessment are documented in [the overlap report](../../steam_100games_v1/steam_overlap_report.md). The original 20-game snapshot is preserved separately.
 
 ## Project in one minute

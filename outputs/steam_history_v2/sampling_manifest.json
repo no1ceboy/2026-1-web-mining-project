@@ -1,0 +1,1119 @@
+{
+  "dataset_version": "steam_history_v2",
+  "settings": {
+    "dataset_version": "steam_history_v2",
+    "catalogue_config": "configs/steam_crawl_100games_v1.json",
+    "catalogue_metadata": "outputs/steam_100games_v1/steam_metadata_audit.json",
+    "baseline_reviews": "outputs/steam_100games_v1/steam_expanded_pilot.jsonl",
+    "catalogue_replacements": [
+      {
+        "replace_app_id": 2694490,
+        "app_id": 435150,
+        "game": "Divinity: Original Sin 2 - Definitive Edition"
+      },
+      {
+        "replace_app_id": 39210,
+        "app_id": 1151340,
+        "game": "Fallout 76"
+      }
+    ],
+    "observation_start_utc": "2020-01-01T00:00:00Z",
+    "validation_cutoff_utc": "2026-09-01T00:00:00Z",
+    "test_cutoff_utc": "2026-10-01T00:00:00Z",
+    "observation_end_utc": "2026-11-21T00:00:00Z",
+    "seed_reviews_per_game": 50,
+    "minimum_positive_training_games": 3,
+    "selection_seed": "steam-history-v2-2026-11-21",
+    "target_cohort_users": 500,
+    "target_cohort_reviews": 10000,
+    "minimum_validation_users": 100,
+    "minimum_test_users": 100,
+    "max_profile_users": 2000,
+    "max_profile_pages": 10,
+    "max_http_attempts": 2500,
+    "request_interval_seconds": 2,
+    "timeout_seconds": 25,
+    "max_retries": 2,
+    "backoff_seconds": 2,
+    "minimum_opinion_tokens": 20,
+    "minimum_english_detector_score": 0.9,
+    "community_date_upper_bound_hours": 38,
+    "scope": "Train-defined cohort of reviewers with at least three positive in-catalog training games. This is not a representative sample of all Steam users. Collect complete accessible public histories within the fixed window and catalogue; do not require future positives, fixed reviews per item, or an all-time k-core. Graph interactions can have any language; opinion-training candidates require English detection, sufficient text and historical availability."
+  },
+  "config_sha256": "0c9ff63dc51f211ded2291e31722e694914ae0ec214be1dca32617451ebf6915",
+  "started_at_utc": "2026-11-21T11:31:11.864343Z",
+  "status": "paused_profile_budget",
+  "output_directory_sha256": "9c696860f561c9b0f1a3535de6b3a3e690c4338496ddec46e516568a094a149e",
+  "apps": [
+    {
+      "app_id": 570,
+      "game": "Dota 2",
+      "metadata_status": "verified_existing_audit"
+    },
+    {
+      "app_id": 730,
+      "game": "Counter-Strike 2",
+      "metadata_status": "verified_existing_audit"
+    },
+    {
+      "app_id": 440,
+      "game": "Team Fortress 2",
+      "metadata_status": "verified_existing_audit"
+    },
+    {
+      "app_id": 620,
+      "game": "Portal 2",
+      "metadata_status": "verified_existing_audit"
+    },
+    {
+      "app_id": 550,
+      "game": "Left 4 Dead 2",
+      "metadata_status": "verified_existing_audit"
+    },
+    {
+      "app_id": 400,
+      "game": "Portal",
+      "metadata_status": "verified_existing_audit"
+    },
+    {
+      "app_id": 220,
+      "game": "Half-Life 2",
+      "metadata_status": "verified_existing_audit"
+    },
+    {
+      "app_id": 4000,
+      "game": "Garry's Mod",
+      "metadata_status": "verified_existing_audit"
+    },
+    {
+      "app_id": 105600,
+      "game": "Terraria",
+      "metadata_status": "verified_existing_audit"
+    },
+    {
+      "app_id": 413150,
+      "game": "Stardew Valley",
+      "metadata_status": "verified_existing_audit"
+    },
+    {
+      "app_id": 1091500,
+      "game": "Cyberpunk 2077",
+      "metadata_status": "verified_existing_audit"
+    },
+    {
+      "app_id": 1245620,
+      "game": "ELDEN RING",
+      "metadata_status": "verified_existing_audit"
+    },
+    {
+      "app_id": 1086940,
+      "game": "Baldur's Gate 3",
+      "metadata_status": "verified_existing_audit"
+    },
+    {
+      "app_id": 292030,
+      "game": "The Witcher 3: Wild Hunt",
+      "metadata_status": "verified_existing_audit"
+    },
+    {
+      "app_id": 1174180,
+      "game": "Red Dead Redemption 2",
+      "metadata_status": "verified_existing_audit"
+    },
+    {
+      "app_id": 367520,
+      "game": "Hollow Knight",
+      "metadata_status": "verified_existing_audit"
+    },
+    {
+      "app_id": 1145360,
+      "game": "Hades",
+      "metadata_status": "verified_existing_audit"
+    },
+    {
+      "app_id": 646570,
+      "game": "Slay the Spire",
+      "metadata_status": "verified_existing_audit"
+    },
+    {
+      "app_id": 294100,
+      "game": "RimWorld",
+      "metadata_status": "verified_existing_audit"
+    },
+    {
+      "app_id": 548430,
+      "game": "Deep Rock Galactic",
+      "metadata_status": "verified_existing_audit"
+    },
+    {
+      "app_id": 271590,
+      "game": "Grand Theft Auto V Legacy",
+      "metadata_status": "verified_existing_audit"
+    },
+    {
+      "app_id": 1172470,
+      "game": "Apex Legends",
+      "metadata_status": "verified_existing_audit"
+    },
+    {
+      "app_id": 578080,
+      "game": "PUBG: BATTLEGROUNDS",
+      "metadata_status": "verified_existing_audit"
+    },
+    {
+      "app_id": 252490,
+      "game": "Rust",
+      "metadata_status": "verified_existing_audit"
+    },
+    {
+      "app_id": 346110,
+      "game": "ARK: Survival Evolved",
+      "metadata_status": "verified_existing_audit"
+    },
+    {
+      "app_id": 945360,
+      "game": "Among Us",
+      "metadata_status": "verified_existing_audit"
+    },
+    {
+      "app_id": 1794680,
+      "game": "Vampire Survivors",
+      "metadata_status": "verified_existing_audit"
+    },
+    {
+      "app_id": 1966720,
+      "game": "Lethal Company",
+      "metadata_status": "verified_existing_audit"
+    },
+    {
+      "app_id": 1623730,
+      "game": "Palworld",
+      "metadata_status": "verified_existing_audit"
+    },
+    {
+      "app_id": 892970,
+      "game": "Valheim",
+      "metadata_status": "verified_existing_audit"
+    },
+    {
+      "app_id": 108600,
+      "game": "Project Zomboid",
+      "metadata_status": "verified_existing_audit"
+    },
+    {
+      "app_id": 1144200,
+      "game": "Ready or Not",
+      "metadata_status": "verified_existing_audit"
+    },
+    {
+      "app_id": 1938090,
+      "game": "Call of Duty",
+      "metadata_status": "verified_existing_audit"
+    },
+    {
+      "app_id": 359550,
+      "game": "Tom Clancy's Rainbow Six Siege",
+      "metadata_status": "verified_existing_audit"
+    },
+    {
+      "app_id": 381210,
+      "game": "Dead by Daylight",
+      "metadata_status": "verified_existing_audit"
+    },
+    {
+      "app_id": 322330,
+      "game": "Don't Starve Together",
+      "metadata_status": "verified_existing_audit"
+    },
+    {
+      "app_id": 219740,
+      "game": "Don't Starve",
+      "metadata_status": "verified_existing_audit"
+    },
+    {
+      "app_id": 275850,
+      "game": "No Man's Sky",
+      "metadata_status": "verified_existing_audit"
+    },
+    {
+      "app_id": 264710,
+      "game": "Subnautica",
+      "metadata_status": "verified_existing_audit"
+    },
+    {
+      "app_id": 848450,
+      "game": "Subnautica: Below Zero",
+      "metadata_status": "verified_existing_audit"
+    },
+    {
+      "app_id": 242760,
+      "game": "The Forest",
+      "metadata_status": "verified_existing_audit"
+    },
+    {
+      "app_id": 1326470,
+      "game": "Sons Of The Forest",
+      "metadata_status": "verified_existing_audit"
+    },
+    {
+      "app_id": 1084600,
+      "game": "My Time at Sandrock",
+      "metadata_status": "verified_existing_audit"
+    },
+    {
+      "app_id": 666140,
+      "game": "My Time at Portia",
+      "metadata_status": "verified_existing_audit"
+    },
+    {
+      "app_id": 632360,
+      "game": "Risk of Rain 2",
+      "metadata_status": "verified_existing_audit"
+    },
+    {
+      "app_id": 250900,
+      "game": "The Binding of Isaac: Rebirth",
+      "metadata_status": "verified_existing_audit"
+    },
+    {
+      "app_id": 753640,
+      "game": "Outer Wilds",
+      "metadata_status": "verified_existing_audit"
+    },
+    {
+      "app_id": 588650,
+      "game": "Dead Cells",
+      "metadata_status": "verified_existing_audit"
+    },
+    {
+      "app_id": 504230,
+      "game": "Celeste",
+      "metadata_status": "verified_existing_audit"
+    },
+    {
+      "app_id": 268910,
+      "game": "Cuphead",
+      "metadata_status": "verified_existing_audit"
+    },
+    {
+      "app_id": 391540,
+      "game": "Undertale",
+      "metadata_status": "verified_existing_audit"
+    },
+    {
+      "app_id": 427520,
+      "game": "Factorio",
+      "metadata_status": "verified_existing_audit"
+    },
+    {
+      "app_id": 526870,
+      "game": "Satisfactory",
+      "metadata_status": "verified_existing_audit"
+    },
+    {
+      "app_id": 457140,
+      "game": "Oxygen Not Included",
+      "metadata_status": "verified_existing_audit"
+    },
+    {
+      "app_id": 255710,
+      "game": "Cities: Skylines",
+      "metadata_status": "verified_existing_audit"
+    },
+    {
+      "app_id": 949230,
+      "game": "Cities: Skylines II",
+      "metadata_status": "verified_existing_audit"
+    },
+    {
+      "app_id": 227300,
+      "game": "Euro Truck Simulator 2",
+      "metadata_status": "verified_existing_audit"
+    },
+    {
+      "app_id": 270880,
+      "game": "American Truck Simulator",
+      "metadata_status": "verified_existing_audit"
+    },
+    {
+      "app_id": 289070,
+      "game": "Sid Meier's Civilization VI",
+      "metadata_status": "verified_existing_audit"
+    },
+    {
+      "app_id": 8930,
+      "game": "Sid Meier's Civilization V",
+      "metadata_status": "verified_existing_audit"
+    },
+    {
+      "app_id": 236850,
+      "game": "Europa Universalis IV",
+      "metadata_status": "verified_existing_audit"
+    },
+    {
+      "app_id": 281990,
+      "game": "Stellaris",
+      "metadata_status": "verified_existing_audit"
+    },
+    {
+      "app_id": 394360,
+      "game": "Hearts of Iron IV",
+      "metadata_status": "verified_existing_audit"
+    },
+    {
+      "app_id": 1158310,
+      "game": "Crusader Kings III",
+      "metadata_status": "verified_existing_audit"
+    },
+    {
+      "app_id": 251570,
+      "game": "7 Days to Die",
+      "metadata_status": "verified_existing_audit"
+    },
+    {
+      "app_id": 238960,
+      "game": "Path of Exile",
+      "metadata_status": "verified_existing_audit"
+    },
+    {
+      "app_id": 435150,
+      "game": "Divinity: Original Sin 2 - Definitive Edition",
+      "metadata_status": "verified_live",
+      "replaces_unverified_app": 2694490,
+      "metadata_url": "https://store.steampowered.com/api/appdetails?appids=435150&filters=basic",
+      "official_title": "Divinity: Original Sin 2 - Definitive Edition",
+      "metadata_checked_at_utc": "2026-11-21T11:31:12.361608Z"
+    },
+    {
+      "app_id": 899770,
+      "game": "Last Epoch",
+      "metadata_status": "verified_existing_audit"
+    },
+    {
+      "app_id": 2344520,
+      "game": "Diablo IV",
+      "metadata_status": "verified_existing_audit"
+    },
+    {
+      "app_id": 582010,
+      "game": "Monster Hunter: World",
+      "metadata_status": "verified_existing_audit"
+    },
+    {
+      "app_id": 1446780,
+      "game": "MONSTER HUNTER RISE",
+      "metadata_status": "verified_existing_audit"
+    },
+    {
+      "app_id": 814380,
+      "game": "Sekiro: Shadows Die Twice",
+      "metadata_status": "verified_existing_audit"
+    },
+    {
+      "app_id": 374320,
+      "game": "DARK SOULS III",
+      "metadata_status": "verified_existing_audit"
+    },
+    {
+      "app_id": 570940,
+      "game": "DARK SOULS: REMASTERED",
+      "metadata_status": "verified_existing_audit"
+    },
+    {
+      "app_id": 960090,
+      "game": "Bloons TD 6",
+      "metadata_status": "verified_existing_audit"
+    },
+    {
+      "app_id": 1244460,
+      "game": "Jurassic World Evolution 2",
+      "metadata_status": "verified_existing_audit"
+    },
+    {
+      "app_id": 703080,
+      "game": "Planet Zoo",
+      "metadata_status": "verified_existing_audit"
+    },
+    {
+      "app_id": 493340,
+      "game": "Planet Coaster",
+      "metadata_status": "verified_existing_audit"
+    },
+    {
+      "app_id": 582660,
+      "game": "Black Desert",
+      "metadata_status": "verified_existing_audit"
+    },
+    {
+      "app_id": 306130,
+      "game": "The Elder Scrolls Online",
+      "metadata_status": "verified_existing_audit"
+    },
+    {
+      "app_id": 1151340,
+      "game": "Fallout 76",
+      "metadata_status": "verified_live",
+      "replaces_unverified_app": 39210,
+      "metadata_url": "https://store.steampowered.com/api/appdetails?appids=1151340&filters=basic",
+      "official_title": "Fallout 76",
+      "metadata_checked_at_utc": "2026-11-21T11:31:14.096054Z"
+    },
+    {
+      "app_id": 1284210,
+      "game": "Guild Wars 2",
+      "metadata_status": "verified_existing_audit"
+    },
+    {
+      "app_id": 230410,
+      "game": "Warframe",
+      "metadata_status": "verified_existing_audit"
+    },
+    {
+      "app_id": 1085660,
+      "game": "Destiny 2",
+      "metadata_status": "verified_existing_audit"
+    },
+    {
+      "app_id": 1238810,
+      "game": "Battlefield V",
+      "metadata_status": "verified_existing_audit"
+    },
+    {
+      "app_id": 1517290,
+      "game": "Battlefield 2042",
+      "metadata_status": "verified_existing_audit"
+    },
+    {
+      "app_id": 1238840,
+      "game": "Battlefield 1",
+      "metadata_status": "verified_existing_audit"
+    },
+    {
+      "app_id": 218620,
+      "game": "PAYDAY 2",
+      "metadata_status": "verified_existing_audit"
+    },
+    {
+      "app_id": 1272080,
+      "game": "PAYDAY 3",
+      "metadata_status": "verified_existing_audit"
+    },
+    {
+      "app_id": 447040,
+      "game": "Watch Dogs 2",
+      "metadata_status": "verified_existing_audit"
+    },
+    {
+      "app_id": 460930,
+      "game": "Tom Clancy's Ghost Recon Wildlands",
+      "metadata_status": "verified_existing_audit"
+    },
+    {
+      "app_id": 812140,
+      "game": "Assassin's Creed Odyssey",
+      "metadata_status": "verified_existing_audit"
+    },
+    {
+      "app_id": 2208920,
+      "game": "Assassin's Creed Valhalla",
+      "metadata_status": "verified_existing_audit"
+    },
+    {
+      "app_id": 2050650,
+      "game": "Resident Evil 4",
+      "metadata_status": "verified_existing_audit"
+    },
+    {
+      "app_id": 883710,
+      "game": "Resident Evil 2",
+      "metadata_status": "verified_existing_audit"
+    },
+    {
+      "app_id": 1196590,
+      "game": "Resident Evil Village",
+      "metadata_status": "verified_existing_audit"
+    },
+    {
+      "app_id": 1150690,
+      "game": "OMORI",
+      "metadata_status": "verified_existing_audit"
+    },
+    {
+      "app_id": 413410,
+      "game": "Danganronpa: Trigger Happy Havoc",
+      "metadata_status": "verified_existing_audit"
+    },
+    {
+      "app_id": 620980,
+      "game": "Beat Saber",
+      "metadata_status": "verified_existing_audit"
+    },
+    {
+      "app_id": 284160,
+      "game": "BeamNG.drive",
+      "metadata_status": "verified_existing_audit"
+    }
+  ],
+  "seed_app_index": 100,
+  "seed_records_seen": 5000,
+  "seed_records_excluded_after_edit": 113,
+  "last_error": "URLError",
+  "seed_users": 4766,
+  "profiles": {
+    "a5d5f77f814f003d0b4d77ffc10c1e135c49154a4d2b822dbb6ab067b4486f05": {
+      "status": "complete",
+      "page": 1,
+      "boxes_seen": 9,
+      "records_saved": 1,
+      "parse_problems": {},
+      "seed_review_id": "233397982",
+      "positive_training_games": 1,
+      "seed_review_observed_in_training": true,
+      "train_eligible": false
+    },
+    "0b27aeaf3f28242d3d5230298579a913d61e3df526991e894f5740b60fee5581": {
+      "status": "complete",
+      "page": 1,
+      "boxes_seen": 1,
+      "records_saved": 1,
+      "parse_problems": {},
+      "seed_review_id": "234198399",
+      "positive_training_games": 0,
+      "seed_review_observed_in_training": false,
+      "train_eligible": false
+    },
+    "3303a1997663e63ac4a64203f48d316449677e18732a3c95767f3ca0a3369c51": {
+      "status": "complete",
+      "page": 10,
+      "boxes_seen": 92,
+      "records_saved": 15,
+      "parse_problems": {},
+      "seed_review_id": "233947723",
+      "positive_training_games": 11,
+      "seed_review_observed_in_training": true,
+      "train_eligible": true
+    },
+    "7b59f20564ab0b293221c147fe46d897d84cf1c97029d90398de96f4a13d56d7": {
+      "status": "unavailable",
+      "page": 6,
+      "boxes_seen": 43,
+      "records_saved": 5,
+      "parse_problems": {},
+      "seed_review_id": "234170691",
+      "positive_training_games": 0,
+      "seed_review_observed_in_training": false,
+      "train_eligible": false
+    },
+    "806a4c75c128d3b63ce771785ca759b0485743cbf5d1ff4fd4268c2f05c4ad47": {
+      "status": "complete",
+      "page": 1,
+      "boxes_seen": 3,
+      "records_saved": 1,
+      "parse_problems": {},
+      "seed_review_id": "234102927",
+      "positive_training_games": 1,
+      "seed_review_observed_in_training": true,
+      "train_eligible": false
+    },
+    "d996bd5294f43f0b03456585589a859e826b4e85737afc38443d4b9d1b726c48": {
+      "status": "complete",
+      "page": 1,
+      "boxes_seen": 7,
+      "records_saved": 6,
+      "parse_problems": {},
+      "seed_review_id": "233828510",
+      "positive_training_games": 3,
+      "seed_review_observed_in_training": true,
+      "train_eligible": true
+    },
+    "827e5033c4faee02e76cd4d19402cbe4204fd0698f30be7234943723ab194e4c": {
+      "status": "complete",
+      "page": 1,
+      "boxes_seen": 1,
+      "records_saved": 1,
+      "parse_problems": {},
+      "seed_review_id": "233055832",
+      "positive_training_games": 1,
+      "seed_review_observed_in_training": true,
+      "train_eligible": false
+    },
+    "e75be960b2902f1322e600124c171f1732c309e5b9eb0b5ca9f159f8b9f11aa2": {
+      "status": "complete",
+      "page": 5,
+      "boxes_seen": 45,
+      "records_saved": 8,
+      "parse_problems": {},
+      "seed_review_id": "233866831",
+      "positive_training_games": 7,
+      "seed_review_observed_in_training": true,
+      "train_eligible": true
+    },
+    "6b69a0cb5ea9c1569a19f61e2e618ff40786e76dc70596540f53b0c1ff5dfe1b": {
+      "status": "complete",
+      "page": 1,
+      "boxes_seen": 3,
+      "records_saved": 1,
+      "parse_problems": {},
+      "seed_review_id": "234110754",
+      "positive_training_games": 1,
+      "seed_review_observed_in_training": true,
+      "train_eligible": false
+    },
+    "d81e65b44e22f875db9949cdac5aafe8e69789cd04d21cd69d66579b3ece3aa4": {
+      "status": "complete",
+      "page": 1,
+      "boxes_seen": 3,
+      "records_saved": 1,
+      "parse_problems": {},
+      "seed_review_id": "234127279",
+      "positive_training_games": 1,
+      "seed_review_observed_in_training": true,
+      "train_eligible": false
+    },
+    "875150baa8c8368331771abd86360c54d01eed7d102cdd718742ace3808310ce": {
+      "status": "complete",
+      "page": 3,
+      "boxes_seen": 26,
+      "records_saved": 3,
+      "parse_problems": {},
+      "seed_review_id": "234185159",
+      "positive_training_games": 1,
+      "seed_review_observed_in_training": false,
+      "train_eligible": false
+    },
+    "88de2049b76cef2dcb35238f663d34c5e4e3554d2715a70cbe79e11c436d46e0": {
+      "status": "complete",
+      "page": 1,
+      "boxes_seen": 8,
+      "records_saved": 4,
+      "parse_problems": {},
+      "seed_review_id": "234073666",
+      "positive_training_games": 4,
+      "seed_review_observed_in_training": true,
+      "train_eligible": true
+    },
+    "53ab280421d2ba2c19143d0fda9a0f321f37bb11d2a6cf097e14fe6aeace68a1": {
+      "status": "complete",
+      "page": 4,
+      "boxes_seen": 33,
+      "records_saved": 4,
+      "parse_problems": {},
+      "seed_review_id": "233910597",
+      "positive_training_games": 2,
+      "seed_review_observed_in_training": true,
+      "train_eligible": false
+    },
+    "8ffe139037afe63c08611b0d45d4547cfab2f7457f36522e4a06a44014de1fd3": {
+      "status": "complete",
+      "page": 1,
+      "boxes_seen": 3,
+      "records_saved": 3,
+      "parse_problems": {},
+      "seed_review_id": "234169350",
+      "positive_training_games": 2,
+      "seed_review_observed_in_training": false,
+      "train_eligible": false
+    },
+    "ed627e95c9a6523b7a1a9ad509f613e1a8ef0ff0f4d40cc4a35ca295a6897f34": {
+      "status": "complete",
+      "page": 1,
+      "boxes_seen": 1,
+      "records_saved": 1,
+      "parse_problems": {},
+      "seed_review_id": "232951839",
+      "positive_training_games": 1,
+      "seed_review_observed_in_training": true,
+      "train_eligible": false
+    },
+    "4a5c5d82e9b41d5e79129e94432e19b29b571d7ebf877a0c09b9fc350db2986b": {
+      "status": "complete",
+      "page": 1,
+      "boxes_seen": 1,
+      "records_saved": 1,
+      "parse_problems": {},
+      "seed_review_id": "234200224",
+      "positive_training_games": 0,
+      "seed_review_observed_in_training": false,
+      "train_eligible": false
+    },
+    "db98823d53c2b6067d10162029ab21093f22f8ccab3f489feefe381032e755bc": {
+      "status": "complete",
+      "page": 3,
+      "boxes_seen": 30,
+      "records_saved": 3,
+      "parse_problems": {},
+      "seed_review_id": "234168225",
+      "positive_training_games": 1,
+      "seed_review_observed_in_training": false,
+      "train_eligible": false
+    },
+    "bb6a16b4b3d90f2415697a6282c7353f259ee7460c56641ad3698ac9b323dc9f": {
+      "status": "complete",
+      "page": 1,
+      "boxes_seen": 1,
+      "records_saved": 1,
+      "parse_problems": {},
+      "seed_review_id": "234190791",
+      "positive_training_games": 0,
+      "seed_review_observed_in_training": false,
+      "train_eligible": false
+    },
+    "b09cbc6b642efe20ee771e6d3495383fd709f99866cb51e05cc3894d683a2c2b": {
+      "status": "complete",
+      "page": 1,
+      "boxes_seen": 1,
+      "records_saved": 1,
+      "parse_problems": {},
+      "seed_review_id": "233896058",
+      "positive_training_games": 1,
+      "seed_review_observed_in_training": true,
+      "train_eligible": false
+    },
+    "cfacbc29c71c21971c98003d1dd5b629fc54b48356b4e347eb8e2c7b03ccf81e": {
+      "status": "complete",
+      "page": 1,
+      "boxes_seen": 2,
+      "records_saved": 1,
+      "parse_problems": {},
+      "seed_review_id": "232858782",
+      "positive_training_games": 1,
+      "seed_review_observed_in_training": true,
+      "train_eligible": false
+    },
+    "eaa90199a42cc3d29f0afc4f9d6c9c53ed5239fcfa46181ce8e7b2d2bc03e237": {
+      "status": "complete",
+      "page": 1,
+      "boxes_seen": 3,
+      "records_saved": 1,
+      "parse_problems": {},
+      "seed_review_id": "234085276",
+      "positive_training_games": 1,
+      "seed_review_observed_in_training": true,
+      "train_eligible": false
+    },
+    "ab2682fd979dc83efccd76e917803bb6e5b39742dd38b10ef655a1f277eb85e5": {
+      "status": "complete",
+      "page": 1,
+      "boxes_seen": 6,
+      "records_saved": 2,
+      "parse_problems": {},
+      "seed_review_id": "234190739",
+      "positive_training_games": 0,
+      "seed_review_observed_in_training": false,
+      "train_eligible": false
+    },
+    "479c37521c48858c67974224b8ad3befff04060a511084ab7ad5118d74f514d0": {
+      "status": "complete",
+      "page": 2,
+      "boxes_seen": 11,
+      "records_saved": 4,
+      "parse_problems": {},
+      "seed_review_id": "234141318",
+      "positive_training_games": 3,
+      "seed_review_observed_in_training": true,
+      "train_eligible": true
+    },
+    "58cbf22d4b25ede5d4b66254fb664c8c6ab1c404abfd57f5824b252e43178ca7": {
+      "status": "complete",
+      "page": 1,
+      "boxes_seen": 2,
+      "records_saved": 2,
+      "parse_problems": {},
+      "seed_review_id": "232659640",
+      "positive_training_games": 2,
+      "seed_review_observed_in_training": true,
+      "train_eligible": false
+    },
+    "13b5a31a52968d552188e48b12c394c51313ad708dad0fa5adf79b0b2ffa5d33": {
+      "status": "complete",
+      "page": 1,
+      "boxes_seen": 8,
+      "records_saved": 5,
+      "parse_problems": {},
+      "seed_review_id": "234157756",
+      "positive_training_games": 4,
+      "seed_review_observed_in_training": false,
+      "train_eligible": false
+    },
+    "8cee6c22b4a08c455a352ffdfeae63271a1aa3742ef4a0cae8db1c019f3b1ba2": {
+      "status": "complete",
+      "page": 1,
+      "boxes_seen": 2,
+      "records_saved": 2,
+      "parse_problems": {},
+      "seed_review_id": "234198819",
+      "positive_training_games": 0,
+      "seed_review_observed_in_training": false,
+      "train_eligible": false
+    },
+    "cf4a41d83eba28a17bc7d2fc622fabf05ffffdccdb61b73edb779d50d3fc8916": {
+      "status": "complete",
+      "page": 4,
+      "boxes_seen": 31,
+      "records_saved": 10,
+      "parse_problems": {},
+      "seed_review_id": "234196142",
+      "positive_training_games": 9,
+      "seed_review_observed_in_training": false,
+      "train_eligible": false
+    },
+    "3ca9364f797fa50573a958414eb8b32edf26831e3d4fe93fd944b79f1b9191c5": {
+      "status": "complete",
+      "page": 1,
+      "boxes_seen": 1,
+      "records_saved": 1,
+      "parse_problems": {},
+      "seed_review_id": "234138847",
+      "positive_training_games": 1,
+      "seed_review_observed_in_training": true,
+      "train_eligible": false
+    },
+    "a17dbd6be294964190944fdd6b6d10f9277f3ee39f6c0fff946121170b6e48a2": {
+      "status": "complete",
+      "page": 1,
+      "boxes_seen": 1,
+      "records_saved": 1,
+      "parse_problems": {},
+      "seed_review_id": "233848496",
+      "positive_training_games": 1,
+      "seed_review_observed_in_training": true,
+      "train_eligible": false
+    },
+    "1aa16fad9a2a68f054d5db27c6f744ee7c3cff72a170fef5a7e72c735916d891": {
+      "status": "complete",
+      "page": 1,
+      "boxes_seen": 3,
+      "records_saved": 1,
+      "parse_problems": {},
+      "seed_review_id": "234115885",
+      "positive_training_games": 1,
+      "seed_review_observed_in_training": true,
+      "train_eligible": false
+    },
+    "af9c7804b03f6d933ed462d188442d305d9995ce23be2da4dc5fadb1d8980feb": {
+      "status": "complete",
+      "page": 1,
+      "boxes_seen": 7,
+      "records_saved": 3,
+      "parse_problems": {},
+      "seed_review_id": "233874197",
+      "positive_training_games": 3,
+      "seed_review_observed_in_training": true,
+      "train_eligible": true
+    },
+    "f7bc08f7d12d17335dfd700db9af1d64f30b3edbe7147cc14c163e0f9bf60def": {
+      "status": "complete",
+      "page": 1,
+      "boxes_seen": 1,
+      "records_saved": 1,
+      "parse_problems": {},
+      "seed_review_id": "234199187",
+      "positive_training_games": 0,
+      "seed_review_observed_in_training": false,
+      "train_eligible": false
+    },
+    "a141a36bf74123323a290e5268394ef923a9f5766fa2106d1010a8a6b5097389": {
+      "status": "complete",
+      "page": 1,
+      "boxes_seen": 2,
+      "records_saved": 1,
+      "parse_problems": {},
+      "seed_review_id": "234040330",
+      "positive_training_games": 1,
+      "seed_review_observed_in_training": true,
+      "train_eligible": false
+    },
+    "b98f7a4f80380cd227ee3412a36fb8d5e4f595cc14c62d44d67b03420d336843": {
+      "status": "complete",
+      "page": 1,
+      "boxes_seen": 1,
+      "records_saved": 1,
+      "parse_problems": {},
+      "seed_review_id": "234153698",
+      "positive_training_games": 0,
+      "seed_review_observed_in_training": false,
+      "train_eligible": false
+    },
+    "e1d436f959a18ec4ec1034b83e3f18f190ddd0009d32d5c168d1da355831af6c": {
+      "status": "complete",
+      "page": 1,
+      "boxes_seen": 1,
+      "records_saved": 1,
+      "parse_problems": {},
+      "seed_review_id": "233989907",
+      "positive_training_games": 1,
+      "seed_review_observed_in_training": true,
+      "train_eligible": false
+    },
+    "b77e454d043933b629e27e6527b659c3068437e00e98dd0a361946d776516613": {
+      "status": "complete",
+      "page": 1,
+      "boxes_seen": 2,
+      "records_saved": 1,
+      "parse_problems": {},
+      "seed_review_id": "234058225",
+      "positive_training_games": 1,
+      "seed_review_observed_in_training": true,
+      "train_eligible": false
+    },
+    "c5174a0e100f31880a61d6d63c76254e41f67bfbd11553d737ed5c3856162b96": {
+      "status": "complete",
+      "page": 1,
+      "boxes_seen": 9,
+      "records_saved": 3,
+      "parse_problems": {},
+      "seed_review_id": "233675720",
+      "positive_training_games": 2,
+      "seed_review_observed_in_training": true,
+      "train_eligible": false
+    },
+    "83fb75894539a09e9a4d05f031c901a7da2018e546c87e4bb61fe3a42043e977": {
+      "status": "complete",
+      "page": 2,
+      "boxes_seen": 17,
+      "records_saved": 5,
+      "parse_problems": {},
+      "seed_review_id": "234198973",
+      "positive_training_games": 3,
+      "seed_review_observed_in_training": false,
+      "train_eligible": false
+    },
+    "66651706125dbde10726e7ebc22b1bf3826b374894b49153c640ce803e598252": {
+      "status": "complete",
+      "page": 1,
+      "boxes_seen": 5,
+      "records_saved": 2,
+      "parse_problems": {},
+      "seed_review_id": "234041304",
+      "positive_training_games": 1,
+      "seed_review_observed_in_training": true,
+      "train_eligible": false
+    },
+    "4d12b56c4fe1cc7047ee0d721f8cdc1796674437f8ff2ca3127ff27054b99e9e": {
+      "status": "complete",
+      "page": 1,
+      "boxes_seen": 1,
+      "records_saved": 1,
+      "parse_problems": {},
+      "seed_review_id": "234127182",
+      "positive_training_games": 1,
+      "seed_review_observed_in_training": true,
+      "train_eligible": false
+    },
+    "eb3a95cc99f23760f9efb2e3d3f8c2e95746c1978c5c34fb0c834ca042a95f98": {
+      "status": "complete",
+      "page": 2,
+      "boxes_seen": 18,
+      "records_saved": 2,
+      "parse_problems": {},
+      "seed_review_id": "233957462",
+      "positive_training_games": 2,
+      "seed_review_observed_in_training": true,
+      "train_eligible": false
+    },
+    "fcda06e89d0cfd12d54c776b03ca5c5977873238d9c6b7157b3ea3da85baa622": {
+      "status": "complete",
+      "page": 3,
+      "boxes_seen": 25,
+      "records_saved": 1,
+      "parse_problems": {},
+      "seed_review_id": "233104736",
+      "positive_training_games": 1,
+      "seed_review_observed_in_training": true,
+      "train_eligible": false
+    },
+    "4cd087dd29dabadbbba9a34e0489df7a078507c850c09936c9b5da44d4752e9c": {
+      "status": "complete",
+      "page": 1,
+      "boxes_seen": 2,
+      "records_saved": 1,
+      "parse_problems": {},
+      "seed_review_id": "234192674",
+      "positive_training_games": 0,
+      "seed_review_observed_in_training": false,
+      "train_eligible": false
+    },
+    "2b110363be25bc0fd63313d221fd4c3383a69496f6f4e76e51546b67ad7b9404": {
+      "status": "complete",
+      "page": 1,
+      "boxes_seen": 1,
+      "records_saved": 1,
+      "parse_problems": {},
+      "seed_review_id": "233765709",
+      "positive_training_games": 1,
+      "seed_review_observed_in_training": true,
+      "train_eligible": false
+    },
+    "4a6d2faad3ab3a9b2a551c64b2eab227f529f9dfd4526fd8915835a869b89164": {
+      "status": "complete",
+      "page": 1,
+      "boxes_seen": 1,
+      "records_saved": 1,
+      "parse_problems": {},
+      "seed_review_id": "234196510",
+      "positive_training_games": 0,
+      "seed_review_observed_in_training": false,
+      "train_eligible": false
+    },
+    "270f9aaff15c5ec7207b84969f4c6becf5cff01d53762174ffd9ac73589c4c65": {
+      "status": "complete",
+      "page": 1,
+      "boxes_seen": 1,
+      "records_saved": 1,
+      "parse_problems": {},
+      "seed_review_id": "234154087",
+      "positive_training_games": 0,
+      "seed_review_observed_in_training": false,
+      "train_eligible": false
+    },
+    "c2d6ccfeedc4b6c0043f56a45b9d60ed4dfd4ac263d891ad414a8765a0145026": {
+      "status": "complete",
+      "page": 1,
+      "boxes_seen": 9,
+      "records_saved": 2,
+      "parse_problems": {},
+      "seed_review_id": "234188794",
+      "positive_training_games": 0,
+      "seed_review_observed_in_training": false,
+      "train_eligible": false
+    },
+    "6cbb99ccf4ab7b7674b3a85ce37889a8ac66cd3d17b5eee3f407aaa0456571f6": {
+      "status": "complete",
+      "page": 2,
+      "boxes_seen": 12,
+      "records_saved": 1,
+      "parse_problems": {},
+      "seed_review_id": "234199843",
+      "positive_training_games": 0,
+      "seed_review_observed_in_training": false,
+      "train_eligible": false
+    },
+    "5297d1e3a4a345a291ee5581d1525c5b3aa94968f9e96aa64d28f4200d6ae790": {
+      "status": "complete",
+      "page": 1,
+      "boxes_seen": 1,
+      "records_saved": 1,
+      "parse_problems": {},
+      "seed_review_id": "234176288",
+      "positive_training_games": 0,
+      "seed_review_observed_in_training": false,
+      "train_eligible": false
+    },
+    "5a479b27dc3a1ec230396ddfce1b6eaeb0d12a52a2f4ee4f876d3739deb1a386": {
+      "status": "complete",
+      "page": 1,
+      "boxes_seen": 3,
+      "records_saved": 1,
+      "parse_problems": {},
+      "seed_review_id": "234178833",
+      "positive_training_games": 0,
+      "seed_review_observed_in_training": false,
+      "train_eligible": false
+    }
+  },
+  "record_count": 122,
+  "data_sha256": "029fdd3b79a50ff7e28384cb8249ef4f942bcbb4fd830bf0f2033133b9a63dbd",
+  "last_saved_utc": "2026-11-21T11:43:52.240562Z",
+  "private_state": "Windows DPAPI encrypted, outside repository, same account/machine required for resume",
+  "source_url_policy": "Profile URLs/usernames and raw SteamIDs are never published; source_url is the platform root, per-review stable key is review_id. Date precision is one day with a conservative +38h availability bound."
+}

@@ -1,0 +1,95 @@
+{
+  "status": "proposed_sampling_contract_requires_evaluation_owner_review",
+  "settings": {
+    "dataset_version": "steam_history_v2",
+    "catalogue_config": "configs/steam_crawl_100games_v1.json",
+    "catalogue_metadata": "outputs/steam_100games_v1/steam_metadata_audit.json",
+    "baseline_reviews": "outputs/steam_100games_v1/steam_expanded_pilot.jsonl",
+    "catalogue_replacements": [
+      {
+        "replace_app_id": 2694490,
+        "app_id": 435150,
+        "game": "Divinity: Original Sin 2 - Definitive Edition"
+      },
+      {
+        "replace_app_id": 39210,
+        "app_id": 1151340,
+        "game": "Fallout 76"
+      }
+    ],
+    "observation_start_utc": "2020-01-01T00:00:00Z",
+    "validation_cutoff_utc": "2026-09-01T00:00:00Z",
+    "test_cutoff_utc": "2026-10-01T00:00:00Z",
+    "observation_end_utc": "2026-11-21T00:00:00Z",
+    "seed_reviews_per_game": 50,
+    "minimum_positive_training_games": 3,
+    "selection_seed": "steam-history-v2-2026-11-21",
+    "target_cohort_users": 500,
+    "target_cohort_reviews": 10000,
+    "minimum_validation_users": 100,
+    "minimum_test_users": 100,
+    "max_profile_users": 2000,
+    "max_profile_pages": 10,
+    "max_http_attempts": 2500,
+    "request_interval_seconds": 2,
+    "timeout_seconds": 25,
+    "max_retries": 2,
+    "backoff_seconds": 2,
+    "minimum_opinion_tokens": 20,
+    "minimum_english_detector_score": 0.9,
+    "community_date_upper_bound_hours": 38,
+    "scope": "Train-defined cohort of reviewers with at least three positive in-catalog training games. This is not a representative sample of all Steam users. Collect complete accessible public histories within the fixed window and catalogue; do not require future positives, fixed reviews per item, or an all-time k-core. Graph interactions can have any language; opinion-training candidates require English detection, sufficient text and historical availability."
+  },
+  "cohort_user_ids": [
+    "3303a1997663e63ac4a64203f48d316449677e18732a3c95767f3ca0a3369c51",
+    "d996bd5294f43f0b03456585589a859e826b4e85737afc38443d4b9d1b726c48",
+    "e75be960b2902f1322e600124c171f1732c309e5b9eb0b5ca9f159f8b9f11aa2",
+    "88de2049b76cef2dcb35238f663d34c5e4e3554d2715a70cbe79e11c436d46e0",
+    "8ffe139037afe63c08611b0d45d4547cfab2f7457f36522e4a06a44014de1fd3",
+    "479c37521c48858c67974224b8ad3befff04060a511084ab7ad5118d74f514d0",
+    "13b5a31a52968d552188e48b12c394c51313ad708dad0fa5adf79b0b2ffa5d33",
+    "cf4a41d83eba28a17bc7d2fc622fabf05ffffdccdb61b73edb779d50d3fc8916",
+    "af9c7804b03f6d933ed462d188442d305d9995ce23be2da4dc5fadb1d8980feb",
+    "83fb75894539a09e9a4d05f031c901a7da2018e546c87e4bb61fe3a42043e977"
+  ],
+  "validation": {
+    "positive_training_edges": 53,
+    "warm_users": 10,
+    "warm_items": 37,
+    "eligible_target_users": 0,
+    "candidate_count_min": 0,
+    "candidate_count_max": 0,
+    "targets_with_more_than_20_candidates": 0,
+    "target_exclusion_observations": {}
+  },
+  "test": {
+    "positive_training_edges": 54,
+    "warm_users": 10,
+    "warm_items": 38,
+    "eligible_target_users": 0,
+    "candidate_count_min": 0,
+    "candidate_count_max": 0,
+    "targets_with_more_than_20_candidates": 0,
+    "target_exclusion_observations": {}
+  },
+  "date_policy": "Matching seed interactions can use their exact API creation/update times. Other public page dates are day precision: require date-14h >= interval start and date+38h < interval end. Public text availability always keeps its conservative latest-edit-date+38h bound, including API-anchored seeds. Exclude targets with a later visible edit. Missing edit dates are assumed unedited by the public UI and require spot validation.",
+  "seen_item_policy": "Exclude any previously reviewed item, including negatives and pre-study-window items. Use the exported seen-item masks; a later edit cannot become a historical positive edge.",
+  "source_scope": "Train-defined cohort of reviewers with at least three positive in-catalog training games. This is not a representative sample of all Steam users. Collect complete accessible public histories within the fixed window and catalogue; do not require future positives, fixed reviews per item, or an all-time k-core. Graph interactions can have any language; opinion-training candidates require English detection, sufficient text and historical availability.",
+  "data_files_sha256": {
+    "cohort_reviews.jsonl": "af1ab7ff76a608a8fb08c3dd0e6df6934d92c8cd64070a3295685f778e04350d",
+    "discovered_reviews.jsonl": "029fdd3b79a50ff7e28384cb8249ef4f942bcbb4fd830bf0f2033133b9a63dbd",
+    "opinion_train_candidates.jsonl": "f45b862748b9f7f82f5670c3904e2960ef2299bb4c52fd9fb9aa2ccdedbc7819",
+    "refit_reviews.jsonl": "00725236c479c335eaac90ab2b313bbc944b0b99301c8bff14f2a6daa6421057",
+    "review_quality.jsonl": "b06d0186a21219567d07aecba7485b242b84e81827839e217949babb4fb7071e",
+    "sampling_requests.jsonl": "2a2824636772016c73136fbdefd9d8ce6f641ef0920e64656da8cfd4c65d6d7f",
+    "seen_items_before_test.jsonl": "8a3947104c287f226482d667d0a3d0a828dd6312b53f2f02bf199259d086ee42",
+    "seen_items_before_validation.jsonl": "8a3947104c287f226482d667d0a3d0a828dd6312b53f2f02bf199259d086ee42",
+    "test_targets.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "train_reviews.jsonl": "183a873726759f2fdeea25682a4c9c41c15ff14ffbf2ef83d16e0ab9fff1c885",
+    "validation_targets.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "source_manifests_sha256": {
+    "sampling_manifest.json": "e110fe2af86344a3b9c1ae769e008bb246e7775bbc23dce5f3125f21becc9238",
+    "seed_manifest.json": "aefee2de550566a6b06ce293b068b24309f94e3370135502e578e2e8c09815ad"
+  }
+}

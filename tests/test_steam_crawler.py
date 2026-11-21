@@ -163,6 +163,16 @@ class ResumeTests(unittest.TestCase):
 
 
 class HttpTests(unittest.TestCase):
+    def test_explicit_empty_historical_response_can_omit_reviews_array(self):
+        with tempfile.TemporaryDirectory() as directory:
+            client = crawler.SteamClient(config(), Path(directory) / "log.jsonl")
+            response = io.BytesIO(json.dumps({"response": {"query_summary": {"num_reviews": 0},
+                                                          "cursor": "*", "total_matching": 0}}).encode())
+            response.status = 200
+            with patch.object(crawler.urllib.request, "urlopen", return_value=response):
+                body = client.fetch(crawler.request_parameters(config(), 1))
+            self.assertEqual(body["reviews"], [])
+
     def test_429_retry_after_then_success_without_persisting_raw_response(self):
         with tempfile.TemporaryDirectory() as directory:
             client = crawler.SteamClient(config(), Path(directory) / "log.jsonl")

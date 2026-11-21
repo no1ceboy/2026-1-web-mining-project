@@ -123,6 +123,9 @@ class SteamClient:
         self.log_path = Path(log_path)
         self.last_request = None
 
+    def before_attempt(self):
+        """Extension point for clients with an overall HTTP attempt budget."""
+
     def log(self, event):
         self.log_path.parent.mkdir(parents=True, exist_ok=True)
         with self.log_path.open("a", encoding="utf-8", newline="\n") as handle:
@@ -132,6 +135,7 @@ class SteamClient:
     def fetch(self, params, purpose="crawl"):
         url = ENDPOINT + "?" + urllib.parse.urlencode({"input_json": json.dumps(params)})
         for attempt in range(self.config["max_retries"] + 1):
+            self.before_attempt()
             if self.last_request is not None:
                 time.sleep(max(0, self.config["request_interval_seconds"] -
                                (time.monotonic() - self.last_request)))
@@ -148,6 +152,11 @@ class SteamClient:
                     raise ValueError("Response exceeds 4 MiB limit")
                 payload = json.loads(raw)
                 body = payload.get("response", payload)
+                # Steam omits the repeated reviews field for explicit zero-result
+                # queries (for example a game released after a historical cutoff).
+                if (isinstance(body, dict) and "reviews" not in body and body.get("total_matching") == 0 and
+                        isinstance(body.get("query_summary"), dict) and body["query_summary"].get("num_reviews") == 0):
+                    body["reviews"] = []
                 if not isinstance(body, dict) or not isinstance(body.get("reviews"), list):
                     raise ValueError("Response has no reviews list")
                 if len(body["reviews"]) > params["num_per_page"]:

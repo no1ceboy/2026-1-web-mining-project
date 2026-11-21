@@ -6,6 +6,8 @@ A Method + System Hybrid capstone: build a bounded crawler and recommendation sy
 
 **Collection update (2026-11-21):** The collection scope has since expanded to 10,000 saved reviews from 100 manually selected games. The current version is [steam_100games_v1](steam_100games_v1/steam_expanded_manifest.json), with a [quality/overlap report](steam_100games_v1/steam_overlap_report.md) and [project assessment](../docs/project_assessment.md). There are 169 users with at least two positive games, 37 with at least three, and five with at least five; these are pre-split descriptive counts, not ranking-evaluation coverage. The original source gates and 20-game estimates below document the initial plan; use the current runbook and versioned manifest for the updated collection boundary. No cleaning, ranking models, opinion validation or final evaluation has been completed on main.
 
+**Sampling redesign:** [User-history acquisition and the proposed cohort/coverage contract](../docs/sampling_design.md) now replace per-game quotas for the main recommendation-data design. [Audit v3](steam_history_v3/sampling_report.md) reports the pilot's actual cohort and temporal coverage, including any unmet planning targets. The original plan below remains historical context; the new split views require the evaluation owner's review and do not imply completed ranking experiments or human ABSA validation.
+
 ## 1. Motivation and project objective
 
 Game reviews contain searchable descriptions of product features, user opinions, and links between reviewers and products. A star rating compresses this evidence: two games can receive similar averages even when reviewers praise and criticize different aspects.
