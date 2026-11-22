@@ -2,11 +2,11 @@
 
 A Method + System Hybrid capstone: build a bounded crawler and recommendation system, then evaluate how link analysis and opinion mining work together to recommend video games.
 
-**Status:** A Steam API smoke crawl completed on 2026-11-20: 200 reviews from five games are saved under `outputs/steam_pilot.jsonl`, with crawl settings and counts in `outputs/steam_pilot_manifest.json`. No full cleaning, models, or evaluation have been completed. The small pilot has very little cross-game reviewer overlap, so graph suitability remains unproven.
+**Status (2026-11-23):** The repository now contains a 10,000-review, 100-game quota snapshot and a separate train-defined history-cohort pilot. The Project Lead / Member 2 workstream has added a hash-checked shared loader, text-quality audit, and Popularity smoke baseline on `member2/data-evaluation`. The history cohort has 54 users, 22 validation targets, and 23 test targets; its registered planning gate is not met. The baseline is pipeline evidence only. No PPR/LightGCN comparison or human-validated aspect-mining result is available yet.
 
-**Collection update (2026-11-21):** The collection scope has since expanded to 10,000 saved reviews from 100 manually selected games. The current version is [steam_100games_v1](steam_100games_v1/steam_expanded_manifest.json), with a [quality/overlap report](steam_100games_v1/steam_overlap_report.md) and [project assessment](../docs/project_assessment.md). There are 169 users with at least two positive games, 37 with at least three, and five with at least five; these are pre-split descriptive counts, not ranking-evaluation coverage. The original source gates and 20-game estimates below document the initial plan; use the current runbook and versioned manifest for the updated collection boundary. No cleaning, ranking models, opinion validation or final evaluation has been completed on main.
+**Collection update (2026-11-21):** The collection scope expanded to 10,000 saved reviews from 100 manually selected games. The current version is [steam_100games_v1](steam_100games_v1/steam_expanded_manifest.json), with a [quality/overlap report](steam_100games_v1/steam_overlap_report.md) and [project assessment](../docs/project_assessment.md). There are 169 users with at least two positive games, 37 with at least three, and five with at least five; these are pre-split descriptive counts, not ranking-evaluation coverage. A separate v3 history cohort was then collected for temporal evaluation. See its [sampling report](steam_history_v3/sampling_report.md) and [evaluation-owner review](steam_history_v3/evaluation_owner_review.md). The original source gates and 20-game estimates below document the initial plan; use the current runbooks and versioned manifests for the updated collection boundary.
 
-**Sampling redesign:** [User-history acquisition and the proposed cohort/coverage contract](../docs/sampling_design.md) now replace per-game quotas for the main recommendation-data design. [Audit v3](steam_history_v3/sampling_report.md) reports the pilot's actual cohort and temporal coverage, including any unmet planning targets. The original plan below remains historical context; the new split views require the evaluation owner's review and do not imply completed ranking experiments or human ABSA validation.
+**Sampling redesign:** [User-history acquisition and the proposed cohort/coverage contract](../docs/sampling_design.md) now replace per-game quotas for the main recommendation-data design. The evaluation owner has reviewed v3 for pipeline smoke use only; its registered coverage gate and human source/date/content spot-check remain incomplete. The original plan below remains historical context; the new split views do not imply completed ranking comparisons or human ABSA validation. See the [evaluation contract](../docs/evaluation_contract.md).
 
 ## 1. Motivation and project objective
 
@@ -284,6 +284,7 @@ Role-specific, self-contained work guides for teammates who are new to the proje
 - [Data collection and provenance](team_guides/data_collection/README.md)
 - [Member 3: Personalized PageRank and LightGCN](team_guides/member3_graph_models/README.md)
 - [Member 4: opinion mining and validation](team_guides/member4_opinion_mining/README.md)
+- [Project Lead / Member 2: evaluation contract](../docs/evaluation_contract.md)
 
 ## 9. Timeline and compute plan
 

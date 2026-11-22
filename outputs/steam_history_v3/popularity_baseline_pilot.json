@@ -1,0 +1,45 @@
+{
+  "dataset_version": "steam_history_v3",
+  "split_contract_status": "proposed_sampling_contract_requires_evaluation_owner_review",
+  "planning_gate_passed": false,
+  "result_status": "pilot_smoke_only",
+  "interpretation": "This run verifies metric and ranking plumbing on the current small cohort. Do not interpret it as evidence that one recommender is better.",
+  "validation": {
+    "split": "validation",
+    "target_users": 22,
+    "positive_history_edges": 334,
+    "warm_users": 54,
+    "warm_items": 84,
+    "candidate_count_min": 69,
+    "candidate_count_max": 81,
+    "candidate_count_mean": 76.4545,
+    "metrics": {
+      "recall_at_10": 0.18181818181818182,
+      "ndcg_at_10": 0.06848296043512256,
+      "recall_at_20": 0.5,
+      "ndcg_at_20": 0.14662708826477833
+    },
+    "tie_break": "score descending, then item_id ascending",
+    "model": "Popularity (positive training-edge count)",
+    "score_source": "unique positive user-item pairs in the split history"
+  },
+  "test": {
+    "split": "test",
+    "target_users": 23,
+    "positive_history_edges": 458,
+    "warm_users": 54,
+    "warm_items": 90,
+    "candidate_count_min": 69,
+    "candidate_count_max": 86,
+    "candidate_count_mean": 79.9565,
+    "metrics": {
+      "recall_at_10": 0.13043478260869565,
+      "ndcg_at_10": 0.042548058554749704,
+      "recall_at_20": 0.30434782608695654,
+      "ndcg_at_20": 0.08753023305236222
+    },
+    "tie_break": "score descending, then item_id ascending",
+    "model": "Popularity (positive training-edge count)",
+    "score_source": "unique positive user-item pairs in the split history"
+  }
+}
