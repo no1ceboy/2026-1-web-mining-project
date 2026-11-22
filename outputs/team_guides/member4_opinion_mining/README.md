@@ -11,9 +11,11 @@ The Steam API's `voted_up` value is the reviewer's overall recommendation, not a
 - Initial Steam pilot: `../../steam_pilot.jsonl`
 - Crawl settings/counts: `../../steam_pilot_manifest.json`
 - Shared project plan: `../../README.md`
-- Later input: Member 2's cleaned snapshot, with a confirmed path and split manifest.
+- Current train-only development text: `../../steam_history_v3/opinion_train_candidates.jsonl` (85 records in the current pilot).
+- Current source/date/content spot-check template: `../../steam_history_v3/source_spotcheck_template.csv` (human labels are still blank).
+- Shared temporal contract: `../../../docs/evaluation_contract.md`.
 
-The pilot has 200 recent English reviews, including 79 `voted_up=false` reviews. All have text, but the set is small and was sampled for feasibility, not representativeness. Use it to draft labels, inspect errors, and benchmark the extractor; do not make category-wide claims from it.
+The original 200-review pilot can be used to draft a taxonomy. The v3 opinion file contains 85 detected-English texts judged available before the training cutoff; this is a development set, not a validated aspect-mining corpus. The source/date/content spot-check is incomplete. Use `opinion_train_candidates.jsonl` for training-only user/item opinion features and keep all validation/test text out of those profiles.
 
 ## What to extract
 
@@ -50,6 +52,6 @@ For the Nov 23 checkpoint, a 50-review annotation pilot and honest extractor sta
 
 ## Start this role in Codex
 
-Open this guide and the pilot JSONL in the shared Codex workspace, then paste:
+Open this guide, the original pilot, and the v3 opinion-candidate file in the shared Codex workspace, then paste:
 
-> I own opinion mining and validation. Read this guide and inspect the pilot schema and review examples before editing. Draft a small aspect taxonomy based on actual game-review language and prepare the annotation CSV/template and extraction-output schema. I will manually label 50 reviews; do not invent or auto-fill human labels. Arrange an independent 10-15-review overlap with another teammate and record disagreements. In parallel, identify one feasible pretrained aspect-based sentiment model and benchmark a small batch before processing more data. Preserve exact evidence spans and keep Steam `voted_up` separate from aspect sentiment. Produce the validation notes and report what is complete, what needs a GPU or human annotation, and any blockers. Keep changes in opinion-mining-owned files and coordinate the feature definition with the graph-model owner.
+> I own opinion mining and validation. Read this guide and inspect the original pilot, v3 opinion candidates, and source/date/content spot-check status before editing. Draft a small aspect taxonomy based on actual game-review language and prepare the annotation CSV/template and extraction-output schema. I will manually label 50 reviews; do not invent or auto-fill human labels. Arrange an independent 10-15-review overlap with another teammate and record disagreements. In parallel, identify one feasible pretrained aspect-based sentiment model and benchmark a small batch before processing more data. Preserve exact evidence spans and keep Steam `voted_up` separate from aspect sentiment. Use only training-available text when building recommendation features. Produce validation notes and report what is complete, what needs a GPU or human annotation, and any blockers. Keep changes in opinion-mining-owned files and coordinate the feature definition with the graph-model owner.

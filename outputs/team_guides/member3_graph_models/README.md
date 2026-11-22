@@ -8,12 +8,12 @@ The four core configurations are Popularity, PPR, LightGCN, and LightGCN with op
 
 ## Inputs and current limitation
 
-- Initial pilot: `../../steam_pilot.jsonl`
-- Pilot counts and source notes: `../../steam_pilot_manifest.json`
-- Shared project plan: `../../README.md`
-- Expected handoff from Member 2 after cleaning: `outputs/steam_clean_v0.jsonl` and a split manifest. Confirm the final paths with Member 2 before coding against them.
+- Current history-based pilot: `../../steam_history_v3/`
+- Proposed split and coverage report: `../../steam_history_v3/split_manifest.json` and `../../steam_history_v3/sampling_report.md`
+- Shared loader/evaluator contract: `../../../docs/evaluation_contract.md`
+- Project Lead / Member 2 implementation: `../../../src/webmining/evaluation.py`
 
-The current 200-review Steam sample has only one reviewer appearing on multiple games. Use it to inspect the schema and compute graph-coverage statistics, **not** to claim meaningful ranking performance. The crawler owner is testing a larger same-source sample. If Steam remains too sparse, the team may use Amazon as a separate fallback dataset; never mix Steam and Amazon IDs or interactions in one graph.
+The v3 pilot has 54 train-defined users, 554 reviews, 22 validation targets, and 23 test targets. It is below the registered planning gate and supports evaluator/model smoke runs only, not final ranking claims. Load the same shared split for PPR and LightGCN; do not recreate the cutoff or candidate logic. Keep the separate 10,000-review quota snapshot out of v3. If the source decision changes, use one dataset at a time; never mix Steam and Amazon IDs or interactions in one graph.
 
 ## Models
 
@@ -23,7 +23,7 @@ Build a bipartite graph with user nodes and game nodes. Add an edge for each tra
 
 ### LightGCN
 
-Train LightGCN on the same positive training edges. Use the same users, time cutoffs, candidate games, and seen-item exclusions as PPR. Do not train on validation/test edges. An unobserved game is not a verified dislike; use the shared negative-sampling protocol from the evaluator.
+Train LightGCN on the same positive training edges. Use the same users, time cutoffs, candidate games, and seen-item exclusions as PPR. Do not train on validation/test edges. An unobserved game is not a verified dislike. If sampled unobserved games are used as training negatives, treat them only as an optimization device; at evaluation, rank the full shared eligible candidate set.
 
 Negative Steam reviews (`voted_up=false`) stay available for the opinion-mining work, but do not become positive graph edges. `voted_up` is the reviewer's overall recommendation, not a label for each aspect.
 
@@ -39,10 +39,10 @@ Here `L(u,i)` is LightGCN's normalized interaction-only score, `O(u,i)` is the n
 
 ## Tasks and deliverables
 
-1. Inspect the current pilot schema and report graph coverage: users, games, positive edges, users with positive interactions on two or more games, and largest connected component.
-2. Implement PPR and LightGCN so both consume Member 2's shared loader and split.
+1. Inspect the v3 pilot and report graph coverage: users, games, positive edges, users with positive interactions on two or more games, and largest connected component.
+2. Implement PPR and LightGCN so both consume `load_ranking_split` and `evaluate_ranker` from Member 2's shared evaluator.
 3. Start with a runnable smoke configuration. If the Steam graph is too sparse, use Amazon only for a clearly labeled development run; do not report it as a Steam result.
-4. After Member 2 freezes a clean snapshot, run PPR and LightGCN on the same evaluation protocol. Add the opinion-augmented LightGCN configuration when Member 4's validated features are ready.
+4. After the team freezes an approved dataset and split, run PPR and LightGCN on the same evaluation protocol. Add the opinion-augmented LightGCN configuration when Member 4's validated features are ready.
 5. Save:
    - Model code under `src/models/` and configs under `configs/` (create these folders if needed).
    - `outputs/graph_coverage.md` with data and connectivity counts.
@@ -61,6 +61,6 @@ Primary ranking metrics are Recall@10/20 and NDCG@10/20. Record the exact snapsh
 
 ## Start this role in Codex
 
-Open this guide and the pilot files in the shared Codex workspace, then paste:
+Open this guide and the v3 pilot files in the shared Codex workspace, then paste:
 
-> I own link analysis and graph recommendation. Read this guide and inspect the repository, data schema, and existing code before editing. First calculate graph coverage for the 200-review Steam pilot and save the requested diagnostic. Then check what split and evaluator Member 2 is building and agree on their interface before adding model code. Implement a small, reproducible Personalized PageRank baseline and LightGCN feasibility run using the same positive training edges and evaluation protocol. Keep runs small enough for ordinary hardware, record runtime and environment, and do not tune on test data. The current pilot is too sparse for model-quality claims; if it cannot support evaluation, document that and use Amazon only for a clearly labeled development run. Keep changes in graph-owned files and report artifacts, results, and blockers when done.
+> I own link analysis and graph recommendation. Read this guide and inspect the repository, v3 data schema, and existing code before editing. First calculate graph coverage for the v3 history pilot and save the requested diagnostic. Use `load_ranking_split` and `evaluate_ranker` from `src/webmining/evaluation.py`; do not implement a separate split, candidate set, or metric. Implement small, reproducible Personalized PageRank and LightGCN smoke runs using the same positive training edges. Keep runs small enough for ordinary hardware, record runtime and environment, and do not tune on test data. The registered sampling gate has not passed, so label all current metrics as pilot smoke results. Keep changes in graph-owned files and report artifacts, results, and blockers when done.

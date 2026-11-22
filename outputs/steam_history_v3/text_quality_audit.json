@@ -1,0 +1,35 @@
+{
+  "dataset_version": "steam_history_v3",
+  "scope": "Descriptive quality flags only; no automatic spam or authenticity labels are assigned.",
+  "checks": {
+    "rows": 554,
+    "unique_review_ids": 554,
+    "unique_users": 54,
+    "unique_items": 95,
+    "positive_reviews": 509,
+    "negative_reviews": 45,
+    "blank_texts": 0,
+    "short_texts_under_20_tokens": 382,
+    "median_tokens": 9.0,
+    "p90_tokens_nearest_rank": 80,
+    "opinion_train_candidates": 85,
+    "quality_language_counts": {
+      "english": 169,
+      "fr": 1,
+      "unknown": 384
+    },
+    "repeated_user_item_pairs": 0,
+    "conflicting_feedback_user_item_pairs": 0,
+    "source_feedback_mapping_disagreements": 0,
+    "normalized_text_groups_repeated": 10,
+    "excess_rows_in_repeated_text_groups": 43,
+    "largest_normalized_text_repeat_count": 14,
+    "author_quote_marker_rows": 10,
+    "intro_or_conclusion_heading_rows": 11,
+    "promotional_phrase_signal_rows": 4,
+    "opinion_candidate_ids_in_cohort": 85,
+    "opinion_candidate_quality_flags_consistent": true,
+    "quality_rows_match_cohort_ids": true,
+    "feedback_mapping_clean": true
+  }
+}
