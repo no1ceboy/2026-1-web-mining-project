@@ -25,6 +25,17 @@ cache/
 Thumbs.db
 .vscode/
 
+# LaTeX build files
+*.aux
+*.log
+*.out
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+reports/build/
+tmp/pdfs/
+
 # Private sampling lookup state / local source-review links
 *.dpapi
 *_spotcheck.html

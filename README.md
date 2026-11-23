@@ -1,52 +1,80 @@
-# 2026-1 Web Mining Project
+# Review-Aware Recommendation from User-Generated Content
 
-**Working title:** Review-Aware Game Recommendation with Web Mining
+**Web Mining Capstone | Progress report, 23 November 2026**
 
-This capstone studies whether opinions mined from Steam game reviews add useful evidence to recommendations built from user-game links. It combines web data collection, link analysis, opinion mining, and a small recommendation demo. Information retrieval is out of scope.
+## Project summary
 
-## Start here
+This project studies whether public Steam reviews can support game recommendations and whether aspect-level opinions in review text add useful evidence beyond a review's overall recommendation vote. The study combines web data collection, link analysis, recommendation, and opinion mining. Information retrieval is outside the project scope.
 
-1. Read the [full project plan](outputs/README.md) for the research questions, shared schema, evaluation plan, and checkpoint schedule.
-2. Open the README for the assigned workstream:
-   - [Data collection and provenance](outputs/team_guides/data_collection/README.md)
-   - [Member 3: Personalized PageRank and LightGCN](outputs/team_guides/member3_graph_models/README.md)
-   - [Member 4: opinion mining and validation](outputs/team_guides/member4_opinion_mining/README.md)
-3. For recommendation data, read the [user-history sampling design](docs/sampling_design.md) and [current sampling audit](outputs/steam_history_v3/sampling_report.md). The new sampler retains observed user histories and defines cohort membership using training data only. Its outputs are a feasibility pilot and proposed split contract; check the audit gate before treating them as final benchmark data.
-4. Keep the [10,000-review quota snapshot](outputs/steam_100games_v1/steam_expanded_pilot.jsonl), [its manifest](outputs/steam_100games_v1/steam_expanded_manifest.json), and [quality report](outputs/steam_100games_v1/steam_overlap_report.md) as a separate reference. Do not combine it with the historical cohort to fill row counts or build pre-cutoff features. The original 200- and 2,000-review snapshots also remain unchanged.
-5. Read the [technical project assessment](docs/project_assessment.md) for data limitations, scope, workload and priorities for the four-person team.
-6. For the Project Lead / Member 2 loader and evaluation contract, see [evaluation protocol](docs/evaluation_contract.md) and the [evaluation-owner review](outputs/steam_history_v3/evaluation_owner_review.md).
+For this progress checkpoint, the deliverables are a formal report, reproducible source code, and documented datasets. The report separates pilot evidence from results that still require validation.
 
-## Project in brief
+## Current progress
 
-The main comparison is Popularity vs. Personalized PageRank (PPR) vs. LightGCN. We then test whether validated aspect-level opinions from review text improve LightGCN. Steam's `voted_up` field is an overall recommendation label; it is not the sentiment of every aspect mentioned in a review.
+- The Steam history pilot contains 54 selected users, 554 reviews, and 95 games. It is too small to meet the registered evaluation gate of 500 users and at least 100 eligible validation and test users.
+- The shared chronological evaluator, data-quality audit, and Popularity baseline are implemented.
+- Personalized PageRank and LightGCN have been run on the same pilot split. Results are exploratory because the test set has only 23 users.
+- The aspect categories, rule-based text extractor, annotation tools, and proposed opinion feature are in the repository. Human annotation and extraction-quality evaluation are not complete, so no validated opinion result is available.
 
-The earlier quota snapshot contains 10,000 recent English reviews from 100 games and 9,718 reviewers, but only 169 reviewers with two positive games. The [revised acquisition method](docs/sampling_design.md) therefore discovers reviewers in a historical training window and collects their public histories within a frozen 100-game catalogue. It preserves short/negative interactions, separates usable English opinion text, records date uncertainty and measures actual chronological coverage. The target population is a train-defined active-reviewer cohort, not all Steam users. Never combine Steam and Amazon users or interactions in one graph.
+See the [progress report source](reports/Group9_ProgressReport.tex) and [PDF](output/pdf/Group9_ProgressReport.pdf) for the project statement, datasets, results, and next steps.
 
-## Workstream owners
+## Research questions
 
-| Owner | Workstream | First evidence to share |
-| --- | --- | --- |
-| Project Lead / Member 2 | Cleaning, shared loader, chronological split, evaluator, Popularity baseline | Clean-data counts, exclusions, split/evaluator contract, baseline status |
-| Data Collection | Steam crawler and provenance | Expanded sample, manifest, access status, overlap/data-quality report |
-| Member 3 | PPR and LightGCN | Graph coverage, runnable pilot methods, runtime and limitations |
-| Member 4 | Opinion mining | Aspect guide, human annotation pilot, extractor benchmark and validation status |
+1. How do Popularity, Personalized PageRank, and LightGCN rank held-out games under the same time-based evaluation?
+2. Which aspects are discussed positively or negatively in reviews, and how accurately can those opinions be extracted?
+3. After opinion extraction is validated, does adding aspect-level evidence improve LightGCN ranking?
 
-All four streams can start from the pilot in parallel. Coordinate shared field names and model interfaces early; rerun results on the same frozen clean snapshot when it is ready.
+## Repository map
 
-## Shared-data rules
+| Path | Contents |
+|---|---|
+| reports/ | Editable progress report source |
+| output/pdf/ | Rendered progress report |
+| src/webmining/ | Shared data loader and ranking evaluation |
+| src/models/ | Personalized PageRank and LightGCN implementations |
+| scripts/ | Collection, audit, baseline, graph-model, and opinion-mining scripts |
+| configs/ | Versioned collection and model settings |
+| outputs/ | Versioned datasets, audit reports, pilot metrics, and opinion-mining artifacts |
+| docs/ | Sampling design, evaluation protocol, project status, and role guides |
 
-- Preserve `review_id`, hashed `user_id`, `item_id`, `timestamp`, `crawl_time_utc`, `source_feedback`, `positive_interaction`, `title`, `text`, and `source_url` when the source provides them.
-- Do not store raw SteamIDs, credentials, or API tokens in the repository.
-- Keep negative reviews for opinion mining, but create recommendation edges only from the agreed positive-interaction rule.
-- Do not use validation/test interactions or future review text in training, user profiles, opinion features, or tuning.
-- Record dataset version, filters, split, random seed, runtime, and hardware for reported results.
+## Data versions
 
-## Git collaboration
+The repository preserves three distinct Steam datasets. Do not combine them to increase graph coverage.
 
-Each contributor should create a branch for the assigned workstream, for example `feat/steam-data-collection`, `member3/graph-models`, or `member4/opinion-mining`. Commit focused changes and open a pull request or request review from the project lead before merging. Do not commit model weights, environment files, credentials, caches, or large unbounded crawls. Keep generated reports and bounded samples reproducible and small enough to review.
+- The 200-review pilot supports early collection and opinion-taxonomy development.
+- The 10,000-review quota snapshot supports source and text-pipeline checks. Its reviewer overlap is too low for the current recommendation benchmark.
+- The v3 history sample is the current ranking pilot. It preserves observed histories for selected users and uses time-based evaluation windows.
 
-## Current status
+The v3 sample is not representative of all Steam users. The sample-size target and public-source spot-check remain incomplete. The full sampling rules are in [docs/sampling_design.md](docs/sampling_design.md), and the current counts are in [the sampling report](outputs/steam_history_v3/sampling_report.md).
 
-The quota crawl remains available as a reference. The new history sampler and cohort/coverage builder are implemented; see the [latest audit](outputs/steam_history_v3/sampling_report.md) for counts, limitations and whether the declared planning gate passes. The Project Lead / Member 2 shared loader and Popularity smoke evaluator are implemented in the current evaluation workstream; see the [evaluation-owner review](outputs/steam_history_v3/evaluation_owner_review.md). Raw discovery, cohort reviews, historical views, seen-item masks and opinion-training candidates are versioned separately. Public-history dates have day precision except matching API-anchored seeds; exact historical text cannot be reconstructed. PPR/LightGCN model runs, human opinion validation and the demo remain pending. Use the [sampling runbook](docs/sampling_design.md#chạy-và-chạy-tiếp) for the new pipeline and the [API crawl runbook](docs/steam_data_collection.md) for the earlier snapshot.
+## Reproduce the pilot analyses
 
-The v3 design pilot checked 100 profiles and produced 54 train-eligible cohort users with 554 reviews across 95 observed games. The proposed temporal contract yields 22 validation and 23 test users, with 69–86 candidates each. These are coverage counts, not ranking scores; the planning gate is not yet met. A separately versioned [full-scale resource configuration](configs/steam_history_sampling_full_v1.json) is prepared but has not been executed.
+From the repository root, install the Python packages needed for the selected analysis. The graph-model CPU environment is specified in requirements-graph.txt.
+
+    python -m pip install -r requirements-graph.txt
+    python scripts/audit_history_quality.py
+    python scripts/run_popularity_baseline.py --pilot-smoke
+    python scripts/run_graph_models.py --pilot-smoke
+
+The rule-based opinion extractor and validation tools are described in the [Member 4 guide](docs/team_guides/member4_opinion_mining/README.md). Opinion outputs are exploratory until compared with human labels.
+
+To rebuild the PDF with Tectonic (Times New Roman is used to render Vietnamese names):
+
+    tectonic --outdir output/pdf reports/Group9_ProgressReport.tex
+
+## Shared data rules
+
+- Keep raw records separate from processed views and preserve the source fields.
+- Hash reviewer identifiers consistently; do not store raw SteamIDs, credentials, or API tokens.
+- Preserve negative reviews for text analysis. Only positive interactions form recommendation graph edges.
+- A missing review is unknown feedback, not a verified dislike.
+- Keep Steam's overall vote separate from sentiment inferred for individual review aspects.
+- Build training histories and opinion profiles only from information available before each evaluation cutoff.
+
+## Team workstreams
+
+| Workstream | Main responsibility |
+|---|---|
+| [Member 1](docs/team_guides/data_collection/README.md) | Steam collection, source provenance, and coverage checks |
+| [Member 2](docs/team_guides/member2_data_evaluation.md) | Data preparation, shared split, evaluator, and baseline |
+| [Member 3](docs/team_guides/member3_graph_models/README.md) | Personalized PageRank and LightGCN |
+| [Member 4](docs/team_guides/member4_opinion_mining/README.md) | Aspect taxonomy, opinion extraction, and human validation |

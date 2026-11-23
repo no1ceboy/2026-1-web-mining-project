@@ -1,0 +1,57 @@
+{
+  "version": "aspect_lexicon_v0",
+  "status": "draft_from_steam_pilot_reading; revise after the 50-review annotation pilot and overlap adjudication",
+  "source_note": "Terms were chosen by reading the 200-review steam_pilot.jsonl (5 Valve games). They are candidate cues for the extractor baseline and examples for annotators, not an exhaustive or validated vocabulary.",
+  "sentiments": ["positive", "negative", "neutral", "mixed"],
+  "aspects": {
+    "gameplay": {
+      "definition": "Core play experience: mechanics, controls, combat/gunplay, puzzles, heroes/classes/weapons, strategy, depth, difficulty, pacing, game balance and replayability.",
+      "terms": ["gameplay", "game play", "mechanic", "mechanics", "combat", "gunplay", "shooting", "puzzle", "puzzles", "controls", "movement", "hero", "heroes", "class", "classes", "weapon", "weapons", "gun", "guns", "strategy", "strategies", "learning curve", "difficulty", "challenging", "pacing", "pace", "balance", "imbalance", "replayable", "replayability", "hitbox", "hitboxes", "melee", "items", "teamwork"]
+    },
+    "modes_content": {
+      "definition": "Amount and kind of content: maps, levels, campaign, game modes (co-op, versus, casual, ranked as a mode), game length, workshop/mods/community maps.",
+      "terms": ["map", "maps", "level", "levels", "campaign", "mode", "modes", "co-op", "coop", "versus", "singleplayer", "single player", "split screen", "workshop", "mod", "mods", "moddable", "community maps", "content", "longer", "length", "arcade", "arcades"]
+    },
+    "story_characters": {
+      "definition": "Narrative and writing: story, plot, lore, characters, dialogue, humor, voice acting, ending.",
+      "terms": ["story", "storytelling", "plot", "lore", "character", "characters", "dialogue", "writing", "written", "humor", "humour", "comedy", "banter", "voice acting", "ending", "narrative"]
+    },
+    "audiovisual": {
+      "definition": "Presentation: graphics, visuals, art style, animation, music, sound effects, soundtrack, gore effects.",
+      "terms": ["graphics", "visuals", "visual", "art style", "style", "animation", "animations", "ragdoll", "ragdolls", "music", "soundtrack", "sound", "sounds", "theme", "shaders", "gore", "looks"]
+    },
+    "performance_stability": {
+      "definition": "Technical quality on the player's machine or network: FPS, stutter, optimization, crashes, bugs, connection/server reliability, system requirements.",
+      "terms": ["fps", "frame", "frames", "stutter", "stuttering", "optimized", "optimization", "optimisation", "lag", "laggy", "crash", "crashes", "bug", "bugs", "bugged", "buggy", "server", "servers", "connection", "disconnect", "specs", "runs", "toaster", "low-end", "lowend"]
+    },
+    "matchmaking_ranking": {
+      "definition": "How matches are formed and ranked: matchmaking, queue times, ranked/MMR/Elo systems, team balance, smurfs and boosters as a matchmaking-fairness issue.",
+      "terms": ["matchmaking", "match making", "mm", "queue", "queues", "queuing", "ranked", "rank", "ranks", "mmr", "elo", "smurf", "smurfs", "smurfing", "booster", "boosters", "premier", "meet your match", "quickplay"]
+    },
+    "players_community": {
+      "definition": "Other people and the social experience: teammates, toxicity, the community, playing with friends or randoms.",
+      "terms": ["toxic", "toxicity", "teammate", "teammates", "players", "player base", "playerbase", "community", "randoms", "friends", "friend", "squad", "people", "trolls", "trolling", "tryhards", "noobs"]
+    },
+    "cheating_moderation": {
+      "definition": "Integrity and enforcement: cheaters/hackers, bot accounts, anti-cheat (VAC), bans, reports, behavior/communication scores, penalties, vote kicks.",
+      "terms": ["cheater", "cheaters", "cheating", "cheats", "hacker", "hackers", "aimbot", "wallhack", "wallhacks", "walling", "bot", "bots", "anti-cheat", "anticheat", "anti cheat", "vac", "ban", "bans", "banned", "banning", "cooldown", "cooldowns", "report", "reports", "reported", "punishment", "punish", "penalty", "behavior score", "behaviour score", "conduct", "communication score", "kick", "vote kick"]
+    },
+    "developer_support": {
+      "definition": "The developer/publisher's ongoing support: updates, patches, fixes, neglect or abandonment, customer support.",
+      "terms": ["valve", "dev", "devs", "developer", "developers", "update", "updates", "patch", "patches", "neglect", "neglected", "abandoned", "support", "maintenance", "gaben"]
+    },
+    "value_monetization": {
+      "definition": "Price and spending: price/value for money, free-to-play, skins/cosmetics, cases, gambling, paid subscriptions, microtransactions.",
+      "terms": ["price", "priced", "cheap", "free", "worth the", "euro", "dollar", "dollars", "money", "skin", "skins", "cosmetic", "cosmetics", "hats", "cases", "gamble", "gambling", "dota plus", "microtransaction", "microtransactions", "battle pass", "sale"]
+    }
+  },
+  "special_labels": {
+    "overall": "Whole-game judgment with no specific aspect ('great game', '10/10'). Annotate it, but report it separately and exclude it from aspect P/R/F1 and from O(u,i).",
+    "none": "Use once per review that has no aspect and no overall judgment, so the review counts as annotated (needed for precision/recall denominators)."
+  },
+  "baseline_sentiment_lexicon": {
+    "positive": ["good", "great", "best", "love", "loved", "awesome", "amazing", "excellent", "fun", "enjoy", "enjoyed", "enjoyable", "nice", "brilliant", "fantastic", "perfect", "masterpiece", "beautiful", "clever", "solid", "smooth", "satisfying", "memorable", "innovative", "spectacular", "flawless", "classic", "favorite", "favourite", "cool", "funny", "witty", "fresh", "deep", "worth", "recommend", "legendary", "peak", "excited", "awesome", "chill", "diverse", "refreshing", "stimulating", "decent", "well"],
+    "negative": ["bad", "worst", "terrible", "awful", "broken", "trash", "garbage", "sucks", "suck", "hate", "boring", "unplayable", "toxic", "lazy", "annoying", "infuriating", "disappointing", "disappointment", "worse", "poorly", "clunky", "stuttering", "buggy", "bugged", "fail", "failure", "miserable", "ruin", "ruins", "ruining", "ruined", "abandoned", "neglected", "neglect", "dogshit", "shit", "ass", "disgrace", "ridiculous", "rampant", "flooded", "problem", "issue", "issues", "lacks", "missing", "regret", "joke", "pointless", "imbalance", "severe", "false", "random", "drags", "repetitive", "shitty", "crisis", "horrible", "unfair"],
+    "negators": ["not", "no", "never", "dont", "don't", "doesn't", "doesnt", "isn't", "isnt", "wasn't", "wasnt", "can't", "cant", "cannot", "won't", "wont", "without", "hardly", "nothing"]
+  }
+}
