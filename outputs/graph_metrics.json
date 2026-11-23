@@ -1,0 +1,210 @@
+{
+  "dataset_version": "steam_history_v3",
+  "split_manifest_sha256": "5b29cc87a838ded2f336a4f538e1ad0d4c1bd9caae196534a9bf30cd83393b77",
+  "split_contract_status": "proposed_sampling_contract_requires_evaluation_owner_review",
+  "planning_gate_passed": false,
+  "result_status": "pilot_smoke_only",
+  "runtime_environment": {
+    "platform": "Linux-6.18.55+-x86_64-with-glibc2.39",
+    "python": "3.13.18",
+    "device": "cpu",
+    "cpu": "Intel(R) Xeon(R) CPU @ 2.20GHz",
+    "logical_cpus": 4,
+    "torch": "2.11.0+cpu",
+    "torch_threads": 1
+  },
+  "config": {
+    "ks": [
+      10,
+      20
+    ],
+    "ppr": {
+      "restart": 0.15,
+      "tolerance": 1e-10,
+      "max_iterations": 250
+    },
+    "lightgcn": {
+      "embedding_dim": 32,
+      "layers": 2,
+      "epochs": 30,
+      "batch_size": 256,
+      "learning_rate": 0.01,
+      "regularization": 0.0001,
+      "seed": 2026
+    }
+  },
+  "splits": {
+    "validation": {
+      "coverage": {
+        "warm_users": 54,
+        "warm_items": 84,
+        "positive_edges": 334,
+        "users_with_two_positive_games": 54,
+        "components": 1,
+        "largest_component_users": 54,
+        "largest_component_items": 84,
+        "largest_component_edges": 334
+      },
+      "models": {
+        "popularity": {
+          "split": "validation",
+          "target_users": 22,
+          "positive_history_edges": 334,
+          "warm_users": 54,
+          "warm_items": 84,
+          "candidate_count_min": 69,
+          "candidate_count_max": 81,
+          "candidate_count_mean": 76.4545,
+          "metrics": {
+            "recall_at_10": 0.18181818181818182,
+            "ndcg_at_10": 0.06848296043512256,
+            "recall_at_20": 0.5,
+            "ndcg_at_20": 0.14662708826477833
+          },
+          "tie_break": "score descending, then item_id ascending",
+          "runtime_seconds": {
+            "prepare": 0.00017,
+            "rank_and_evaluate": 0.001608,
+            "total": 0.001777
+          }
+        },
+        "ppr": {
+          "split": "validation",
+          "target_users": 22,
+          "positive_history_edges": 334,
+          "warm_users": 54,
+          "warm_items": 84,
+          "candidate_count_min": 69,
+          "candidate_count_max": 81,
+          "candidate_count_mean": 76.4545,
+          "metrics": {
+            "recall_at_10": 0.22727272727272727,
+            "ndcg_at_10": 0.09190506990229141,
+            "recall_at_20": 0.3181818181818182,
+            "ndcg_at_20": 0.11416927292811554
+          },
+          "tie_break": "score descending, then item_id ascending",
+          "runtime_seconds": {
+            "prepare": 1e-05,
+            "rank_and_evaluate": 0.247785,
+            "total": 0.247795
+          }
+        },
+        "lightgcn": {
+          "split": "validation",
+          "target_users": 22,
+          "positive_history_edges": 334,
+          "warm_users": 54,
+          "warm_items": 84,
+          "candidate_count_min": 69,
+          "candidate_count_max": 81,
+          "candidate_count_mean": 76.4545,
+          "metrics": {
+            "recall_at_10": 0.13636363636363635,
+            "ndcg_at_10": 0.04639869909342101,
+            "recall_at_20": 0.18181818181818182,
+            "ndcg_at_20": 0.05803315476659444
+          },
+          "tie_break": "score descending, then item_id ascending",
+          "training": {
+            "positive_edges_per_epoch": 334,
+            "skipped_edges_without_unobserved_games": 0,
+            "first_epoch_mean_loss": 0.6839291114293172,
+            "last_epoch_mean_loss": 0.15279926448881984
+          },
+          "runtime_seconds": {
+            "prepare": 1.148668,
+            "rank_and_evaluate": 0.028357,
+            "total": 1.177025
+          }
+        }
+      }
+    },
+    "test": {
+      "coverage": {
+        "warm_users": 54,
+        "warm_items": 90,
+        "positive_edges": 458,
+        "users_with_two_positive_games": 54,
+        "components": 1,
+        "largest_component_users": 54,
+        "largest_component_items": 90,
+        "largest_component_edges": 458
+      },
+      "models": {
+        "popularity": {
+          "split": "test",
+          "target_users": 23,
+          "positive_history_edges": 458,
+          "warm_users": 54,
+          "warm_items": 90,
+          "candidate_count_min": 69,
+          "candidate_count_max": 86,
+          "candidate_count_mean": 79.9565,
+          "metrics": {
+            "recall_at_10": 0.13043478260869565,
+            "ndcg_at_10": 0.042548058554749704,
+            "recall_at_20": 0.30434782608695654,
+            "ndcg_at_20": 0.08753023305236222
+          },
+          "tie_break": "score descending, then item_id ascending",
+          "runtime_seconds": {
+            "prepare": 0.000256,
+            "rank_and_evaluate": 0.001646,
+            "total": 0.001901
+          }
+        },
+        "ppr": {
+          "split": "test",
+          "target_users": 23,
+          "positive_history_edges": 458,
+          "warm_users": 54,
+          "warm_items": 90,
+          "candidate_count_min": 69,
+          "candidate_count_max": 86,
+          "candidate_count_mean": 79.9565,
+          "metrics": {
+            "recall_at_10": 0.21739130434782608,
+            "ndcg_at_10": 0.08823056408589124,
+            "recall_at_20": 0.30434782608695654,
+            "ndcg_at_20": 0.10925788032531594
+          },
+          "tie_break": "score descending, then item_id ascending",
+          "runtime_seconds": {
+            "prepare": 1.2e-05,
+            "rank_and_evaluate": 0.308125,
+            "total": 0.308137
+          }
+        },
+        "lightgcn": {
+          "split": "test",
+          "target_users": 23,
+          "positive_history_edges": 458,
+          "warm_users": 54,
+          "warm_items": 90,
+          "candidate_count_min": 69,
+          "candidate_count_max": 86,
+          "candidate_count_mean": 79.9565,
+          "metrics": {
+            "recall_at_10": 0.17391304347826086,
+            "ndcg_at_10": 0.05759634102919529,
+            "recall_at_20": 0.34782608695652173,
+            "ndcg_at_20": 0.10390877444039874
+          },
+          "tie_break": "score descending, then item_id ascending",
+          "training": {
+            "positive_edges_per_epoch": 458,
+            "skipped_edges_without_unobserved_games": 0,
+            "first_epoch_mean_loss": 0.6860661321852405,
+            "last_epoch_mean_loss": 0.18714844627411606
+          },
+          "runtime_seconds": {
+            "prepare": 0.11744,
+            "rank_and_evaluate": 0.014546,
+            "total": 0.131986
+          }
+        }
+      }
+    }
+  }
+}
