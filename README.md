@@ -1,4 +1,4 @@
-# Game Recommendation from Steam Reviews
+# Review-Aware Recommendation from User-Generated Content
 
 **Web Mining Capstone | Progress report, 23 November 2026**
 
@@ -15,7 +15,7 @@ For this progress checkpoint, the deliverables are a formal report, reproducible
 - Personalized PageRank and LightGCN have been run on the same pilot split. Results are exploratory because the test set has only 23 users.
 - The aspect categories, rule-based text extractor, annotation tools, and proposed opinion feature are in the repository. Human annotation and extraction-quality evaluation are not complete, so no validated opinion result is available.
 
-See the [progress report](reports/progress_report.tex) and its [PDF](output/pdf/progress_report.pdf) for the evidence, methods, and limitations.
+See the [progress report source](reports/Group9_ProgressReport.tex) and [PDF](output/pdf/Group9_ProgressReport.pdf) for the project statement, datasets, results, and next steps.
 
 ## Research questions
 
@@ -57,9 +57,9 @@ From the repository root, install the Python packages needed for the selected an
 
 The rule-based opinion extractor and validation tools are described in the [Member 4 guide](docs/team_guides/member4_opinion_mining/README.md). Opinion outputs are exploratory until compared with human labels.
 
-To rebuild the paper PDF with Tectonic:
+To rebuild the PDF with Tectonic (Times New Roman is used to render Vietnamese names):
 
-    tectonic --outdir output/pdf reports/progress_report.tex
+    tectonic --outdir output/pdf reports/Group9_ProgressReport.tex
 
 ## Shared data rules
 

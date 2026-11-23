@@ -1,0 +1,105 @@
+\documentclass[10pt]{article}
+
+\usepackage[margin=0.62in]{geometry}
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs,tabularx,array}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xurl}
+
+\hypersetup{
+  pdftitle={Review-Aware Recommendation from User-Generated Content: Progress Report},
+  pdfauthor={Nguyen Ngoc Minh; Nguyen Tat Thanh; Vu Tran An Khanh; Dang Thinh Tuong Minh},
+  pdfsubject={Group 9 Web Mining capstone progress report}
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{3pt}
+\setlist{nosep,leftmargin=1.35em}
+\renewcommand{\arraystretch}{1.04}
+\setlength{\headheight}{13pt}
+\emergencystretch=1em
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Group 9 | Web Mining Capstone}
+\fancyhead[R]{Progress Report | 23 November 2026}
+\fancyfoot[C]{\thepage}
+
+\begin{document}
+
+\begin{center}
+{\Large\bfseries Review-Aware Recommendation from User-Generated Content\par}
+\vspace{2pt}
+{\large Progress Report\par}
+\vspace{5pt}
+{\small\textbf{Group 9 members and student IDs}\par}
+{\small
+Nguyễn Ngọc Minh (20235533) \quad Nguyễn Tất Thanh (20235560)\\
+Vũ Trần An Khánh (20235514) \quad Đặng Thịnh Tường Minh (20235528)\par}
+\vspace{4pt}
+{\small 23 November 2026\par}
+\end{center}
+
+\section*{Problem statement}
+
+Steam's overall recommendation vote records whether a reviewer recommends a game, but not which aspects the review discusses or the opinion expressed about them. This project combines link analysis of positive user-game review histories with opinion mining of review text. It asks whether Personalized PageRank and LightGCN can rank games that users later recommend, and whether aspect-level opinions add useful evidence. The project covers link analysis and opinion mining; information retrieval is outside its scope.
+
+\section*{Datasets}
+
+The collection uses a fixed catalogue of 100 Steam games. A 10,000-review snapshot was collected from Steam's review service [1] with a per-game quota. It contains 9,718 reviewers, but only 169 have positive reviews for at least two games, so it is used for source and overlap assessment rather than the main personalized-ranking evaluation.
+
+The v3 history sample is the main ranking dataset. The collector attempted 100 public profiles; 92 histories were complete, and 54 users met the rule of at least three positive games before the training cutoff. The sample contains 554 reviews across 95 games (509 positive and 45 negative). The quality audit found no duplicate review IDs, blank review text, repeated user-game pairs, or mismatch between source votes and normalized feedback. Short and repeated texts were flagged for review rather than removed automatically. The training-time opinion file has 85 eligible English texts.
+
+\newpage
+\section*{Current experiments and results}
+
+Popularity counts each game's positive training reviewers. Personalized PageRank (PPR) ranks games by their graph proximity to a user [2]. LightGCN learns user and game representations from the same positive-interaction graph [3]. PPR used restart probability 0.15; LightGCN used 32-dimensional embeddings, two graph-propagation layers, 30 epochs, and random seed 2026.
+
+Each evaluation user has one later positive game held out from training. Recall@K is the share of users whose target appears in the first K results; NDCG gives more credit when it appears nearer the top. The validation window has 22 users and the test window has 23.
+
+\begin{table}[ht]
+\centering
+\small
+\caption{Pilot ranking results}
+\begin{tabular}{llrrrrr}
+\toprule
+Split & Method & Users & Recall@10 & NDCG@10 & Recall@20 & NDCG@20 \\
+\midrule
+Validation & Popularity & 22 & 0.182 & 0.068 & \textbf{0.500} & \textbf{0.147} \\
+Validation & PPR & 22 & \textbf{0.227} & \textbf{0.092} & 0.318 & 0.114 \\
+Validation & LightGCN & 22 & 0.136 & 0.046 & 0.182 & 0.058 \\
+Test & Popularity & 23 & 0.130 & 0.043 & 0.304 & 0.088 \\
+Test & PPR & 23 & \textbf{0.217} & \textbf{0.088} & 0.304 & \textbf{0.109} \\
+Test & LightGCN & 23 & 0.174 & 0.058 & \textbf{0.348} & 0.104 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+PPR has the strongest top-10 results on both splits; Popularity has the highest validation Recall@20, while LightGCN has the highest test Recall@20. These values are from the current pilot and are reported with their user counts.
+
+Aspect-based opinion mining [4] has an aspect guide, a 50-review annotation batch, and a rule-based extractor. The extractor produced 212 aspect records from the batch and 538 from the 85 v3 opinion texts; these counts measure output volume, not accuracy. Human labels have not yet been entered, and no opinion-augmented LightGCN result is included.
+
+\textbf{Code repository:} \url{https://github.com/no1ceboy/2026-1-web-mining-project/tree/codex/progress-report}
+
+\section*{Next steps for the final report and presentation}
+
+\begin{enumerate}
+  \item Complete the review source/date/content check, confirm the final collection size, and freeze a versioned dataset and time split.
+  \item Label the review batch, independently label the shared examples, resolve disagreements, and evaluate both extractors on held-out human labels.
+  \item Rerun Popularity, PPR, and LightGCN on the frozen split. Add the opinion feature using only text available before each prediction date, then present the comparison and supported conclusions.
+\end{enumerate}
+
+\section*{References}
+{\small
+[1] Valve Corporation. Steamworks Web API Reference: IUserReviewsService.\par
+[2] T. H. Haveliwala. Topic-Sensitive PageRank. WWW, 2002.\par
+[3] X. He et al. LightGCN: Simplifying and Powering Graph Convolution Network for Recommendation. SIGIR, 2020.\par
+[4] M. Pontiki et al. SemEval-2014 Task 4: Aspect Based Sentiment Analysis, 2014.
+}
+
+\end{document}

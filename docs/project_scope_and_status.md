@@ -1,6 +1,6 @@
 # Project scope and current status
 
-**Project:** Game Recommendation from Steam Reviews
+**Project:** Review-Aware Recommendation from User-Generated Content
 **Checkpoint:** Progress report, 23 November 2026
 **Team:** Four members
 
@@ -32,7 +32,7 @@ The two snapshots must not be combined. Sampling details, timestamp rules, and t
 - The 50-review human annotation batch has not yet been labeled. There is no human-validated extraction score and no final comparison of LightGCN with opinion features.
 - A 20-review public-source, date, and content spot-check remains incomplete.
 
-The complete counts, model metrics, and limitations appear in the [progress report](../reports/progress_report.tex).
+The current counts, model metrics, and next steps appear in the [progress report](../reports/Group9_ProgressReport.tex).
 
 ## Completion criteria for the final study
 
