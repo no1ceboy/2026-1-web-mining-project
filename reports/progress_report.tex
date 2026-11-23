@@ -1,0 +1,304 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=0.85in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs,tabularx,array}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{needspace}
+\usepackage{placeins}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xurl}
+
+\hypersetup{
+  pdftitle={Game Recommendation from Steam Reviews: Progress Report},
+  pdfauthor={Four-member Web Mining Capstone Team},
+  pdfsubject={Progress report for a Web Mining capstone}
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+\setlist{nosep,leftmargin=1.5em}
+\renewcommand{\arraystretch}{1.12}
+\setlength{\headheight}{14pt}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Web Mining Capstone}
+\fancyhead[R]{Progress Report | 23 November 2026}
+\fancyfoot[C]{\thepage}
+
+\title{\textbf{Game Recommendation from Steam Reviews}\\
+\large Progress Report}
+\author{Four-member Web Mining Capstone Team}
+\date{23 November 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This project examines whether public Steam reviews can support game ranking and whether opinions about specific game aspects add useful evidence to recommendations. The team has built a review collection and preparation process, a shared chronological evaluation procedure, a simple popularity-count method, and pilot implementations of Personalized PageRank and LightGCN. The current history sample contains 54 selected users, 554 reviews, and 95 games. In the test sample of 23 users, Personalized PageRank found the held-out game in the top ten more often and placed it higher on average. LightGCN found one more target in the top twenty than either alternative. These results check that the methods and evaluation work together; the sample is too small to estimate performance on Steam. The planned sample-size requirement is not met. An aspect guide and a rule-based text extractor are available, but human labels and extractor validation are incomplete. No conclusion can yet be made about whether mined opinions improve recommendations. The next work is to increase the sample or narrow the study, complete source checks and human annotation, freeze a final split, and rerun all methods on that split.
+\end{abstract}
+
+\noindent\textbf{Keywords:} Steam reviews, link analysis, game recommendation, aspect-based sentiment analysis, LightGCN
+
+\section{Motivation and research questions}
+
+Steam records whether a review recommends a game overall. Its text can also praise or criticize specific aspects such as gameplay, performance, or price. The overall vote does not identify which aspect the reviewer discusses or the opinion expressed about that aspect. The project therefore studies user-game review histories for ranking and review text for aspect-level opinion analysis.
+
+The recommendation task is defined as follows. Given a user's reviews available before a fixed time, rank games from a bounded catalogue that the user has not reviewed. A positive Steam review is used as a proxy for preference. A game with no observed review is unknown, not a confirmed dislike.
+
+The work addresses three questions:
+\begin{enumerate}
+  \item How do Popularity, Personalized PageRank, and LightGCN rank later-reviewed games under the same time-based evaluation?
+  \item Which aspects do reviewers praise or criticize, and how accurately can those opinions be extracted from review text?
+  \item After extraction has been validated, does adding aspect-level opinion evidence improve LightGCN ranking?
+\end{enumerate}
+
+The course topics in scope are link analysis and opinion mining. Information retrieval is outside the project scope. For this checkpoint, the group is preparing a report, reproducible code, and documented datasets.
+
+\section{Data collection and preparation}
+
+\subsection{Two Steam snapshots with different purposes}
+
+The collection uses Steam as one source across a fixed catalogue of 100 game applications. The official Steamworks review service supports cursor-based retrieval and returns an overall recommendation field called \texttt{voted\_up} \cite{steamworks}.
+
+The first snapshot was collected through the official review service and contains 10,000 recent reviews selected by a per-game quota. It has 9,718 reviewers, but only 169 reviewers have positive reviews for at least two games. Since this collection samples reviews independently by game, it is not the main dataset for personalized ranking.
+
+The separate v3 history sample was designed to retain observed histories for selected reviewers. The sampler used records from Steam's application programming interface (API), dated before the first evaluation period, to identify candidate reviewers. It then collected their public profile review listings within the fixed game catalogue. It attempted 100 public profiles. Ninety-two profiles were complete, and 54 users met the rule of having at least three positive in-catalog games in the training period. The resulting sample contains 554 reviews across 95 observed games: 509 positive and 45 negative. The quota snapshot and the history sample are kept separate and are not combined.
+
+\begin{table}[ht]
+\centering
+\small
+\caption{Steam datasets and their current use}
+\begin{tabularx}{\linewidth}{l r r r X}
+\toprule
+Dataset & Reviews & Users & Games & Use \\
+\midrule
+Recent quota snapshot & 10,000 & 9,718 & 100 & Collection and overlap assessment \\
+v3 history sample & 554 & 54 & 95 & Ranking and opinion-feature pilot \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Cleaning and quality checks}
+
+The v3 quality audit found 554 unique review IDs, no blank review text, no repeated user-game pairs, and no disagreement between the stored source vote and the normalized interaction field. It also flagged 382 reviews with fewer than 20 whitespace-separated tokens. Repeated normalized text occurs in 10 groups, accounting for 43 excess rows. These are screening flags, not proof of spam; no source row was removed because of short or repeated text alone.
+
+Negative reviews remain in the review history and in the set of games already seen by a user, but only positive interactions become graph edges. English detection and a 20-token minimum apply only to the opinion-training view. The current training-time opinion file contains 85 eligible texts. Steam's overall vote is kept separate from sentiment assigned to individual aspects.
+
+The v3 data are a selected sample of complete, accessible public profiles, not a representative sample of all Steam users. Most public-history dates have day-level precision. The sampler applies a conservative date-availability rule, but the planned human check of the source, date, and content for 20 reviews has not been completed. The full counts and collection limits are recorded in the v3 sampling report and quality audit.
+
+\subsection{Time-based evaluation}
+
+The team uses two chronological evaluation windows with validation and test cutoffs of 1 January 2024 and 1 January 2025 UTC. Validation has 22 target users, 334 positive history edges, 84 games with positive training evidence, and 69 to 81 candidates per target. Test has 23 target users, 458 positive history edges, 90 such games, and 69 to 86 candidates per target.
+
+For a target user, candidate games are those with at least one permitted positive training edge, excluding every game that user reviewed before the cutoff, including negative reviews. Validation models use the training history. Test models refit on the history available before the test period. The shared loader checks the split-file hashes, held-out targets, seen-game masks, and candidate counts.
+
+The planned sample-size requirement is at least 500 users overall and at least 100 eligible users in each evaluation window, with more than 20 candidate games per user. The current values are 54 users in the sample, 22 validation users, and 23 test users. The requirement is not met. The current split is suitable for checking the implementation, not for a reliable comparison of ranking quality.
+
+\section{Methods}
+
+\subsection{Popularity baseline}
+
+Let $U$ be the users, $I$ the games, and $E$ the set of unique positive user-game pairs in the permitted training history. The Popularity score for game $i$ is the number of distinct users who reviewed it positively. The indicator $\mathbf{1}\{\cdot\}$ equals one when its condition is true and zero otherwise:
+\[
+  s_{\mathrm{pop}}(i)=\sum_{u\in U}\mathbf{1}\{(u,i)\in E\}.
+\]
+This simple reference method gives the graph methods a baseline to beat.
+
+\subsection{Personalized PageRank}
+
+Personalized PageRank ranks games by their graph proximity to a particular user \cite{haveliwala}. The graph has user nodes and game nodes; an edge represents a positive review in the permitted history. Let $M$ be its row-normalized transition matrix, so each entry gives a one-step transition probability. Let $\mathbf{e}_u$ be a vector with value one at user $u$ and zero elsewhere. The score vector $\mathbf{p}_u$ for user $u$ satisfies
+\[
+  \mathbf{p}_u=\rho\mathbf{e}_u+(1-\rho)M^\top\mathbf{p}_u,
+  \qquad \rho=0.15.
+\]
+Here, $\rho$ is the restart probability. At each step, the walk either returns to user $u$ with probability $\rho$ or follows an edge with probability $1-\rho$. The pilot uses a convergence tolerance of $10^{-10}$ and a limit of 250 iterations. Games are ranked by their entries in $\mathbf{p}_u$.
+
+\subsection{LightGCN}
+
+LightGCN learns user and game vectors by repeatedly averaging neighboring vectors over the user-game graph \cite{lightgcn}. Let $\mathbf{e}_v^{(0)}$ be the initial trainable vector for node $v$, let $N(v)$ be its graph neighbors, and let $d_v$ be its degree. At propagation layer $\ell+1$,
+\[
+  \mathbf{e}_v^{(\ell+1)}
+  =\sum_{w\in N(v)}
+    \frac{\mathbf{e}_w^{(\ell)}}{\sqrt{d_vd_w}}.
+\]
+The final vector averages the initial and propagated vectors over $L$ layers, where $L$ is the number of propagation steps:
+\[
+  \mathbf{z}_v=\frac{1}{L+1}\sum_{\ell=0}^{L}\mathbf{e}_v^{(\ell)},
+  \qquad
+  s_{\mathrm{LG}}(u,i)=\mathbf{z}_u^\top\mathbf{z}_i.
+\]
+The pilot uses 32-dimensional initial vectors, two propagation layers, 30 training epochs, a batch size of 256, learning rate 0.01, embedding penalty weight 0.0001, and random seed 2026. During training, it compares a positive game with one sampled unseen game and adjusts the scores so the positive ranks higher. Sampled unseen games are training examples, not confirmed dislikes. At evaluation, every eligible unseen game is ranked.
+
+\subsection{Proposed opinion feature}
+
+Aspect-based sentiment analysis identifies an aspect discussed in a text and the sentiment expressed toward it \cite{absa}. The ten categories are gameplay, game modes and content, story and characters, audiovisual quality, performance and stability, matchmaking and ranking, player community, cheating and moderation, developer support, and value and monetization. Separate labels record an overall judgment or the absence of aspect evidence; overall judgments are excluded from the opinion feature. The rule-based extractor searches for aspect cues and sentiment words. Both available options use the same aspect cue list; the pretrained model would assign sentiment only after a cue is found. This model has not been run.
+
+The proposed opinion feature combines game-level aspect sentiment with the aspects mentioned in a user's earlier reviews. For game $i$ and aspect $a$, let $P_{ia}$, $N_{ia}$, and $Z_{ia}$ be positive, negative, and neutral review counts. A smoothed game score is
+\[
+  g_{ia}=\frac{P_{ia}-N_{ia}}{P_{ia}+N_{ia}+Z_{ia}+2}.
+\]
+The added 2 is a fixed smoothing constant that reduces the effect of sparse counts. A mixed opinion means that the review expresses both positive and negative views about the same aspect; it contributes one half to each count.
+For user $u$, let $n_{ua}$ be the number of eligible earlier reviews that mention aspect $a$, and let $q_a$ be that aspect's share of all eligible mentions. The user weight uses a prior strength of one:
+\[
+  w_{ua}=\frac{n_{ua}+q_a}{\sum_b n_{ub}+1}.
+\]
+The proposed compatibility score maps the weighted aspect score from $[-1,1]$ to $[0,1]$:
+\[
+  O(u,i)=\frac{1}{2}\left(1+\sum_a w_{ua}g_{ia}\right).
+\]
+The proposed combined ranking score is
+\[
+  S(u,i)=(1-\lambda)\widetilde{s}_{\mathrm{LG}}(u,i)+\lambda O(u,i),
+\]
+where $\widetilde{s}_{\mathrm{LG}}$ is LightGCN's score normalized over the user's candidate games and $\lambda$ is selected from $\{0,0.1,0.2,0.3,0.4,0.5\}$ on validation data only. If no opinion score is available, the proposed method falls back to LightGCN. This feature is not yet validated or evaluated. The use of aspect mention frequency as user interest is an assumption, not a measured fact about a user's preferences.
+
+\subsection{Evaluation measures}
+
+Let $T$ be the set of eligible target users. Each eligible user has one held-out positive game. If its rank is $r_u$, Recall@$K$ is the share of users whose held-out game appears within the first $K$ ranked candidates:
+\[
+  \mathrm{Recall@}K=\frac{1}{|T|}\sum_{u\in T}
+  \mathbf{1}\{r_u\leq K\}.
+\]
+With one target per user, this is a hit rate. Normalized discounted cumulative gain (NDCG@$K$) gives more credit when the target is nearer the top:
+\[
+  \mathrm{NDCG@}K=\frac{1}{|T|}\sum_{u\in T}
+  \frac{\mathbf{1}\{r_u\leq K\}}{\log_2(1+r_u)}.
+\]
+The evaluator reports the mean over users for $K=10$ and $K=20$. A tie is resolved by ascending game ID.
+
+\section{Progress and preliminary results}
+
+\subsection{Ranking results}
+
+All three ranking methods use the same v3 split, candidate sets, seen-game exclusions, and evaluator. Tables~\ref{tab:validation} and~\ref{tab:test} report pilot metrics to three decimal places; bold font marks the highest value in each column. The runs used Linux, Python 3.13.18, PyTorch 2.11.0+cpu, and one thread on an Intel Xeon CPU at 2.20 GHz with four logical CPUs.
+
+\begin{table}[ht]
+\centering
+\small
+\caption{Validation results on 22 users}
+\label{tab:validation}
+\begin{tabular}{lrrrr}
+\toprule
+Method & Recall@10 & NDCG@10 & Recall@20 & NDCG@20 \\
+\midrule
+Popularity & 0.182 & 0.068 & 0.500 & 0.147 \\
+Personalized PageRank & \textbf{0.227} & \textbf{0.092} & 0.318 & 0.114 \\
+LightGCN & 0.136 & 0.046 & 0.182 & 0.058 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[ht]
+\centering
+\small
+\caption{Test results on 23 users}
+\label{tab:test}
+\begin{tabular}{lrrrr}
+\toprule
+Method & Recall@10 & NDCG@10 & Recall@20 & NDCG@20 \\
+\midrule
+Popularity & 0.130 & 0.043 & 0.304 & 0.088 \\
+Personalized PageRank & \textbf{0.217} & \textbf{0.088} & 0.304 & \textbf{0.109} \\
+LightGCN & 0.174 & 0.058 & \textbf{0.348} & 0.104 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+On the test split, the held-out game appears in the top 10 for 5 of 23 users with Personalized PageRank, 4 with LightGCN, and 3 with Popularity. At the top 20, LightGCN finds it for 8 users, while the other methods find it for 7. One test user changes Recall by about 0.043. The results suggest that Personalized PageRank may be useful at the top of this pilot ranking, while LightGCN's result varies by cutoff. The sample is too small to conclude that either method is generally better.
+
+\subsection{Opinion-mining progress}
+
+The annotation guide and a 50-review development batch are ready. A second annotator is assigned to label 15 of the reviews independently; 16 of the 50 reviews have a negative overall recommendation. The human annotation file contains only a header, so the group has not yet labeled any reviews or resolved disagreements. A machine-generated draft exists but is not ground truth.
+
+The rule-based extractor produced 212 aspect records from the 50-review batch and 538 records from the 85 v3 opinion candidates. These counts describe extraction output volume, not accuracy. The project has no validated precision, recall, or F1 score. Qualitative review of the outputs shows likely keyword ambiguity and difficulty with sarcasm. The pretrained model option has not been run.
+
+The exploratory opinion profiles cover 14 of 22 validation users and 10 of 23 test users. They provide scores for 616 of 2,090 validation user-game pairs and 440 of 2,185 test pairs. These values come from only 85 candidate texts and an unvalidated extractor. The current test-side input also does not contain all opinion text available before the test cutoff. No opinion-augmented LightGCN result is available.
+
+\Needspace{14\baselineskip}
+\subsection{Workstream status}
+
+\begin{table}[ht]
+\centering
+\small
+\caption{Progress by workstream}
+\begin{tabularx}{\linewidth}{l X X}
+\toprule
+Workstream & Completed for the pilot & Remaining \\
+\midrule
+Data collection & Steam data versions, manifests, v3 history sample & Source spot-check; decide on larger collection or narrower claims \\
+Data preparation and evaluation & Shared loader, quality audit, time split, Popularity baseline & Freeze an adequate final dataset and rerun the baseline \\
+Link analysis and recommendation & PPR and LightGCN code and pilot metrics & Rerun on the final dataset; report eligible-user counts with each result \\
+Opinion mining & Aspect guide, rule-based extractor, annotation workflow, proposed feature & Human labels, a second independent review of 15 examples, evaluation on reserved reviews, and profiles limited to text available by each prediction date \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\FloatBarrier
+\section{Limitations and next work}
+
+The main limitation is the small sample. The v3 dataset has 54 users and only 23 test users, well below the planned sample-size target. Model scores are sensitive to one or two users. The pilot therefore supports implementation checks and a transparent progress report, but not broad claims about recommendation quality.
+
+The opinion results have a separate validity limitation. No human-labeled reference set exists, and only a small portion of review text is eligible for analysis. Keyword matches can confuse context, and sarcasm is difficult to interpret reliably. The opinion feature also assumes that the aspects a user mentions are relevant to that user's future choices. This assumption must be tested rather than treated as fact.
+
+The source check is not complete. Public profile dates generally have day precision, and the current historical text-availability rule relies on the displayed update date. Human review of a sample is needed before making strong claims about the exact time when text was available.
+
+The next work is:
+\begin{enumerate}
+  \item Manually check 20 reviews against Steam to confirm their source, dates, and text.
+  \item Decide whether to run a larger collection of user histories or report the study as a small pilot with restricted claims.
+  \item Freeze a dataset and split before further model tuning. Keep the two Steam snapshots separate.
+  \item Complete the human labels, have a second annotator label the shared examples independently, and evaluate both methods against a separate labeled set.
+  \item Prepare opinion records using only text available before each prediction date. Run the opinion-augmented comparison after the feature and fallback rules are agreed.
+  \item Revise the repository status documentation and update this report after the final comparison.
+\end{enumerate}
+
+\Needspace{11\baselineskip}
+\section{Conclusion}
+
+The project now has a Steam history pilot, a shared evaluator, PPR and LightGCN runs, and an opinion-mining prototype. The ranking results are mixed and the small sample cannot support a general conclusion. Opinion extraction has no human-validated accuracy score, and opinion features have not been tested with LightGCN. A final comparison requires a larger evaluation sample and validated text features.
+
+\section*{Reproducibility record}
+
+The current source artifacts are stored in the repository:
+\begin{itemize}
+  \item v3 sampling and split: \texttt{outputs/steam\_history\_v3/}
+  \item shared loader and metrics: \texttt{src/webmining/evaluation.py}
+  \item graph models and saved metrics: \texttt{src/models/} and \texttt{outputs/graph\_metrics.json}
+  \item opinion tools and their validation status report: the scripts/ and outputs/ directories
+\end{itemize}
+The pilot commands and artifact map are listed in the repository README and \texttt{outputs/README.md}. All reported ranking values are read from the saved evaluator outputs. No new model run or human annotation is claimed in this report.
+
+\begin{thebibliography}{9}
+
+\bibitem{steamworks}
+Valve Corporation.
+\newblock \emph{IUserReviewsService: Steamworks Web API Reference}.
+\newblock \href{https://partner.steamgames.com/doc/webapi/IUserReviewsService}{Official API reference}. Accessed 23 November 2026.
+
+\bibitem{haveliwala}
+T. H. Haveliwala.
+\newblock Topic-Sensitive PageRank.
+\newblock In \emph{Proceedings of the 11th International World Wide Web Conference}, pages 517-526, 2002.
+\newblock DOI: 10.1145/511446.511513.
+
+\bibitem{lightgcn}
+X. He, K. Deng, X. Wang, Y. Li, Y. Zhang, and M. Wang.
+\newblock LightGCN: Simplifying and Powering Graph Convolution Network for Recommendation.
+\newblock In \emph{Proceedings of the 43rd International ACM SIGIR Conference on Research and Development in Information Retrieval}, 2020.
+\newblock arXiv:2002.02126.
+
+\bibitem{absa}
+M. Pontiki, D. Galanis, J. Pavlopoulos, H. Papageorgiou, I. Androutsopoulos, and S. Manandhar.
+\newblock SemEval-2014 Task 4: Aspect Based Sentiment Analysis.
+\newblock In \emph{Proceedings of the 8th International Workshop on Semantic Evaluation}, pages 27-35, 2014.
+\newblock DOI: 10.3115/v1/S14-2004.
+
+\end{thebibliography}
+
+\end{document}

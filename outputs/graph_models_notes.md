@@ -1,23 +1,33 @@
-# Member 3 graph-model pilot
+# Graph-model pilot notes
 
-The frozen Steam v3 dataset passed the shared loader's hash and candidate checks.
-It has 22 eligible validation users and 23 test users, below the sampling gate.
-The reported metrics verify the ranking pipeline.
+## Scope
 
-On Kaggle, use the saved notebook to recreate this run on CPU with its supplied PyTorch.
-In the repo, use python scripts/run_graph_models.py --pilot-smoke after applying
-the source files to the Member 2 evaluator branch and installing requirements-graph.txt.
-The script accepts --coverage-only for diagnostics and --models ppr for PPR alone.
+The recorded Personalized PageRank and LightGCN runs use dataset version steam_history_v3 and the shared loader and evaluator. They are marked pilot-only because the registered sampling gate has not passed.
 
-PPR uses restart probability 0.15 and caches the converged scores for each user.
-LightGCN uses symmetric degree normalization, averages layer 0 through layer 2,
-and trains with BPR on one sampled unobserved warm game per positive edge per epoch.
-The sampler excludes every game in the historical seen mask. Hyperparameters and
-seed were set before running both holdouts. Test is fit anew using refit history.
-The run uses only positive user–game edges and reports no opinion features.
-An unobserved game may still become a future positive.
+## Configuration
 
-For the final comparison, run the same code on the approved benchmark.
-LightGCN with opinions requires validated, cutoff-specific features from Member 4.
+- Personalized PageRank restart probability: 0.15.
+- LightGCN embedding size: 32.
+- LightGCN propagation layers: 2.
+- LightGCN training epochs: 30.
+- Random seed: 2026.
+- Training objective: Bayesian Personalized Ranking with sampled unobserved games used only as optimization negatives.
+- Evaluation: the complete eligible candidate set from the shared split after excluding all previously reviewed games.
 
-LightGCN reference: https://arxiv.org/abs/2002.02126
+## Recorded environment
+
+The metrics file records Linux, Python 3.13.18, PyTorch 2.11.0+cpu, and one CPU thread. requirements-graph.txt pins that PyTorch version. A GPU is not required to reproduce this small smoke run.
+
+## Interpretation
+
+There are 22 validation users and 23 test users. The metrics show that the ranking code runs through the shared evaluator; they do not establish which method is better for Steam users generally. The test Recall@10 difference between PPR and Popularity corresponds to two users. LightGCN has higher Recall@20 than the other methods on this test split, but the difference is one user.
+
+The run uses only positive user-game edges and no opinion features. Opinion-augmented LightGCN requires validated, cutoff-specific opinion data and a final shared benchmark.
+
+## Reproduction
+
+From the repository root, install requirements-graph.txt and run:
+
+    python scripts/run_graph_models.py --pilot-smoke
+
+The script and saved metrics are the reproducibility record. No notebook is required.

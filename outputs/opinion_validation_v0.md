@@ -21,7 +21,7 @@ Date: 2026-11-23. Owner: Member 4. Branch: `member4/opinion-mining`.
 
 ## Extractor pipeline
 
-1. Split each review into clauses: sentence punctuation, newlines, `;`, "but", "however". Each clause is an exact substring with stored offsets, so evidence can be shown verbatim in the demo.
+1. Split each review into clauses: sentence punctuation, newlines, `;`, "but", "however". Each clause is an exact substring with stored offsets, so every extracted result can be traced to its source review.
 2. Detect candidate aspects with the cue lexicon in [configs/aspect_lexicon_v0.json](../configs/aspect_lexicon_v0.json).
 3. Assign sentiment toward each cue. The **lexicon** backend uses polarity words with negation in a 3-token window. The **hf-absa** backend uses a pretrained aspect-sentiment classifier on (clause, cue term).
 4. Emit `review_id, user_id, item_id, timestamp, aspect, aspect_term, sentiment, evidence, evidence_start, evidence_end, confidence, model, model_version, config, run_id`.
