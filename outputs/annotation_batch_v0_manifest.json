@@ -1,0 +1,49 @@
+{
+  "batch": "annotation_batch_v0",
+  "source": "outputs/steam_pilot.jsonl",
+  "purpose": "development batch for taxonomy and annotation guide; not a held-out evaluation set",
+  "selection": {
+    "per_item": 10,
+    "max_negative_per_item": 5,
+    "overlap_per_item": 3,
+    "min_tokens": 5,
+    "min_english_function_word_share": 0.15,
+    "seed": "member4-annotation-v0",
+    "ordering": "sha256(seed:review_id)"
+  },
+  "blinding": "voted_up is omitted from the worksheet; evaluation joins it from the source by review_id",
+  "source_reviews": 200,
+  "excluded_before_sampling": {
+    "likely_not_english": 7
+  },
+  "selected_reviews": 50,
+  "selected_voted_up_false": 16,
+  "overlap_reviews": 15,
+  "per_item": {
+    "440": {
+      "reviews": 10,
+      "voted_up_false": 5,
+      "overlap": 3
+    },
+    "550": {
+      "reviews": 10,
+      "voted_up_false": 1,
+      "overlap": 3
+    },
+    "570": {
+      "reviews": 10,
+      "voted_up_false": 5,
+      "overlap": 3
+    },
+    "620": {
+      "reviews": 10,
+      "voted_up_false": 0,
+      "overlap": 3
+    },
+    "730": {
+      "reviews": 10,
+      "voted_up_false": 5,
+      "overlap": 3
+    }
+  }
+}
