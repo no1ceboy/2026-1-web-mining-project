@@ -1,0 +1,12 @@
+{
+  "split": "test",
+  "cutoff_utc": "2025-01-01T00:00:00Z",
+  "target_users": 23,
+  "target_users_with_profile": 10,
+  "catalogue_items_observed": 95,
+  "items_with_profile": 44,
+  "targets_whose_item_has_profile": 10,
+  "user_item_pairs": 2185,
+  "pairs_with_score": 440,
+  "status": "pilot coverage; extractor not yet validated against human labels"
+}

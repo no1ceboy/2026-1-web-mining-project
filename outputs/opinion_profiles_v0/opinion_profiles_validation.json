@@ -1,0 +1,1431 @@
+{
+  "split": "validation",
+  "cutoff_utc": "2024-01-01T00:00:00Z",
+  "definition": "see module docstring / opinion_feature_spec_v0.md",
+  "parameters": {
+    "k": 2.0,
+    "beta": 1.0
+  },
+  "aspects": [
+    "gameplay",
+    "modes_content",
+    "story_characters",
+    "audiovisual",
+    "performance_stability",
+    "matchmaking_ranking",
+    "players_community",
+    "cheating_moderation",
+    "developer_support",
+    "value_monetization"
+  ],
+  "input_reviews": 85,
+  "reviews_available_before_cutoff": 85,
+  "reviews_with_extracted_aspects": 68,
+  "extraction_run_id": "lexicon-20261123T104531Z",
+  "aspect_prior": {
+    "gameplay": 0.167665,
+    "modes_content": 0.191617,
+    "story_characters": 0.113772,
+    "audiovisual": 0.08982,
+    "performance_stability": 0.065868,
+    "matchmaking_ranking": 0.011976,
+    "players_community": 0.215569,
+    "cheating_moderation": 0.017964,
+    "developer_support": 0.077844,
+    "value_monetization": 0.047904
+  },
+  "item_profiles": {
+    "848450": {
+      "players_community": 0.0,
+      "story_characters": 0.0,
+      "gameplay": 0.0,
+      "audiovisual": 0.0,
+      "modes_content": 0.0,
+      "developer_support": 0.0,
+      "value_monetization": -0.333333
+    },
+    "814380": {
+      "gameplay": 0.333333,
+      "story_characters": 0.333333,
+      "players_community": 0.333333,
+      "modes_content": 0.0,
+      "audiovisual": 0.0
+    },
+    "400": {
+      "developer_support": 0.333333,
+      "story_characters": 0.333333,
+      "gameplay": 0.333333,
+      "players_community": 0.0,
+      "modes_content": 0.333333,
+      "audiovisual": 0.0
+    },
+    "322330": {
+      "gameplay": 0.5,
+      "audiovisual": 0.5,
+      "players_community": 0.4,
+      "story_characters": 0.333333,
+      "modes_content": 0.0
+    },
+    "346110": {
+      "players_community": 0.333333,
+      "gameplay": 0.0,
+      "story_characters": 0.333333,
+      "modes_content": 0.0,
+      "developer_support": 0.0,
+      "performance_stability": 0.0
+    },
+    "1172470": {
+      "story_characters": 0.333333,
+      "gameplay": 0.333333,
+      "modes_content": 0.333333,
+      "players_community": 0.25,
+      "value_monetization": 0.0
+    },
+    "289070": {
+      "gameplay": 0.333333,
+      "audiovisual": 0.0,
+      "players_community": 0.0,
+      "developer_support": 0.0,
+      "modes_content": 0.333333
+    },
+    "730": {
+      "gameplay": 0.25,
+      "audiovisual": 0.0,
+      "developer_support": 0.0,
+      "modes_content": 0.25,
+      "story_characters": 0.0,
+      "matchmaking_ranking": 0.0,
+      "players_community": 0.25,
+      "value_monetization": 0.0
+    },
+    "1245620": {
+      "gameplay": 0.333333,
+      "story_characters": 0.0,
+      "players_community": 0.0,
+      "modes_content": 0.0,
+      "performance_stability": -0.333333,
+      "developer_support": 0.0
+    },
+    "394360": {
+      "modes_content": 0.333333,
+      "gameplay": 0.0,
+      "audiovisual": 0.0,
+      "matchmaking_ranking": 0.0,
+      "story_characters": 0.0,
+      "value_monetization": 0.333333,
+      "performance_stability": 0.0
+    },
+    "1238810": {
+      "players_community": 0.0
+    },
+    "1938090": {
+      "modes_content": -0.25,
+      "audiovisual": 0.0,
+      "performance_stability": 0.0
+    },
+    "620980": {
+      "modes_content": 0.25,
+      "audiovisual": 0.25,
+      "developer_support": 0.0,
+      "players_community": 0.0
+    },
+    "413410": {
+      "story_characters": 0.333333
+    },
+    "1966720": {
+      "gameplay": 0.25,
+      "modes_content": 0.333333,
+      "players_community": 0.142857,
+      "developer_support": 0.0,
+      "value_monetization": -0.333333
+    },
+    "264710": {
+      "performance_stability": 0.0,
+      "story_characters": 0.0
+    },
+    "960090": {
+      "gameplay": 0.0,
+      "value_monetization": 0.333333,
+      "modes_content": 0.0
+    },
+    "504230": {
+      "players_community": 0.0
+    },
+    "570940": {
+      "modes_content": 0.0
+    },
+    "8930": {
+      "players_community": 0.0
+    },
+    "427520": {
+      "players_community": 0.333333,
+      "gameplay": 0.333333,
+      "cheating_moderation": 0.0
+    },
+    "550": {
+      "players_community": 0.25,
+      "modes_content": 0.333333,
+      "gameplay": 0.333333
+    },
+    "620": {
+      "gameplay": 0.25
+    },
+    "945360": {
+      "modes_content": 0.0
+    },
+    "892970": {
+      "modes_content": 0.0,
+      "gameplay": 0.333333,
+      "developer_support": 0.0
+    },
+    "1145360": {
+      "gameplay": 0.333333,
+      "story_characters": 0.333333,
+      "audiovisual": 0.333333
+    },
+    "105600": {
+      "modes_content": 0.0,
+      "story_characters": 0.333333,
+      "gameplay": 0.0,
+      "players_community": 0.333333
+    },
+    "1086940": {
+      "players_community": 0.0,
+      "story_characters": 0.333333,
+      "performance_stability": 0.0,
+      "audiovisual": 0.333333
+    },
+    "570": {
+      "modes_content": -0.333333,
+      "audiovisual": 0.0,
+      "players_community": 0.0,
+      "developer_support": 0.0,
+      "value_monetization": 0.0,
+      "cheating_moderation": 0.0,
+      "gameplay": 0.0
+    },
+    "271590": {
+      "modes_content": 0.5,
+      "story_characters": 0.333333,
+      "performance_stability": 0.0,
+      "cheating_moderation": 0.0
+    },
+    "526870": {
+      "audiovisual": 0.0,
+      "performance_stability": 0.333333,
+      "developer_support": 0.333333,
+      "gameplay": 0.333333,
+      "modes_content": 0.333333
+    },
+    "220": {
+      "story_characters": 0.0,
+      "gameplay": 0.0,
+      "modes_content": 0.333333
+    },
+    "1174180": {
+      "gameplay": 0.333333,
+      "modes_content": 0.0
+    },
+    "1091500": {
+      "performance_stability": 0.0,
+      "gameplay": 0.0,
+      "developer_support": 0.333333,
+      "value_monetization": 0.333333
+    },
+    "255710": {
+      "modes_content": 0.0
+    },
+    "812140": {
+      "story_characters": 0.0
+    },
+    "1446780": {
+      "players_community": 0.0
+    },
+    "1284210": {
+      "players_community": 0.0
+    },
+    "578080": {
+      "players_community": 0.0
+    },
+    "1085660": {
+      "players_community": 0.0
+    },
+    "306130": {
+      "gameplay": 0.0
+    },
+    "1517290": {
+      "developer_support": 0.333333,
+      "modes_content": 0.333333,
+      "performance_stability": 0.0
+    },
+    "252490": {
+      "players_community": 0.333333
+    },
+    "949230": {
+      "performance_stability": 0.333333,
+      "players_community": 0.0
+    }
+  },
+  "item_profile_support": {
+    "848450": {
+      "players_community": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "story_characters": [
+        0.0,
+        0.0,
+        2.0
+      ],
+      "gameplay": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "audiovisual": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "modes_content": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "developer_support": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "value_monetization": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    },
+    "814380": {
+      "gameplay": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "story_characters": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "players_community": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "modes_content": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "audiovisual": [
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    "400": {
+      "developer_support": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "story_characters": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "gameplay": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "players_community": [
+        0.5,
+        0.5,
+        0.0
+      ],
+      "modes_content": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "audiovisual": [
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    "322330": {
+      "gameplay": [
+        2.0,
+        0.0,
+        0.0
+      ],
+      "audiovisual": [
+        2.0,
+        0.0,
+        0.0
+      ],
+      "players_community": [
+        2.0,
+        0.0,
+        1.0
+      ],
+      "story_characters": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "modes_content": [
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    "346110": {
+      "players_community": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "gameplay": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "story_characters": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "modes_content": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "developer_support": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "performance_stability": [
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    "1172470": {
+      "story_characters": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "gameplay": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "modes_content": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "players_community": [
+        1.5,
+        0.5,
+        0.0
+      ],
+      "value_monetization": [
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    "289070": {
+      "gameplay": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "audiovisual": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "players_community": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "developer_support": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "modes_content": [
+        1.0,
+        0.0,
+        0.0
+      ]
+    },
+    "730": {
+      "gameplay": [
+        1.0,
+        0.0,
+        1.0
+      ],
+      "audiovisual": [
+        0.5,
+        0.5,
+        0.0
+      ],
+      "developer_support": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "modes_content": [
+        1.0,
+        0.0,
+        1.0
+      ],
+      "story_characters": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "matchmaking_ranking": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "players_community": [
+        1.0,
+        0.0,
+        1.0
+      ],
+      "value_monetization": [
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    "1245620": {
+      "gameplay": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "story_characters": [
+        0.0,
+        0.0,
+        2.0
+      ],
+      "players_community": [
+        0.0,
+        0.0,
+        2.0
+      ],
+      "modes_content": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "performance_stability": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "developer_support": [
+        0.5,
+        0.5,
+        0.0
+      ]
+    },
+    "394360": {
+      "modes_content": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "gameplay": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "audiovisual": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "matchmaking_ranking": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "story_characters": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "value_monetization": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "performance_stability": [
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    "1238810": {
+      "players_community": [
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    "1938090": {
+      "modes_content": [
+        0.0,
+        1.0,
+        1.0
+      ],
+      "audiovisual": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "performance_stability": [
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    "620980": {
+      "modes_content": [
+        1.0,
+        0.0,
+        1.0
+      ],
+      "audiovisual": [
+        1.0,
+        0.0,
+        1.0
+      ],
+      "developer_support": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "players_community": [
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    "413410": {
+      "story_characters": [
+        1.0,
+        0.0,
+        0.0
+      ]
+    },
+    "1966720": {
+      "gameplay": [
+        1.0,
+        0.0,
+        1.0
+      ],
+      "modes_content": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "players_community": [
+        2.0,
+        1.0,
+        2.0
+      ],
+      "developer_support": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "value_monetization": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    },
+    "264710": {
+      "performance_stability": [
+        0.5,
+        0.5,
+        0.0
+      ],
+      "story_characters": [
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    "960090": {
+      "gameplay": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "value_monetization": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "modes_content": [
+        1.0,
+        1.0,
+        0.0
+      ]
+    },
+    "504230": {
+      "players_community": [
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    "570940": {
+      "modes_content": [
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    "8930": {
+      "players_community": [
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    "427520": {
+      "players_community": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "gameplay": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "cheating_moderation": [
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    "550": {
+      "players_community": [
+        1.0,
+        0.0,
+        1.0
+      ],
+      "modes_content": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "gameplay": [
+        1.0,
+        0.0,
+        0.0
+      ]
+    },
+    "620": {
+      "gameplay": [
+        1.5,
+        0.5,
+        0.0
+      ]
+    },
+    "945360": {
+      "modes_content": [
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    "892970": {
+      "modes_content": [
+        0.0,
+        0.0,
+        2.0
+      ],
+      "gameplay": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "developer_support": [
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    "1145360": {
+      "gameplay": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "story_characters": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "audiovisual": [
+        1.0,
+        0.0,
+        0.0
+      ]
+    },
+    "105600": {
+      "modes_content": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "story_characters": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "gameplay": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "players_community": [
+        1.0,
+        0.0,
+        0.0
+      ]
+    },
+    "1086940": {
+      "players_community": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "story_characters": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "performance_stability": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "audiovisual": [
+        1.0,
+        0.0,
+        0.0
+      ]
+    },
+    "570": {
+      "modes_content": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "audiovisual": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "players_community": [
+        0.0,
+        0.0,
+        2.0
+      ],
+      "developer_support": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "value_monetization": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "cheating_moderation": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "gameplay": [
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    "271590": {
+      "modes_content": [
+        2.0,
+        0.0,
+        0.0
+      ],
+      "story_characters": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "performance_stability": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "cheating_moderation": [
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    "526870": {
+      "audiovisual": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "performance_stability": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "developer_support": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "gameplay": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "modes_content": [
+        1.0,
+        0.0,
+        0.0
+      ]
+    },
+    "220": {
+      "story_characters": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "gameplay": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "modes_content": [
+        1.0,
+        0.0,
+        0.0
+      ]
+    },
+    "1174180": {
+      "gameplay": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "modes_content": [
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    "1091500": {
+      "performance_stability": [
+        0.5,
+        0.5,
+        0.0
+      ],
+      "gameplay": [
+        0.5,
+        0.5,
+        0.0
+      ],
+      "developer_support": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "value_monetization": [
+        1.0,
+        0.0,
+        0.0
+      ]
+    },
+    "255710": {
+      "modes_content": [
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    "812140": {
+      "story_characters": [
+        0.5,
+        0.5,
+        0.0
+      ]
+    },
+    "1446780": {
+      "players_community": [
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    "1284210": {
+      "players_community": [
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    "578080": {
+      "players_community": [
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    "1085660": {
+      "players_community": [
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    "306130": {
+      "gameplay": [
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    "1517290": {
+      "developer_support": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "modes_content": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "performance_stability": [
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    "252490": {
+      "players_community": [
+        1.0,
+        0.0,
+        0.0
+      ]
+    },
+    "949230": {
+      "performance_stability": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "players_community": [
+        0.0,
+        0.0,
+        1.0
+      ]
+    }
+  },
+  "user_profiles": {
+    "85d5d0fe811f48ef4cd845435b4a53f38a1934df81d12a7173067bdc345dceda": {
+      "gameplay": 0.187095,
+      "modes_content": 0.167176,
+      "story_characters": 0.165587,
+      "audiovisual": 0.124282,
+      "performance_stability": 0.021752,
+      "matchmaking_ranking": 0.020653,
+      "players_community": 0.188073,
+      "cheating_moderation": 0.000367,
+      "developer_support": 0.083221,
+      "value_monetization": 0.041794
+    },
+    "e9853e803029e08ca7175e9c426498eb104c8033d37e0b770b164719ba2a2194": {
+      "gameplay": 0.145958,
+      "modes_content": 0.148952,
+      "story_characters": 0.139222,
+      "audiovisual": 0.136228,
+      "performance_stability": 0.133234,
+      "matchmaking_ranking": 0.126497,
+      "players_community": 0.026946,
+      "cheating_moderation": 0.002246,
+      "developer_support": 0.009731,
+      "value_monetization": 0.130988
+    },
+    "ff925a590d3e76b15a96d5ef31cc6536e14e348a8b5aab9f150e4b45bab4c423": {
+      "gameplay": 0.083832,
+      "modes_content": 0.095808,
+      "story_characters": 0.056886,
+      "audiovisual": 0.04491,
+      "performance_stability": 0.032934,
+      "matchmaking_ranking": 0.005988,
+      "players_community": 0.607784,
+      "cheating_moderation": 0.008982,
+      "developer_support": 0.038922,
+      "value_monetization": 0.023952
+    },
+    "47908f6d9ea3313e7cb5db7f0be66e8f374e0d0769040e606afedb2a11ff1749": {
+      "gameplay": 0.027944,
+      "modes_content": 0.365269,
+      "story_characters": 0.185629,
+      "audiovisual": 0.181637,
+      "performance_stability": 0.177645,
+      "matchmaking_ranking": 0.001996,
+      "players_community": 0.035928,
+      "cheating_moderation": 0.002994,
+      "developer_support": 0.012974,
+      "value_monetization": 0.007984
+    },
+    "e87990b495c727db0d8ab563549633c006f82b4bef212e567950a27b107b672a": {
+      "gameplay": 0.154833,
+      "modes_content": 0.227973,
+      "story_characters": 0.079555,
+      "audiovisual": 0.077844,
+      "performance_stability": 0.076133,
+      "matchmaking_ranking": 0.000855,
+      "players_community": 0.086826,
+      "cheating_moderation": 0.001283,
+      "developer_support": 0.148417,
+      "value_monetization": 0.146279
+    },
+    "bf1bc2f1f45bfe7f7a6f7e3b2a96a57c30a8374022c39d6d2291499e31bafbee": {
+      "gameplay": 0.083832,
+      "modes_content": 0.095808,
+      "story_characters": 0.056886,
+      "audiovisual": 0.04491,
+      "performance_stability": 0.032934,
+      "matchmaking_ranking": 0.005988,
+      "players_community": 0.607784,
+      "cheating_moderation": 0.008982,
+      "developer_support": 0.038922,
+      "value_monetization": 0.023952
+    },
+    "729164ddc0a5a8f9cf1d8b6d8f82c42ba758c148978abb8841dbbc12a947a988": {
+      "gameplay": 0.083832,
+      "modes_content": 0.595808,
+      "story_characters": 0.056886,
+      "audiovisual": 0.04491,
+      "performance_stability": 0.032934,
+      "matchmaking_ranking": 0.005988,
+      "players_community": 0.107784,
+      "cheating_moderation": 0.008982,
+      "developer_support": 0.038922,
+      "value_monetization": 0.023952
+    },
+    "85449090fec4403bcc4ea4fbf95b497b9738f12a80cd634e697726acb282ad1c": {
+      "gameplay": 0.309666,
+      "modes_content": 0.027374,
+      "story_characters": 0.016253,
+      "audiovisual": 0.012831,
+      "performance_stability": 0.00941,
+      "matchmaking_ranking": 0.001711,
+      "players_community": 0.459367,
+      "cheating_moderation": 0.145423,
+      "developer_support": 0.011121,
+      "value_monetization": 0.006843
+    },
+    "cad584505e6b18962c6e464df464ed832c6b1b513aff743678289136a22373a2": {
+      "gameplay": 0.083832,
+      "modes_content": 0.095808,
+      "story_characters": 0.056886,
+      "audiovisual": 0.04491,
+      "performance_stability": 0.032934,
+      "matchmaking_ranking": 0.005988,
+      "players_community": 0.607784,
+      "cheating_moderation": 0.008982,
+      "developer_support": 0.038922,
+      "value_monetization": 0.023952
+    },
+    "c4e4405a3757129c7c74f5bed9e7e354ff80dec0f23b301535864de9502f5faa": {
+      "gameplay": 0.583832,
+      "modes_content": 0.095808,
+      "story_characters": 0.056886,
+      "audiovisual": 0.04491,
+      "performance_stability": 0.032934,
+      "matchmaking_ranking": 0.005988,
+      "players_community": 0.107784,
+      "cheating_moderation": 0.008982,
+      "developer_support": 0.038922,
+      "value_monetization": 0.023952
+    },
+    "2668d67d71124d3a24f33d0cf8588569f5d49f8aca54ba01cef078a8329d00c6": {
+      "gameplay": 0.055888,
+      "modes_content": 0.063872,
+      "story_characters": 0.037924,
+      "audiovisual": 0.02994,
+      "performance_stability": 0.021956,
+      "matchmaking_ranking": 0.003992,
+      "players_community": 0.40519,
+      "cheating_moderation": 0.005988,
+      "developer_support": 0.025948,
+      "value_monetization": 0.349301
+    },
+    "3be11221aaf9e70e4647226e1d718feca6ef02510091689617ee9cb550a73c43": {
+      "gameplay": 0.055888,
+      "modes_content": 0.730539,
+      "story_characters": 0.037924,
+      "audiovisual": 0.02994,
+      "performance_stability": 0.021956,
+      "matchmaking_ranking": 0.003992,
+      "players_community": 0.071856,
+      "cheating_moderation": 0.005988,
+      "developer_support": 0.025948,
+      "value_monetization": 0.015968
+    },
+    "9379508bbe7277dc8020ff5152902f6902d45bccdf89d3bb5f813b36ae881db9": {
+      "gameplay": 0.19706,
+      "modes_content": 0.199238,
+      "story_characters": 0.192161,
+      "audiovisual": 0.099075,
+      "performance_stability": 0.005988,
+      "matchmaking_ranking": 0.001089,
+      "players_community": 0.292324,
+      "cheating_moderation": 0.001633,
+      "developer_support": 0.007077,
+      "value_monetization": 0.004355
+    },
+    "476b7754b6da8485221299b307dc9ad529521d5b0a152310365feecc009afb99": {
+      "gameplay": 0.077844,
+      "modes_content": 0.079441,
+      "story_characters": 0.074251,
+      "audiovisual": 0.139321,
+      "performance_stability": 0.137725,
+      "matchmaking_ranking": 0.000798,
+      "players_community": 0.214371,
+      "cheating_moderation": 0.067864,
+      "developer_support": 0.138523,
+      "value_monetization": 0.06986
+    },
+    "f1f79cb71cdfe9fc1c939d5482f7c20549828b329994be410fe9d62444a09113": {
+      "gameplay": 0.041916,
+      "modes_content": 0.547904,
+      "story_characters": 0.278443,
+      "audiovisual": 0.022455,
+      "performance_stability": 0.016467,
+      "matchmaking_ranking": 0.002994,
+      "players_community": 0.053892,
+      "cheating_moderation": 0.004491,
+      "developer_support": 0.019461,
+      "value_monetization": 0.011976
+    },
+    "bba2e34616caf08c7ed4e49000a6b61e99a9f9ea3d826f32b755dbe4f5516aae": {
+      "gameplay": 0.233533,
+      "modes_content": 0.238323,
+      "story_characters": 0.022754,
+      "audiovisual": 0.217964,
+      "performance_stability": 0.013174,
+      "matchmaking_ranking": 0.002395,
+      "players_community": 0.243114,
+      "cheating_moderation": 0.003593,
+      "developer_support": 0.015569,
+      "value_monetization": 0.009581
+    },
+    "81a1c2d3a3738f122e44912e129ae7965bd3e7aed71796c44bcef80f5dcc92ba": {
+      "gameplay": 0.291916,
+      "modes_content": 0.297904,
+      "story_characters": 0.278443,
+      "audiovisual": 0.022455,
+      "performance_stability": 0.016467,
+      "matchmaking_ranking": 0.002994,
+      "players_community": 0.053892,
+      "cheating_moderation": 0.004491,
+      "developer_support": 0.019461,
+      "value_monetization": 0.011976
+    },
+    "381f5b291797169cb52a0b00038de1cf351156d1d73f139c050fbf2b70ac1f98": {
+      "gameplay": 0.033533,
+      "modes_content": 0.238323,
+      "story_characters": 0.022754,
+      "audiovisual": 0.217964,
+      "performance_stability": 0.013174,
+      "matchmaking_ranking": 0.002395,
+      "players_community": 0.243114,
+      "cheating_moderation": 0.003593,
+      "developer_support": 0.215569,
+      "value_monetization": 0.009581
+    },
+    "60fae15d6210ad2b3bf7d0d46f9393c17e0cdc94c94f45bd2d3ace86f0d3a408": {
+      "gameplay": 0.226262,
+      "modes_content": 0.227973,
+      "story_characters": 0.008127,
+      "audiovisual": 0.006416,
+      "performance_stability": 0.218991,
+      "matchmaking_ranking": 0.000855,
+      "players_community": 0.015398,
+      "cheating_moderation": 0.072712,
+      "developer_support": 0.148417,
+      "value_monetization": 0.07485
+    },
+    "972ba6260f567b1c4460d1ed51a0c86001002b6f7e4e316727e7e16d62b5333d": {
+      "gameplay": 0.351963,
+      "modes_content": 0.354624,
+      "story_characters": 0.123752,
+      "audiovisual": 0.00998,
+      "performance_stability": 0.007319,
+      "matchmaking_ranking": 0.001331,
+      "players_community": 0.135063,
+      "cheating_moderation": 0.001996,
+      "developer_support": 0.008649,
+      "value_monetization": 0.005323
+    },
+    "98c9873f4cb77b7247f300dc8a16563fb21e33fa4a35d80b408c2d40cda283bb": {
+      "gameplay": 0.083832,
+      "modes_content": 0.095808,
+      "story_characters": 0.556886,
+      "audiovisual": 0.04491,
+      "performance_stability": 0.032934,
+      "matchmaking_ranking": 0.005988,
+      "players_community": 0.107784,
+      "cheating_moderation": 0.008982,
+      "developer_support": 0.038922,
+      "value_monetization": 0.023952
+    },
+    "62428cc8fe8dc9e7b5fa4d157004854fb5fb4d86a413f3ed0715801c47603279": {
+      "gameplay": 0.083832,
+      "modes_content": 0.095808,
+      "story_characters": 0.056886,
+      "audiovisual": 0.04491,
+      "performance_stability": 0.032934,
+      "matchmaking_ranking": 0.005988,
+      "players_community": 0.107784,
+      "cheating_moderation": 0.008982,
+      "developer_support": 0.538922,
+      "value_monetization": 0.023952
+    },
+    "747cc03e54fd466090074c95cd9d146a9f778e96912ae5f0a1e8db27f5b7fa62": {
+      "gameplay": 0.291916,
+      "modes_content": 0.047904,
+      "story_characters": 0.028443,
+      "audiovisual": 0.272455,
+      "performance_stability": 0.016467,
+      "matchmaking_ranking": 0.002994,
+      "players_community": 0.303892,
+      "cheating_moderation": 0.004491,
+      "developer_support": 0.019461,
+      "value_monetization": 0.011976
+    },
+    "18b177963c7e39a00f28dc8e765364650d20c6e2388afff76159c94bd80c4574": {
+      "gameplay": 0.083832,
+      "modes_content": 0.095808,
+      "story_characters": 0.056886,
+      "audiovisual": 0.04491,
+      "performance_stability": 0.032934,
+      "matchmaking_ranking": 0.005988,
+      "players_community": 0.607784,
+      "cheating_moderation": 0.008982,
+      "developer_support": 0.038922,
+      "value_monetization": 0.023952
+    },
+    "56a29a799142522157bd3435a272b0ee879e5fed67aec84f0f2313556957bed7": {
+      "gameplay": 0.033533,
+      "modes_content": 0.038323,
+      "story_characters": 0.022754,
+      "audiovisual": 0.017964,
+      "performance_stability": 0.013174,
+      "matchmaking_ranking": 0.002395,
+      "players_community": 0.843114,
+      "cheating_moderation": 0.003593,
+      "developer_support": 0.015569,
+      "value_monetization": 0.009581
+    },
+    "60d916c8bee72b0ae3096e1bcd6b792b62792b29c817ef344f14e78d9693cc71": {
+      "gameplay": 0.083832,
+      "modes_content": 0.095808,
+      "story_characters": 0.056886,
+      "audiovisual": 0.04491,
+      "performance_stability": 0.032934,
+      "matchmaking_ranking": 0.005988,
+      "players_community": 0.607784,
+      "cheating_moderation": 0.008982,
+      "developer_support": 0.038922,
+      "value_monetization": 0.023952
+    },
+    "d8149684a2855d13acc682bbe412e5eed6634e29897f904cfa952e4bc1935734": {
+      "gameplay": 0.233533,
+      "modes_content": 0.238323,
+      "story_characters": 0.022754,
+      "audiovisual": 0.017964,
+      "performance_stability": 0.213174,
+      "matchmaking_ranking": 0.002395,
+      "players_community": 0.043114,
+      "cheating_moderation": 0.003593,
+      "developer_support": 0.215569,
+      "value_monetization": 0.009581
+    },
+    "9c0ba12ebd2b27662ea006cd75fa973bde970573af3e776b766b00fddd5923b0": {
+      "gameplay": 0.083832,
+      "modes_content": 0.095808,
+      "story_characters": 0.556886,
+      "audiovisual": 0.04491,
+      "performance_stability": 0.032934,
+      "matchmaking_ranking": 0.005988,
+      "players_community": 0.107784,
+      "cheating_moderation": 0.008982,
+      "developer_support": 0.038922,
+      "value_monetization": 0.023952
+    },
+    "e8c319c7782634aa2c2384ac333b7599d7416df61a48306519b9e118fa945fde": {
+      "gameplay": 0.055888,
+      "modes_content": 0.063872,
+      "story_characters": 0.037924,
+      "audiovisual": 0.02994,
+      "performance_stability": 0.021956,
+      "matchmaking_ranking": 0.003992,
+      "players_community": 0.738523,
+      "cheating_moderation": 0.005988,
+      "developer_support": 0.025948,
+      "value_monetization": 0.015968
+    },
+    "7c8fc9492e2def17843206c4363813c5b09cbba756862333543d51a5f0c1ebca": {
+      "gameplay": 0.055888,
+      "modes_content": 0.063872,
+      "story_characters": 0.037924,
+      "audiovisual": 0.02994,
+      "performance_stability": 0.355289,
+      "matchmaking_ranking": 0.003992,
+      "players_community": 0.40519,
+      "cheating_moderation": 0.005988,
+      "developer_support": 0.025948,
+      "value_monetization": 0.015968
+    }
+  }
+}

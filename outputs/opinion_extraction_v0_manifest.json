@@ -1,0 +1,20 @@
+{
+  "run_id": "lexicon-20261123T104349Z",
+  "input": "outputs/steam_pilot.jsonl",
+  "review_id_filter": "outputs/annotation_batch_v0.csv",
+  "output": "outputs/opinion_extraction_v0.jsonl",
+  "config": {
+    "backend": "lexicon",
+    "lexicon": "aspect_lexicon_v0",
+    "include_overall": true,
+    "segmentation": "clauses split on . ! ? ; newline, 'but', 'however'"
+  },
+  "reviews": 50,
+  "records": 212,
+  "reviews_with_any_record": 48,
+  "inference_seconds": 0.059,
+  "reviews_per_second": 845.18,
+  "hardware": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+  "python": "3.14.4",
+  "validation_status": "unvalidated until compared with human labels by opinion_evaluate.py"
+}

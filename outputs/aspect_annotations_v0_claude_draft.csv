@@ -1,0 +1,190 @@
+﻿review_id,annotator_id,aspect,sentiment,evidence,notes
+239288085,claude_draft,performance_stability,negative,there was a lot of Chinese servers that steals your information,"llm_draft_needs_human_review, ambiguous:security_privacy, no security category in v0"
+239385967,claude_draft,overall,negative,Fuck this game,llm_draft_needs_human_review
+239385967,claude_draft,developer_support,negative,after so many shit updates,llm_draft_needs_human_review
+240313861,claude_draft,overall,positive,"Better, and better, and better","llm_draft_needs_human_review, uncertain, may compare with Portal 1"
+239587627,claude_draft,overall,positive,its so refreshing to play this game,llm_draft_needs_human_review
+239587627,claude_draft,developer_support,positive,all the updates helping,llm_draft_needs_human_review
+239587627,claude_draft,modes_content,positive,the mods just add that needed replay,llm_draft_needs_human_review
+238988809,claude_draft,overall,positive,This is and will forever be my favorite game,llm_draft_needs_human_review
+238988809,claude_draft,overall,positive,Dope game though classic and timeless,llm_draft_needs_human_review
+238988809,claude_draft,players_community,positive,I met my husband on the game playing No Mercy,"llm_draft_needs_human_review, implicit"
+240398043,claude_draft,gameplay,positive,Team Fortress 2 is one of those rare games that never really gets old,"llm_draft_needs_human_review, implicit, replayability"
+240398043,claude_draft,gameplay,positive,What makes TF2 special isn't just the gameplay,llm_draft_needs_human_review
+240398043,claude_draft,story_characters,positive,"The characters, voice lines, animations, and ridiculous moments give it a charm that modern games rarely manage to capture",llm_draft_needs_human_review
+240398043,claude_draft,audiovisual,positive,"The characters, voice lines, animations, and ridiculous moments give it a charm that modern games rarely manage to capture","llm_draft_needs_human_review, animations"
+240398043,claude_draft,gameplay,positive,The class system also makes every match feel different,llm_draft_needs_human_review
+240398043,claude_draft,cheating_moderation,negative,"Bots, cheaters, and occasional frustrating teammates can ruin the experience",llm_draft_needs_human_review
+240398043,claude_draft,players_community,negative,"Bots, cheaters, and occasional frustrating teammates can ruin the experience",llm_draft_needs_human_review
+240398043,claude_draft,overall,positive,Still fun after all these years,llm_draft_needs_human_review
+238423549,claude_draft,gameplay,negative,This game lacks balance,"llm_draft_needs_human_review, ambiguous:matchmaking_ranking"
+238423549,claude_draft,matchmaking_ranking,negative,The Rank system is broken,llm_draft_needs_human_review
+238423549,claude_draft,cheating_moderation,negative,someone can feed in the game with 0 punishment,llm_draft_needs_human_review
+238423549,claude_draft,cheating_moderation,negative,They now punish you for communication,llm_draft_needs_human_review
+238423549,claude_draft,cheating_moderation,negative,the lack of a real system that looks at actual words used ruined this game,llm_draft_needs_human_review
+238423549,claude_draft,players_community,negative,Sure toxicity existed then,"llm_draft_needs_human_review, past_state"
+238423549,claude_draft,overall,negative,I will be walking away permanently now,llm_draft_needs_human_review
+240044447,claude_draft,performance_stability,mixed,sea server still as bad a decade ago and I love it,"llm_draft_needs_human_review, sarcasm, uncertain"
+240044447,claude_draft,overall,positive,will recommend,llm_draft_needs_human_review
+240340949,claude_draft,none,,,"llm_draft_needs_human_review, joke"
+239374443,claude_draft,cheating_moderation,negative,I get banned for 20 hours after using Scout on Mirage,llm_draft_needs_human_review
+239374443,claude_draft,developer_support,negative,"no explanation as to why my gameplay is ""irregular"" or any response about getting this resolved","llm_draft_needs_human_review, ambiguous:cheating_moderation"
+239374443,claude_draft,cheating_moderation,negative,this game now bans you for having a few good shots in a game,llm_draft_needs_human_review
+239374443,claude_draft,value_monetization,negative,I would not recommend anyone play this game or purchase any skins/cases when your account can get blocked from playing with no explanation,"llm_draft_needs_human_review, uncertain, purchase risk caused by bans"
+239374443,claude_draft,overall,negative,I would not recommend anyone play this game,llm_draft_needs_human_review
+239374443,claude_draft,cheating_moderation,negative,they make zero sense to roll out without any safeguards,llm_draft_needs_human_review
+240596337,claude_draft,overall,positive,its fucking flawless,llm_draft_needs_human_review
+239883060,claude_draft,overall,negative,It doesn´t offer the highest quality in this janre of gaming,llm_draft_needs_human_review
+239883060,claude_draft,overall,positive,no one can deny that this is a game with legacy,llm_draft_needs_human_review
+239883060,claude_draft,players_community,positive,are able to have fun time with others,llm_draft_needs_human_review
+239883060,claude_draft,players_community,negative,Sure it is not so much Women friendly,llm_draft_needs_human_review
+239883060,claude_draft,players_community,negative,sometimes I get F1-ed just because of being woman,"llm_draft_needs_human_review, F1 = vote kick by players"
+239883060,claude_draft,developer_support,neutral,for sure the game gets updated time to time,llm_draft_needs_human_review
+239467175,claude_draft,cheating_moderation,negative,Multiple vac live cool downs when not cheating,llm_draft_needs_human_review
+239467175,claude_draft,cheating_moderation,negative,won't ban cheaters but I keep getting vac cool downs,llm_draft_needs_human_review
+239467175,claude_draft,overall,negative,fuck this game,llm_draft_needs_human_review
+238229946,claude_draft,overall,positive,its very fun game,llm_draft_needs_human_review
+238229946,claude_draft,players_community,negative,to the point you want to eliminate yourself and the players,"llm_draft_needs_human_review, joke, uncertain"
+238229946,claude_draft,overall,positive,highly recommended game,llm_draft_needs_human_review
+239478092,claude_draft,overall,positive,I absolutely love this game,llm_draft_needs_human_review
+239478092,claude_draft,modes_content,positive,Counter Strike 2 has game modes and custom maps / lobbies that are well made and enjoyable,llm_draft_needs_human_review
+239478092,claude_draft,modes_content,positive,Both the more casual and the more competitive game modes are tons of fun,llm_draft_needs_human_review
+239478092,claude_draft,gameplay,positive,The weapons and maps in this game are very well made and highly thoughtful,"llm_draft_needs_human_review, maps also modes_content"
+239478092,claude_draft,modes_content,positive,the maps actually make sense,llm_draft_needs_human_review
+239478092,claude_draft,gameplay,positive,everything is pretty balanced and the meta feels more like a suggestion,llm_draft_needs_human_review
+239478092,claude_draft,gameplay,negative,the start of the game will be a little painful until you get used to it,"llm_draft_needs_human_review, difficulty"
+239478092,claude_draft,players_community,positive,the major events and tournaments are actually a blast to watch,"llm_draft_needs_human_review, ambiguous:esports_scene, no category in v0"
+239478092,claude_draft,value_monetization,positive,The weapon skin and case system are also nice to get into,llm_draft_needs_human_review
+239478092,claude_draft,overall,positive,10/10 Game,llm_draft_needs_human_review
+240343903,claude_draft,gameplay,neutral,Excited to finally learn what half the items do,"llm_draft_needs_human_review, joke, implicit, complexity"
+240343903,claude_draft,players_community,negative,Great game for anyone who wants to develop trust issues and high blood pressure,"llm_draft_needs_human_review, sarcasm, implicit, uncertain"
+239610900,claude_draft,overall,positive,nice game,llm_draft_needs_human_review
+239610900,claude_draft,value_monetization,neutral,i mostly only collect the skins,llm_draft_needs_human_review
+239610900,claude_draft,modes_content,neutral,play arcades than the actual game,llm_draft_needs_human_review
+240328672,claude_draft,overall,positive,very good game especially with friends,llm_draft_needs_human_review
+240328672,claude_draft,players_community,positive,very good game especially with friends,llm_draft_needs_human_review
+240328672,claude_draft,modes_content,positive,the workshop support makes the whole thing even better,llm_draft_needs_human_review
+239446775,claude_draft,cheating_moderation,negative,worst commend and report system ever created,llm_draft_needs_human_review
+239446775,claude_draft,cheating_moderation,negative,u still get lower comunication summary by idiots reporting u for no reason,llm_draft_needs_human_review
+239446775,claude_draft,matchmaking_ranking,negative,smurfs and noob account buyers are 70% of this game,llm_draft_needs_human_review
+239446775,claude_draft,developer_support,negative,noone gives a sht from administration,llm_draft_needs_human_review
+239446775,claude_draft,value_monetization,negative,all they do are releasing moneygrab treasures,llm_draft_needs_human_review
+239446775,claude_draft,developer_support,negative,not fixing things,llm_draft_needs_human_review
+239446775,claude_draft,cheating_moderation,negative,creating antihack that bans umbrella cheaters,"llm_draft_needs_human_review, uncertain meaning"
+238424243,claude_draft,players_community,negative,A virtual insane asylum of mentally ill societal rejects,llm_draft_needs_human_review
+238424243,claude_draft,players_community,negative,"They don't know you, they don't want to, and they hate you anyways",llm_draft_needs_human_review
+238424243,claude_draft,players_community,negative,one or more of either team has decided to have a mental breakdown and join the other team over a perceived slight,llm_draft_needs_human_review
+238424243,claude_draft,developer_support,negative,the developers spend most of their time monetizing your attention rather than improving game stability,llm_draft_needs_human_review
+238424243,claude_draft,value_monetization,negative,the developers spend most of their time monetizing your attention rather than improving game stability,"llm_draft_needs_human_review, ambiguous:developer_support"
+239628772,claude_draft,players_community,negative,very good game if you want russians to yell at you,"llm_draft_needs_human_review, sarcasm"
+239162121,claude_draft,overall,positive,it's brilliant,llm_draft_needs_human_review
+239162121,claude_draft,modes_content,positive,Campaign and coop mode are both excellent,llm_draft_needs_human_review
+239162121,claude_draft,story_characters,positive,"interesting story, memorable characters",llm_draft_needs_human_review
+239162121,claude_draft,gameplay,positive,"innovative gameplay, and clever puzzles",llm_draft_needs_human_review
+240422325,claude_draft,overall,positive,999/10 beautiful game,llm_draft_needs_human_review
+240422325,claude_draft,value_monetization,positive,absolutely worth the 10 euro,llm_draft_needs_human_review
+240422325,claude_draft,overall,positive,can and WILL recommend this game,llm_draft_needs_human_review
+238306064,claude_draft,overall,positive,Great game,llm_draft_needs_human_review
+238306064,claude_draft,overall,positive,An absolute gem,llm_draft_needs_human_review
+238826503,claude_draft,modes_content,positive,Amazing campaign and maps,llm_draft_needs_human_review
+238826503,claude_draft,modes_content,positive,Singleplayer and Multiplayer is also really enjoyable,llm_draft_needs_human_review
+238826503,claude_draft,performance_stability,positive,Game isn't buggy whatsoever,llm_draft_needs_human_review
+238826503,claude_draft,overall,positive,9.5/10,llm_draft_needs_human_review
+239662439,claude_draft,overall,negative,CS:GO was better by far,llm_draft_needs_human_review
+239662439,claude_draft,gameplay,negative,clunky gameplay,llm_draft_needs_human_review
+239662439,claude_draft,cheating_moderation,negative,"cheaters, clunky gameplay, case-farming bots",llm_draft_needs_human_review
+239662439,claude_draft,overall,negative,the game has completely lost its soul and colors,llm_draft_needs_human_review
+239662439,claude_draft,developer_support,negative,The devs clearly don't care anymore,llm_draft_needs_human_review
+239662439,claude_draft,players_community,positive,the entire game is carried by the community,llm_draft_needs_human_review
+239662439,claude_draft,developer_support,negative,Yet Valve still doesn't care about the players,llm_draft_needs_human_review
+239662439,claude_draft,value_monetization,negative,They shake up and crash the market whenever they feel like it,llm_draft_needs_human_review
+239662439,claude_draft,value_monetization,negative,it's just a pure money-printing machine for Valve,llm_draft_needs_human_review
+239662439,claude_draft,modes_content,negative,"We had Operations, missions, and actual content","llm_draft_needs_human_review, past_state, implicit"
+239662439,claude_draft,matchmaking_ranking,negative,CS2 is nothing more than a soulless FACEIT Elo / rank grind,llm_draft_needs_human_review
+239662439,claude_draft,developer_support,negative,CS2 is left completely empty,"llm_draft_needs_human_review, ambiguous:modes_content"
+239662439,claude_draft,cheating_moderation,negative,overflowing with cheaters and bots,llm_draft_needs_human_review
+239134939,claude_draft,matchmaking_ranking,negative,Stay away from casual matchmaking,llm_draft_needs_human_review
+239134939,claude_draft,cheating_moderation,negative,The bots are ruining everything,llm_draft_needs_human_review
+239134939,claude_draft,overall,positive,"Valve, this is your greatest achievement",llm_draft_needs_human_review
+240514361,claude_draft,players_community,positive,It's so fun to play with friends,llm_draft_needs_human_review
+240514361,claude_draft,modes_content,positive,Even better to play with mods,llm_draft_needs_human_review
+240514361,claude_draft,overall,positive,the nostalgia hits hard,llm_draft_needs_human_review
+239125997,claude_draft,cheating_moderation,negative,False idle bots are back making the game physically unplayable,llm_draft_needs_human_review
+239125997,claude_draft,matchmaking_ranking,negative,they are 9/10 times horribly unbalaced and last sometimes less than a minute,llm_draft_needs_human_review
+239125997,claude_draft,developer_support,negative,It is Valve's responsability to maintain its game,llm_draft_needs_human_review
+239125997,claude_draft,overall,positive,"When games are balanced and last long enough, TF2 is truly some of the most fun you can have online",llm_draft_needs_human_review
+239125997,claude_draft,developer_support,negative,this game's utter neglect means that rarely happens,llm_draft_needs_human_review
+239125997,claude_draft,modes_content,negative,stop bloating the game with more empty maps,llm_draft_needs_human_review
+239125997,claude_draft,matchmaking_ranking,negative,bring back Quickplay,llm_draft_needs_human_review
+240399894,claude_draft,overall,negative,"if u want to get sick , heart attack , if u want to lose your family , your manners , your job , your life just play this game","llm_draft_needs_human_review, joke, uncertain"
+239941567,claude_draft,overall,positive,This is Valve's TRUE Timeless Master Piece,llm_draft_needs_human_review
+239941567,claude_draft,overall,positive,its perfect,llm_draft_needs_human_review
+239335500,claude_draft,cheating_moderation,negative,An absolute disgrace that doesn’t ban cheaters but bans legit players,llm_draft_needs_human_review
+239335500,claude_draft,cheating_moderation,negative,failing to make a decent anti-cheat,llm_draft_needs_human_review
+239335500,claude_draft,developer_support,negative,"Apparently, all their development time went into adding chickens","llm_draft_needs_human_review, sarcasm"
+239335500,claude_draft,cheating_moderation,negative,"You report cheaters and send in demos, and get absolutely zero response",llm_draft_needs_human_review
+239335500,claude_draft,overall,negative,I strongly advise against it,llm_draft_needs_human_review
+239063630,claude_draft,value_monetization,neutral,The game is free,llm_draft_needs_human_review
+239063630,claude_draft,overall,positive,10/10 would go to therapy again,"llm_draft_needs_human_review, sarcasm, joke"
+238579355,claude_draft,players_community,negative,got called multple slurs and was told i deserve to be r***,"llm_draft_needs_human_review, sarcasm (10/10)"
+239178377,claude_draft,cheating_moderation,negative,the bots are back,llm_draft_needs_human_review
+239178377,claude_draft,cheating_moderation,negative,theyre filling up casual queues and not letting you get into the game at all,llm_draft_needs_human_review
+239178377,claude_draft,value_monetization,neutral,we buy your hats and we buy your skins,llm_draft_needs_human_review
+239244807,claude_draft,overall,positive,not a bad game,llm_draft_needs_human_review
+239244807,claude_draft,overall,negative,wouldn't recommend,llm_draft_needs_human_review
+239244807,claude_draft,developer_support,negative,abandoned by the developers for the most part,llm_draft_needs_human_review
+239244807,claude_draft,players_community,negative,the playerbase can be server stomping levels of good at the game,"llm_draft_needs_human_review, skill gap"
+240123573,claude_draft,overall,positive,Very good game,llm_draft_needs_human_review
+240123573,claude_draft,value_monetization,positive,also for the low price,llm_draft_needs_human_review
+240123573,claude_draft,gameplay,positive,You just can play it again and again,"llm_draft_needs_human_review, implicit, replayability"
+240123573,claude_draft,modes_content,positive,the multiplayer is very fun,llm_draft_needs_human_review
+238648395,claude_draft,overall,negative,This SHIT GAME just keeps getting worse and worse,llm_draft_needs_human_review
+238648395,claude_draft,cheating_moderation,negative,The VAC anti-cheat system is an absolute brain cancer,llm_draft_needs_human_review
+238648395,claude_draft,cheating_moderation,negative,"it bans clean players, but leaves those who are blatantly cheating unbanned",llm_draft_needs_human_review
+239792396,claude_draft,overall,positive,Fun zombie shooter,llm_draft_needs_human_review
+239792396,claude_draft,modes_content,positive,it has the original L4D1 levels with the new L4D2 additions,llm_draft_needs_human_review
+239792396,claude_draft,overall,positive,definitely worth checking out,llm_draft_needs_human_review
+238271193,claude_draft,overall,positive,pretty good tbh,llm_draft_needs_human_review
+238271193,claude_draft,overall,positive,it just has a certain charm to it that i cant let go,llm_draft_needs_human_review
+238271193,claude_draft,performance_stability,positive,no matter how shitty my run-down hp laptop is,"llm_draft_needs_human_review, implicit, uncertain"
+240511464,claude_draft,overall,positive,Super fun to play,llm_draft_needs_human_review
+240511464,claude_draft,gameplay,positive,the thrill and the pace that makes it even more worth it to play with your friends,llm_draft_needs_human_review
+240511464,claude_draft,players_community,positive,the thrill and the pace that makes it even more worth it to play with your friends,llm_draft_needs_human_review
+238241573,claude_draft,overall,positive,This game changed me fundamentally as a person,llm_draft_needs_human_review
+238241573,claude_draft,players_community,positive,Made connections i will cherish for the rest of my life,"llm_draft_needs_human_review, implicit"
+238354247,claude_draft,story_characters,positive,Never thought I could get so attached to a potato,"llm_draft_needs_human_review, implicit, character"
+238354247,claude_draft,gameplay,positive,Gameplay 10/10,llm_draft_needs_human_review
+238354247,claude_draft,story_characters,positive,"Best part is, it has an ending!","llm_draft_needs_human_review, joke"
+239260794,claude_draft,matchmaking_ranking,negative,#bringbackquickplay,llm_draft_needs_human_review
+239260794,claude_draft,matchmaking_ranking,negative,Casual is the reason why the game feels so miserable to play,llm_draft_needs_human_review
+239260794,claude_draft,matchmaking_ranking,negative,Entire server leave immediately after a roll,llm_draft_needs_human_review
+240478172,claude_draft,overall,negative,There a only a handful of games I genuinely regret putting this many hours into,llm_draft_needs_human_review
+240478172,claude_draft,players_community,positive,IF you play with friends who are chill it can be fun,llm_draft_needs_human_review
+240478172,claude_draft,matchmaking_ranking,negative,do not solo-queue ranked or otherwise,llm_draft_needs_human_review
+240478172,claude_draft,gameplay,negative,The barrier to entry is high,llm_draft_needs_human_review
+240478172,claude_draft,players_community,negative,the people are terrible,llm_draft_needs_human_review
+240478172,claude_draft,gameplay,negative,the gameplay doesn't make up for it,llm_draft_needs_human_review
+240556980,claude_draft,overall,positive,Really good game,llm_draft_needs_human_review
+240556980,claude_draft,gameplay,positive,Insanely replayable,llm_draft_needs_human_review
+240556980,claude_draft,players_community,positive,great game with friends and decent with randoms,llm_draft_needs_human_review
+240556980,claude_draft,players_community,negative,mainly the community and people who join your game just to team kill,llm_draft_needs_human_review
+240556980,claude_draft,gameplay,negative,the jockey hitbox,"llm_draft_needs_human_review, implicit"
+240556980,claude_draft,gameplay,negative,the CS weapons being completely out of place,llm_draft_needs_human_review
+240556980,claude_draft,gameplay,negative,sometimes the AI Director being to harsh,llm_draft_needs_human_review
+240556980,claude_draft,gameplay,negative,horrible weapon spawns,llm_draft_needs_human_review
+240556980,claude_draft,overall,positive,9/10 game I like it a lot,llm_draft_needs_human_review
+239944755,claude_draft,overall,positive,Truly a masterpiece of a game,llm_draft_needs_human_review
+239944755,claude_draft,story_characters,positive,very well written,llm_draft_needs_human_review
+240290355,claude_draft,overall,positive,it's the game that started it all,"llm_draft_needs_human_review, uncertain"
+240314843,claude_draft,story_characters,positive,Absolute cinema of a story,llm_draft_needs_human_review
+240314843,claude_draft,gameplay,positive,one of the most satisfying gameplays I've ever encountered,llm_draft_needs_human_review
+240314843,claude_draft,story_characters,positive,exactly my type of humour,llm_draft_needs_human_review
+240314843,claude_draft,audiovisual,positive,creepy yet cozy setting,"llm_draft_needs_human_review, ambiguous:story_characters"
+240314843,claude_draft,audiovisual,positive,nice music,llm_draft_needs_human_review
+240314843,claude_draft,story_characters,positive,fenomenal voice acting,llm_draft_needs_human_review
+240314843,claude_draft,overall,positive,11/10,llm_draft_needs_human_review
+238336562,claude_draft,cheating_moderation,negative,now the punishments are way too severe,llm_draft_needs_human_review
+238336562,claude_draft,players_community,positive,It used to be fun meet people in lobbies and voice chat all night,"llm_draft_needs_human_review, past_state"
+238336562,claude_draft,cheating_moderation,negative,now its a report fest,llm_draft_needs_human_review
+238336562,claude_draft,cheating_moderation,negative,you do not get to even type because you can get reported,llm_draft_needs_human_review
+238336562,claude_draft,overall,negative,12 years of playing and now its ruined,llm_draft_needs_human_review

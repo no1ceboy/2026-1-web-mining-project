@@ -39,6 +39,10 @@ Keep `voted_up` separate from these aspect labels. Summarize criticisms in negat
 
 For the Nov 23 checkpoint, a 50-review annotation pilot and honest extractor status are enough. For the final project, plan roughly 200-300 manually labeled reviews with a held-out evaluation portion and documented annotator overlap.
 
+## Current status (2026-11-23)
+
+Tooling and drafts live on branch `member4/opinion-mining`. See the [validation status report](../../opinion_validation_v0.md) for what has been measured and what is still missing. In short: the [aspect guide](../../aspect_guide_v0.md), the [50-review blinded annotation batch](../../annotation_batch_v0.csv), the extractor/evaluator scripts and the draft [O(u,i) spec](../../opinion_feature_spec_v0.md) are ready. Human labels, the second-annotator overlap and the pretrained-model run are still pending, so no extraction accuracy has been reported yet.
+
 ## Completion checklist
 
 - Labels distinguish aspect from sentiment and preserve exact evidence spans.
