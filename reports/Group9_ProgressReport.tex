@@ -55,11 +55,13 @@ The collection covers a fixed catalogue of 100 Steam games. A 10,000-review snap
 
 For the main ranking dataset, the collector checked 100 public Steam profiles. Ninety-two histories were complete, and 54 reviewers had positively reviewed at least three catalogue games before the training period. This sample contains 554 reviews across 95 games (509 positive and 45 negative). The data check found no duplicate reviews, blank text, repeated user-game pairs, or disagreement between the source vote and its stored positive/negative label. Short and repeated texts were flagged, not automatically removed. Eighty-five English reviews met the current text-mining rule in the training period.
 
+The text audit found 382 reviews shorter than 20 words and 10 groups of repeated normalized text, representing 43 excess occurrences. These are inspection flags, not automatic deletion rules. In the mining process, positive recommendation votes form user-game links; review text is separately searched for opinions about game aspects.
+
 \section*{Current experiments and results}
 
 Popularity ranks games by how many users recommended them in the training data. Personalized PageRank (PPR) follows links between users and games, returning to the target user during the walk and scoring games reached from that user [2]. LightGCN repeatedly combines information from linked users and games to calculate recommendation scores [3]. The PPR restart probability was 0.15. LightGCN used 32-component vectors, two rounds of neighbor averaging, 30 training passes, and random seed 2026.
 
-For each evaluation user, one later positively reviewed game was set aside from training. Recall@K is the share of users whose target appears among the first K recommendations. NDCG gives more credit when the target is ranked nearer the top. The validation set has 22 users and the test set has 23.
+For each evaluation user, one later positively reviewed game was set aside from training. The validation cutoff is 1 January 2024 and the test cutoff is 1 January 2025 (UTC). Only games with earlier positive reviews can be ranked; any game the user had already reviewed is excluded, including previously negative reviews. Recall@K is the share of users whose target appears among the first K recommendations. NDCG gives more credit when the target is ranked nearer the top. The validation set has 22 users and the test set has 23.
 
 \begin{table}[ht]
 \centering
@@ -81,7 +83,9 @@ Test & LightGCN & 23 & 0.174 & 0.058 & \textbf{0.348} & 0.104 \\
 
 PPR has the strongest top-10 results in validation and test. Popularity has the highest validation Recall@20, and LightGCN has the highest test Recall@20. The table reports the number of users in each comparison.
 
-The aspect-based opinion analysis [4] has a category guide, a 50-review labeling batch, and a rule-based text extractor. The extractor identified 212 aspect-and-sentiment instances in the batch and 538 in the 85 eligible training reviews. These are output counts; people have not yet labeled the reviews to measure extraction accuracy, and the opinion feature has not been tested with LightGCN.
+For the test set, the later-positive game appears in PPR's top 10 for 5 of 23 users, compared with 4 for LightGCN and 3 for Popularity. In the top 20, LightGCN finds it for 8 users; PPR and Popularity each find it for 7. With one target per user, each user changes Recall by about 0.043.
+
+The aspect-based opinion analysis [4] has a ten-category guide covering topics such as gameplay, story, performance, matchmaking, community, and value; a 50-review labeling batch; and a rule-based text extractor. The extractor identified 212 aspect-and-sentiment instances in the batch and 538 in the 85 eligible training reviews. Exploratory user-opinion profiles cover 14 of 22 validation users and 10 of 23 test users. These are coverage counts, not accuracy or ranking results. People have not yet labeled the reviews to measure extraction accuracy, and the opinion feature has not been tested with LightGCN.
 
 \textbf{Code repository:} \url{https://github.com/no1ceboy/2026-1-web-mining-project}
 
